@@ -1,8 +1,9 @@
 {
-  "focus": "Keep the root solver as a pure-Python deterministic partial certificate packer, retire falsified frontier bridges, and concentrate on verifier-aligned extensions plus provenance and coverage controls.",
+  "focus": "Shift concept evolution away from weak frontier heuristics and toward a verifier-first, provenance-aware deterministic partial solver boundary while keeping unsupported n explicit.",
   "promoted_bridges": [
-    "exact_slack_certificate",
+    "verifier_first_regression_harness",
     "support_table_contract",
+    "deterministic_submission_dsl",
     "witness_provenance_ledger",
     "archive_quarantine_gate"
   ],
@@ -11,16 +12,18 @@
     "unrestricted_stochastic_search"
   ],
   "next_experiments": [
-    "Re-run deterministic exact-slack on n in {23, 24, 50} with fixed move ordering and report min_slack, violation_count, and total_negative_excess against the surrogate baseline.",
-    "Expose the frozen n<=100 support table and per-n provenance classes as machine-readable outputs used by summaries and tests.",
-    "Keep root-path regression checks for pure-Python imports, absence of code generation or randomness, and deterministic repeated outputs.",
-    "Only reopen symmetry-template work if witness-bank symmetry proxies justify orbit compression."
+    "Materialize the frozen n<=100 support table and per-n provenance map directly from the active solver outputs.",
+    "Keep `python -m unittest -v test_solution.py` and `python solution.py --verify-supported --limit 100` as the mandatory regression gate for every solver-facing change.",
+    "Repair the pair-slack benchmark so `verifier_calls` reflects real exact-verifier invocations, then rerun n in {23, 24, 50} with the added n=23 and perturb-and-recover controls.",
+    "Do not reopen lift work unless a relaxed old-old rewire model is specified and can clear known-step gates without falling back to unrestricted search.",
+    "Refresh stale prior-art summaries so string-graph retrieval drift does not contaminate claim framing or citation support."
   ],
   "feedback_used": [
-    "The active root artifact is already Python-only and deterministic; the old mixed C/Python stochastic complaint applies only to the archive tree.",
-    "Coverage is the dominant remaining blocker: local verification still shows 42 supported and 58 unsupported inputs on n<=100, including 23, 24, 50, and 100.",
-    "The fixed-old four-vertex lift failed both known-step gates 20->21 and 21->22, so it no longer deserves champion status.",
-    "Exact slack is the only frontier lane with positive measured signal, but it improved margins without finding a new verified witness.",
-    "Citation and falsifier artifacts both require stronger provenance and archive-quarantine controls to prevent overclaiming."
+    "Live reruns still pass all 6 unit tests, and `python solution.py --verify-supported --limit 100` still reports 42 supported and 58 unsupported inputs through n<=100.",
+    "The active root artifact is already Python-only and deterministic; the mixed-language and probabilistic complaint now applies only to legacy archive files.",
+    "Coverage remains the dominant unresolved failure because unsupported values still include 23, 24, 50, and 100.",
+    "The frozen-old four-vertex lift failed both known-step gates 20->21 and 21->22, so that bridge is no longer credible as a champion lane.",
+    "Exact pair-slack remains mixed: it improved some slack margins but found no new verified witness and currently misreports `verifier_calls`.",
+    "Citation and provenance audits still flag unresolved witness lineage and stale prior-art framing as high-risk claim weaknesses."
   ]
 }

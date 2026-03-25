@@ -1,51 +1,65 @@
 [
   {
-    "bridge": "exact_slack_certificate",
-    "novelty_signal": "Only frontier lane with measured verifier-aligned improvement: on n=24 min_slack improved from -7 to -2 and on n=50 from -14 to -12 versus the surrogate baseline, while staying deterministic.",
-    "validation_plan": "Run deterministic exact-slack benchmarks on n in {23, 24, 50} with fixed move ordering; promote only if the support table changes or the exact verifier shows strictly better min_slack and total_negative_excess than the surrogate.",
-    "risk": "Still no verified witness and may plateau in a local-search regime that improves margins without changing coverage.",
+    "bridge": "verifier_first_regression_harness",
+    "novelty_signal": "Strongest validated bridge in the latest feedback: live reruns still pass the unit suite and the exact support sweep, so the verifier and frozen support table are the only reliable center of progress measurement.",
+    "validation_plan": "Keep `python -m unittest -v test_solution.py` plus `python solution.py --verify-supported --limit 100` as the release gate; only promote solver changes that preserve deterministic purity and shift the certified support table.",
+    "risk": "Does not by itself extend coverage; it is an enforcement layer around honest partial-solver behavior.",
     "promotion_decision": "promote"
   },
   {
     "bridge": "support_table_contract",
-    "novelty_signal": "Turns the partial solver's real contribution into a frozen, testable interface: 42 supported and 58 unsupported values on n<=100, instead of allowing overclaiming.",
-    "validation_plan": "Keep the n<=100 support sweep in regression tests and fail if any change is not matched by exact verifier evidence and an updated support table.",
-    "risk": "Improves honesty and reproducibility, not frontier coverage.",
+    "novelty_signal": "The falsifier and coverage audit agree that the 42-supported / 58-unsupported split is the real claim boundary, so freezing that table is stronger than frontier anecdotes.",
+    "validation_plan": "Materialize the n<=100 support table and fail any change unless it is matched by exact-verifier evidence and updated provenance.",
+    "risk": "Improves honesty and regression control rather than construction power.",
+    "promotion_decision": "promote"
+  },
+  {
+    "bridge": "deterministic_submission_dsl",
+    "novelty_signal": "Directly addresses the user's complaint and is now live-validated: the active root artifact is Python-only, deterministic, and raises `ValueError` instead of falling back to mixed-language or stochastic search.",
+    "validation_plan": "Continue AST and import-hygiene checks that forbid randomness, shelling out, or legacy-module imports on the active path.",
+    "risk": "Artifact-discipline gain, not a new Ramsey construction.",
     "promotion_decision": "promote"
   },
   {
     "bridge": "witness_provenance_ledger",
-    "novelty_signal": "Directly addresses the falsifier and citation-audit gap by separating embedded exact payloads, the prime-power family, and unsupported inputs in machine-readable form.",
-    "validation_plan": "Emit and check a per-n provenance map over n<=100, and require every supported value to have a source class before it can be cited in summaries.",
-    "risk": "Mostly governance; it can clarify claims without yielding new witnesses.",
+    "novelty_signal": "The citation audit identifies provenance as the highest-risk gap; a per-n source-class ledger is now necessary to separate exact payloads, theorem-backed families, and unsupported inputs.",
+    "validation_plan": "Emit a machine-readable provenance map over n<=100 and block summary claims if a supported witness lacks a pinned source class.",
+    "risk": "Governance work may feel indirect because it clarifies claims without adding witnesses.",
     "promotion_decision": "promote"
   },
   {
     "bridge": "archive_quarantine_gate",
-    "novelty_signal": "Targets the remaining contamination risk from legacy C and stochastic archive files even though the active root solver is already pure Python and deterministic.",
-    "validation_plan": "Maintain import-hygiene and no-codegen/no-random regression tests so archive paths cannot leak back into the active artifact.",
-    "risk": "Prevents regressions but does not improve the unsupported frontier.",
+    "novelty_signal": "The mixed C/Python and probabilistic complaint is resolved only because the active root path is clean; the falsifier still flags archive contamination as an easy reviewer attack if legacy files are not clearly quarantined.",
+    "validation_plan": "Keep root-vs-archive import checks and reviewer-facing labels so legacy C/random-search files cannot be mistaken for the submission artifact.",
+    "risk": "Prevents regression and confusion, but does not move the unsupported frontier.",
     "promotion_decision": "promote"
   },
   {
+    "bridge": "exact_slack_certificate",
+    "novelty_signal": "Still the only frontier-search lane with any verifier-aligned movement, but the latest benchmark audit reduces it to mixed signal: no new witness, no support-table change, and broken `verifier_calls` accounting.",
+    "validation_plan": "Fix metric accounting, add n=23 and perturb-and-recover controls, and rerun n in {23, 24, 50}; re-promote only if exact slack improves certified outcomes rather than scalar proxy margins alone.",
+    "risk": "Could remain a local-search objective tweak with no frontier payoff.",
+    "promotion_decision": "hold"
+  },
+  {
     "bridge": "orbit_compressed_frontier",
-    "novelty_signal": "Could reduce frontier search only if the exact witness bank exhibits real low-orbit structure rather than assumed circulant symmetry.",
-    "validation_plan": "Mine automorphism proxies, repeated degree classes, and pair-slack symmetries through n=22 before spending budget on template search.",
-    "risk": "High rehash risk against known cyclic and Paley-style families if symmetry evidence stays weak.",
+    "novelty_signal": "The idea remains plausible only as an evidence-gated symmetry compression lane; current feature mining shows coarse solved-range parity, not a frontier-ready low-orbit law.",
+    "validation_plan": "Mine stronger automorphism and pair-slack symmetry signatures before spending any SAT/ILP budget on composite-order templates for 23, 24, or 50.",
+    "risk": "High rehash risk against cyclic and Paley-style prior art if symmetry evidence stays weak.",
     "promotion_decision": "hold"
   },
   {
     "bridge": "four_vertex_lift_completion",
-    "novelty_signal": "The transition-model idea was interesting, but its novelty is now undercut by failure on both known-step recovery gates.",
-    "validation_plan": "Do not spend more budget unless a new relaxed completion model explains why 20->21 and 21->22 were both INFEASIBLE.",
-    "risk": "Already falsified as the champion lane and likely to consume budget without coverage gain.",
+    "novelty_signal": "The latest validation killed the frozen-old formulation outright: known-step recovery failed on both 20->21 and 21->22 before frontier use was justified.",
+    "validation_plan": "Retire the exact frozen-old lift path unless a relaxed rewire model is formulated and separately gated.",
+    "risk": "Consumes budget on a formulation already falsified by its own prerequisite checks.",
     "promotion_decision": "retire"
   },
   {
     "bridge": "unrestricted_stochastic_search",
-    "novelty_signal": "None; it recreates the exact mixed-language/probabilistic failure mode the user rejected.",
-    "validation_plan": "Keep this out of the active path entirely.",
-    "risk": "Non-auditable behavior, misleading success stories, and immediate conflict with the deterministic submission boundary.",
+    "novelty_signal": "None; it recreates the exact failure mode the user objected to and violates the active deterministic submission boundary.",
+    "validation_plan": "Keep all stochastic or mixed-language search confined to clearly labeled legacy or archive paths outside the active artifact.",
+    "risk": "Non-auditable success stories, unstable outputs, and immediate claim contamination.",
     "promotion_decision": "retire"
   }
 ]
