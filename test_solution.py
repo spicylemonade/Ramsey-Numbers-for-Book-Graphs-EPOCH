@@ -139,7 +139,12 @@ class SolutionTests(unittest.TestCase):
             with self.subTest(n=n):
                 with self.assertRaises(ValueError) as context:
                     solver.solution(n)
-                self.assertIn("unsupported", str(context.exception).lower())
+                message = str(context.exception).lower()
+                self.assertIn("unsupported", message)
+                self.assertIn("python-only", message)
+                self.assertIn("deterministic", message)
+                self.assertIn("probabilistic", message)
+                self.assertIn("mixed-language", message)
 
     def test_supported_domain_up_to_100_is_stable(self) -> None:
         supported, unsupported = solver._supported_values(100)

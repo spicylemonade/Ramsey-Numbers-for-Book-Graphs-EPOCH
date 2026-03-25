@@ -35,11 +35,11 @@ def solution(n: int) -> str:
         return _paley_two_block(q, p, k)
 
     raise ValueError(
-        f"n={n} is unsupported by this deterministic artifact. "
+        f"n={n} is unsupported by this Python-only deterministic artifact. "
         "Supported inputs are the embedded exact witness range n<=22 and "
         "odd n with 2n-1 a prime power congruent to 1 modulo 4; "
-        "unsupported inputs are rejected instead of guessed by heuristic "
-        "or mixed-language fallback."
+        "unsupported inputs are rejected instead of guessed by heuristic, "
+        "probabilistic, or mixed-language fallback."
     )
 
 
