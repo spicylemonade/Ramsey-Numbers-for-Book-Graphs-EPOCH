@@ -111,6 +111,13 @@ EXPECTED_UNSUPPORTED_UP_TO_100 = [
     100,
 ]
 
+ARCHIVE_README = (
+    Path(__file__)
+    .resolve()
+    .with_name("790a8891-d60d-46f1-8aef-84f720d59562_aristotle")
+    / "README.md"
+)
+
 
 class SolutionTests(unittest.TestCase):
     def test_supported_samples_are_deterministic_and_verified(self) -> None:
@@ -130,8 +137,9 @@ class SolutionTests(unittest.TestCase):
     def test_unsupported_samples_raise_value_error(self) -> None:
         for n in [23, 24, 50, 100]:
             with self.subTest(n=n):
-                with self.assertRaises(ValueError):
+                with self.assertRaises(ValueError) as context:
                     solver.solution(n)
+                self.assertIn("unsupported", str(context.exception).lower())
 
     def test_supported_domain_up_to_100_is_stable(self) -> None:
         supported, unsupported = solver._supported_values(100)
@@ -167,9 +175,18 @@ class SolutionTests(unittest.TestCase):
             "gcc",
             "clang",
             "random",
+            "numpy",
+            "ortools",
+            "cp_model",
         ]:
             with self.subTest(token=token):
                 self.assertNotIn(token, source)
+
+    def test_archive_tree_is_explicitly_marked_legacy_only(self) -> None:
+        readme = ARCHIVE_README.read_text().lower()
+        self.assertIn("historical archive", readme)
+        self.assertIn("not the active submission artifact", readme)
+        self.assertIn("legacy", readme)
 
 
 if __name__ == "__main__":

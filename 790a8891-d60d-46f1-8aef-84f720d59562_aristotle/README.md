@@ -1,4 +1,5 @@
 This directory is a historical archive of an earlier solver attempt.
+It is retained as legacy-only context.
 
 It is not the active submission artifact for the triangular book graph task.
 The authoritative deliverable is the repo-root [solution.py](/home/archivara/work/repo/solution.py)

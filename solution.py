@@ -1,12 +1,14 @@
 """Deterministic constructions for the triangular book graph Ramsey task.
 
-This artifact intentionally does not guess. It returns only:
+The active submission path is this file. It intentionally does not guess:
+it returns only
 - embedded exact witnesses backed by published data; or
 - the published two-block Paley-type construction when `2n - 1` is a
   prime power congruent to 1 modulo 4.
 
 Unsupported inputs raise ``ValueError`` instead of falling back to
-probabilistic search or generated C code.
+probabilistic search, external solvers, or generated C code from the
+legacy archive tree.
 """
 
 from __future__ import annotations
@@ -35,7 +37,9 @@ def solution(n: int) -> str:
     raise ValueError(
         f"n={n} is unsupported by this deterministic artifact. "
         "Supported inputs are the embedded exact witness range n<=22 and "
-        "odd n with 2n-1 a prime power congruent to 1 modulo 4."
+        "odd n with 2n-1 a prime power congruent to 1 modulo 4; "
+        "unsupported inputs are rejected instead of guessed by heuristic "
+        "or mixed-language fallback."
     )
 
 
