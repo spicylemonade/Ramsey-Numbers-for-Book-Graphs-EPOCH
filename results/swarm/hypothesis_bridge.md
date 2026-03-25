@@ -1,22 +1,24 @@
 # Hypothesis Bridge
 
-## 1. Belief-Propagation Repair on the Pair-Slack Hypergraph
-- Title: Treat unsupported book-Ramsey instances like LDPC decoding rather than local edge flipping.
-- Closest prior art: the repo already suggests exact pair-slack repair and certificate-driven search, but still frames the search state as a graph with violated pairs rather than as a sparse factor graph over constraints.
-- Why it is different: coding-theory message passing would push local repair signals through edge-pair and non-edge-pair constraints, so updates are driven by structured “check-node” pressure instead of annealing scores or generic SAT branching.
-- Falsifiable prediction: on the first hard cases `n = 23, 24, 50`, belief-propagation-guided decimation will reduce the number of exact verifier calls needed to reach a valid witness or prove a template dead end, compared with the current max-slack/local-search style baselines.
-- Required experiments: build the pair-slack factor graph for two-block and orbit-compressed templates; compare BP-guided decimation against current local search and SAT warm starts on `n = 23, 24, 50`; log verifier calls, best slack margin, and solve rate.
+Pivot away from the current BP/SDP/DSL overlap. The strongest bridge candidates should exploit the verified witness bank and exact verifier, but borrow structure from more distant fields than local search, semidefinite seeding, or construction-program enumeration.
 
-## 2. Semidefinite Seed Design for Orbit-Compressed Witnesses
-- Title: Use SDP-style matrix completion as a seed generator for block-circulant book witnesses.
-- Closest prior art: current local directions emphasize Paley-style algebra, exact witness lookup, and orbit-compressed SAT/IP search.
-- Why it is different: this borrows from semidefinite relaxation and inverse design, treating the signed adjacency matrix as a constrained completion problem whose rounded solution seeds the discrete solver with globally balanced pair counts instead of random or hand-coded starts.
-- Falsifiable prediction: SDP-rounded seeds will enter exact SAT/IP search with smaller maximum pair-slack violations than random seeds or raw Paley-like lifts on unsupported composite/even targets, especially `n = 24` and `n = 50`.
-- Required experiments: formulate an SDP over signed two-block or multi-orbit templates; round the relaxed solution into discrete difference classes; compare initial slack histograms and downstream exact-solver performance against random and heuristic seeds.
+## 1. Delsarte-MacWilliams Dual Shaping for Low-Orbit Witnesses
+- Title: Use coding-theory dual spectra to design book-Ramsey templates before any edge-level search.
+- Closest prior art: the repo already has Paley/two-block finite-field constructions, orbit-compressed search, and an SDP-seeding idea; the overlap is only at the level of using a low-dimensional template.
+- Why it is different: the pivot is to association-scheme and coding-theory dual variables, not matrix relaxations or residue heuristics. Instead of guessing difference sets directly, solve for admissible correlation spectra over cyclic or dihedral classes and round those spectra into candidate templates. That makes the seed generator a discrete dual-certificate problem rather than a continuous SDP or a local swap search.
+- Falsifiable prediction: on `n = 23`, `24`, and `50`, dual-shaped seeds will start with strictly better verifier-aligned slack profiles than the current Paley-style or pair-slack seeds, and at least one of those cases will admit a smaller exact-search neighborhood after rounding.
+- Required experiments: formulate an LP over orbit-count or correlation variables for two-block and small multi-orbit templates; fit and round spectra using the verified witness bank through `n = 22`; compare initial slack histograms, restricted-search dimension, and final solve rate against the current seed candidate and Paley-family starts.
 
-## 3. Construction DSL Search from Small Exact Witnesses
-- Title: Learn a tiny program language of graph lifts instead of searching edge sets directly.
-- Closest prior art: the repo already points toward four-vertex lifts and mining exact witnesses for orbit structure, but not toward explicit program synthesis.
-- Why it is different: this imports syntax-guided program synthesis ideas, searching over a DSL of operations such as block duplication, orbit toggling, residue-class masks, and four-vertex extensions, with the verifier acting as the semantic checker.
-- Falsifiable prediction: a compact DSL fitted on exact witnesses up to `n = 22` will rediscover held-out supported cases and generate better warm starts for `n = 23` and `n = 24` than unrestricted edge-level search under the same time budget.
-- Required experiments: define a minimal construction DSL; perform leave-one-out recovery on known exact witnesses; measure whether synthesized programs transfer useful structure to unsupported cases better than random initializations or plain circulant templates.
+## 2. Counterexample-Guided Orbit Refinement
+- Title: Treat witness search like CEGAR over symmetry-compressed graph templates.
+- Closest prior art: this touches the repo's exact pair-slack repair and deterministic-submission DSL directions, but those still optimize or enumerate inside a fixed representation once the template is chosen.
+- Why it is different: the bridge is formal verification rather than local optimization. Start from a coarse abstract domain such as two-block, dihedral, or small orbit partitions; let the exact verifier return violating pair types; then refine only the abstract template dimensions needed to separate those counterexamples. This pivots away from polishing the killed fixed-old lift and away from flat neighborhood search.
+- Falsifiable prediction: for held-out supported cases near the frontier and for unsupported `n = 23` and `24`, CEGAR-style refinement will reach either a verified witness or a proof that the template family is dead using fewer exact verifier calls than pair-slack local repair on the same starting family.
+- Required experiments: define an abstract template lattice over orbit partitions and pair-type budgets; lift verifier failures into abstract counterexample clauses; run leave-one-out recovery on known supported cases such as `n = 20`, `21`, and `22`; then compare verifier calls, runtime, and template-pruning rate on `n = 23` and `24` against pair-slack repair.
+
+## 3. Sparse Support Tomography on Residue Classes
+- Title: Use compressed-sensing style support recovery to find which orbit classes actually control the worst violations.
+- Closest prior art: the nearest overlap is pair-slack repair plus orbit-compressed search, because both already assume that only a structured subset of edge classes matters.
+- Why it is different: the pivot is experimental design and sparse recovery rather than greedy repair. Apply a deterministic batch of perturbations to `d11` and `d12` residue classes around a seed, measure the resulting exact slack deltas, and recover a small influence support before launching exact search. That is a stronger claim than “swap promising classes”: it assumes the repair signal is sparse and should be identified first.
+- Falsifiable prediction: on `n = 24` and `50`, a recovered support of at most about 10 influential residue classes will produce better min-slack progress per exact verifier call than the unrestricted pair-slack neighborhood, and if the support is not sparse the hypothesis dies quickly.
+- Required experiments: build a deterministic perturbation matrix over residue classes around the current exact-slack seed; record verifier-aligned slack responses; recover influential classes with a fixed sparse-recovery procedure; rerun exact search restricted to that subspace; compare min-slack trajectory, verifier calls, and solve rate against the current pair-slack benchmark.

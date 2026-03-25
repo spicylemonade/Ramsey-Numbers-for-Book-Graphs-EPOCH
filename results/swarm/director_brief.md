@@ -1,25 +1,28 @@
 # Director Brief
 
-## Current state
-- The user's complaint about mixed C/Python and probabilistic fallback is resolved for the active root artifact. `solution.py` is Python-only, deterministic, and the root tests pass.
-- The real unresolved issue is coverage. `python solution.py --verify-supported --limit 100` confirms 42 supported values and 58 explicit `ValueError` rejections, so the root submission is a deterministic partial solver, not a full all-`n` algorithm.
-- The archived `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/` tree still contains C and random-search files. Treat that tree as legacy evidence only and do not conflate it with the root submission.
+## Verified current state
+- Local rerun on 2026-03-25: `python -m unittest -v test_solution.py` passed all 6 tests.
+- Local rerun on 2026-03-25: `python solution.py --verify-supported --limit 100` again showed 42 supported values and 58 unsupported values through `n <= 100`.
+- The user's packaging complaint is resolved for the active repo-root artifact. `solution.py` is Python-only, deterministic, and refuses unsupported inputs with `ValueError`.
+- The same complaint is still valid if someone points at the archived `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/` tree, which still contains C and stochastic search files. That tree must stay labeled as legacy-only context.
+- The actual blocker is coverage, not packaging hygiene. The root artifact is an honest deterministic partial solver, not a valid all-`n` answer to the stated prompt.
 
 ## Champion direction
-- Champion: four-vertex lift from the exact witness ladder.
-- Why this wins: it is the cleanest novelty move that does not overlap the known exact-witness packaging or the known prime-power Paley family. It exploits the strongest unused repo asset, adjacent verified witnesses, and attacks the benchmark at the smallest natural step, `n -> n + 1`, instead of restarting full search on `4n - 2` vertices.
-- Fast falsifier: hold the old graph fixed and ask a restricted SAT/IP model to recover known steps such as `20 -> 21` and `21 -> 22`. If it cannot reproduce known adjacent witnesses, stop before spending serious budget on `22 -> 23`.
-- Exact next experiment for the researcher: extract saturated pair data and coarse orbit summaries from the exact witness bank, encode a completion model over only old-new and new-new incidences, recover known steps first, then attempt `22 -> 23`.
+- Champion: counterexample-guided orbit refinement over symmetry-compressed templates.
+- Why this wins: it is the strongest live novelty lane that still uses the verified witness bank and the exact verifier, but does not overlap too heavily with the known exact-witness packaging or the known Paley/block-circulant family. It also avoids the fatal flaw in the frozen-old four-vertex lift by allowing the representation itself to refine rather than holding the old graph fixed.
+- Fast falsifier: hold out supported cases `n = 20, 21, 22`; start from coarse two-block and dihedral templates; require recovery or a decisive template-death certificate with fewer verifier calls than the exact pair-slack baseline. If two held-out cases fail, kill the lane.
+- Exact next experiment for the researcher: mine orbit summaries and pair-saturation types from the verified witness bank through `n = 22`, define a deterministic template lattice, translate verifier failures into refinement clauses, and run leave-one-out recovery on the held-out supported cases before touching `n = 23` or `n = 24`.
 
 ## Backup direction
-- Backup: certificate-aligned pair-slack repair.
-- Why it stays alive: it is less novel than the champion, but it has the fastest kill path and directly addresses the failure mode exposed by the legacy heuristic artifact, namely optimizing scores that do not match the verifier's actual yes/no condition.
-- Exact next experiment for the researcher: benchmark exact max-slack repair against the old surrogate objective on `n = 22, 24, 50`, using verifier calls, best achieved slack margin, and reproducibility as the only scoreboard. Do not escalate to belief propagation unless the plain exact-slack baseline already wins.
+- Backup: deterministic exact pair-slack repair baseline.
+- Why it stays alive: it is less novel than the champion, but it is the cleanest control against the legacy heuristic artifact and the fastest way to tell whether a new representation is actually better than a verifier-aligned local objective.
+- Exact next experiment for the researcher: freeze the exact-slack implementation and deterministic tie-breaking, then benchmark only against the old surrogate objective on `n = 22`, `24`, and `50`, using verifier calls, best achieved slack margin, and reproducibility as the scoreboard.
 
-## Held in reserve
-- Composite-order orbit-compressed search is the third line. It attacks the real unsupported frontier, especially even `n > 20` and odd composite cases, but it overlaps more heavily with the known cyclic/block-circulant/difference-set lane and should only get budget after witness mining shows a stable low-orbit signal.
+## Not selected
+- Fixed-old four-vertex lift is not selected. Its current form is already killed by the known-step checks: `20 -> 21` and `21 -> 22` both came back infeasible. Do not spend more budget there unless the representation is materially relaxed, in which case it becomes a new hypothesis rather than a continuation.
+- Composite-order or Paley-like template variants are not selected as the main plan because they overlap too heavily with the known cyclic/block-circulant lane unless witness mining first shows a stable low-orbit signal that current templates miss.
+- Do not spend further budget proving that the root solver is Python-only and deterministic. That issue is already closed by test. Spend the next budget only on extending coverage beyond the exact-witness and prime-power regime.
 
-## Guardrails
-- Do not claim the prompt is fully solved. The correct current claim is: the repo now has a Python-only deterministic artifact that returns verified witnesses on its supported domain and refuses unsupported inputs.
-- Do not spend budget re-packaging small exact witnesses or the prime-power Paley family as if that were new.
-- Do not revive unrestricted stochastic search just because it is easy to run. If the lift direction fails, move to exact pair-slack baselines, not back to annealing.
+## Claim guardrail
+- The only acceptable current claim is: the repo contains a Python-only deterministic artifact that returns verified witnesses on its supported domain and refuses unsupported inputs.
+- Do not claim that the original all-`n` prompt has been solved until the unsupported set is eliminated or a mathematically justified full-family construction is in hand.

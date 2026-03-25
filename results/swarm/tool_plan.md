@@ -1,50 +1,60 @@
 # Tool Plan
 
-## Baseline routing
-- Treat the root `solution.py` as the active submission artifact. Treat `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/` as legacy-only context.
-- Local shell checks are the source of truth for packaging and coverage. The current baseline command set is `python -m unittest -v test_solution.py` and `python solution.py --verify-supported --limit 100`.
-- External search budget stays narrow and problem-local. The current watchlist drifted into irrelevant string-graph literature, so no wide query expansion is allowed without a blocker.
+## Baseline truth sources
+- Active submission path: repo-root `solution.py`.
+- Legacy-only context: `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/`.
+- Baseline verification commands for every milestone:
+  - `python -m unittest -v test_solution.py`
+  - `python solution.py --verify-supported --limit 100`
+- Verified in this synthesis pass on 2026-03-25:
+  - all 6 unit tests passed;
+  - the support table remained 42 supported / 58 unsupported through `n <= 100`.
+- Budget rule: synthesize existing specialist output first; do not re-run broad literature searches or wide frontier sweeps unless a blocker forces it.
 
 ## Role routing and budget
 
 ### Orchestrator
-- Primary tools: local repo reads, `rg`, `sed`, targeted `python` verification commands.
-- Budget envelope: 30-60 minutes per synthesis pass; zero broad web-search budget by default.
-- Deliverable: keep the supported/unsupported split explicit and prevent legacy archive evidence from contaminating claims about the root artifact.
+- Primary tools: local repo reads, `rg`, `sed`, baseline verification commands, and markdown/JSON diffs.
+- Budget envelope: 30-45 minutes per coordination pass; zero broad web-search budget by default.
+- Routing: keep claims about the repo-root artifact separate from the archived mixed-language tree; gate all frontier work through one champion lane and one backup only.
 
 ### Researcher
-- Primary tools: exact witness tables, `solution.py`, targeted SAT/IP or restricted construction code only after approval of a single hypothesis.
-- Budget envelope: one champion experiment first, with a hard stop after the first falsifier check; no parallel frontier branching.
+- Primary tools: exact witness bank, repo-root verifier, and one approved hypothesis implementation path at a time.
+- Budget envelope: one champion experiment first, with a hard stop at the first kill switch; no parallel frontier branching.
 - Routing:
-  - Champion path: four-vertex lift completion over old-new and new-new incidences.
-  - Backup path: exact pair-slack repair baseline on `22`, `24`, and `50`.
-  - Reserve path: composite-order orbit templates only if witness mining reveals a stable low-orbit signal.
+  - champion path: counterexample-guided orbit refinement over symmetry-compressed templates;
+  - backup path: deterministic exact pair-slack repair baseline on `n = 22`, `24`, and `50`;
+  - reserve path: dual-shaped low-orbit seeding only after the champion and backup verdicts are in.
 
 ### Falsifier
-- Primary tools: exact verifier, targeted frontier cases, regression checks on known-step recovery.
+- Primary tools: exact verifier, hold-out recovery harness, and the supported/unsupported regression set.
 - Budget envelope: 0.5 researcher day per hypothesis.
-- Deliverable: kill a direction quickly if it fails known-step recovery, collapses into heuristic tuning, or overlaps the Paley/circulant lane without new substance.
+- Routing:
+  - champion kill test: held-out recovery on `n = 20`, `21`, and `22`, with verifier-call comparison against pair-slack;
+  - backup kill test: require a clean deterministic win over the surrogate objective on `n = 22`, `24`, and `50`;
+  - stop immediately on two held-out failures, no verifier-call advantage, or collapse into heuristic parameter tuning.
 
 ### Writer
 - Primary tools: local markdown artifacts and verified command outputs only.
-- Budget envelope: one concise pass after each research cycle.
-- Deliverable: phrase the artifact correctly as a deterministic partial solver plus frontier plan; never call it a full all-`n` solution unless coverage actually changes.
+- Budget envelope: one concise pass after each milestone.
+- Routing: describe the current artifact as a deterministic partial solver plus coverage-extension plan; always include the supported/unsupported split; never blur root-artifact claims with archive behavior.
 
 ### Reviewer
-- Primary tools: diff review, claim-to-evidence matching, local reruns of the baseline verification commands.
+- Primary tools: diff review, claim-to-evidence matching, and reruns of the baseline verification commands.
 - Budget envelope: 30 minutes per review pass.
-- Deliverable: block overclaims, stale plan text, and any mixing of root-artifact claims with legacy archive behavior.
+- Routing: block any overclaim that says the full prompt is solved, any stale text that still treats the packaging complaint as open on the root artifact, and any claim that cites the archive tree as if it were the active submission path.
 
-### Citation auditor
-- Primary tools: targeted literature lookup only if needed to repair the drifted watchlist.
-- Budget envelope: at most 4-6 high-signal sources focused on book-Ramsey, exact witnesses, and symmetry-reduced SAT/IP search.
-- Deliverable: replace irrelevant string-graph references with problem-local sources before any novelty-heavy writeup.
+### Citation Auditor
+- Primary tools: narrow problem-local source checks only when a writeup needs repair.
+- Budget envelope: at most 4-6 high-signal source checks per milestone.
+- Routing: prioritize book-Ramsey, exact-witness, symmetry-reduced SAT/IP, and benchmark sources; do not spend budget on the irrelevant string-graph retrieval drift except to label it as drift.
 
-### Benchmark auditor
-- Primary tools: `python -m unittest -v test_solution.py`, `python solution.py --verify-supported --limit 100`, and any future hypothesis-specific regression harness.
-- Budget envelope: one full `n <= 100` sweep per milestone plus a small frontier set.
-- Deliverable: maintain the deterministic support table, verify every claimed witness exactly, and report unsupported values explicitly instead of averaging them away.
+### Benchmark Auditor
+- Primary tools: `python -m unittest -v test_solution.py`, `python solution.py --verify-supported --limit 100`, and any future deterministic hypothesis-specific regression harness.
+- Budget envelope: one full `n <= 100` sweep per milestone plus a very small frontier set.
+- Routing: treat unsupported values as first-class outputs, verify determinism and exact constraint checking for every claimed witness, and reject any benchmark summary that averages unsupported cases away.
 
-## Current budget decision
-- Do not spend more budget on proving that the root artifact is now Python-only and deterministic; that issue is already resolved by local tests.
-- Spend the next research budget on extending coverage beyond the exact-witness and prime-power regime, starting with the four-vertex lift champion and using exact pair-slack repair as the first fallback.
+## Immediate budget decision
+- Packaging hygiene is no longer the main research spend. The root artifact already resolves the mixed-language and probabilistic complaint.
+- Coverage is the blocker. Spend the next budget on the champion hold-out recovery gate for counterexample-guided orbit refinement, with deterministic exact pair-slack as the mandatory control.
+- Do not revive the frozen-old four-vertex lift or broad stochastic search unless a materially new hypothesis is written down first.

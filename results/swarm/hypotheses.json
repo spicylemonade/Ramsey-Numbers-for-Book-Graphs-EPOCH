@@ -1,71 +1,74 @@
 [
   {
-    "id": "four_vertex_lift",
-    "title": "Four-vertex lift from the exact witness ladder",
-    "novelty_claim": "Treat the transition n -> n + 1 as the primary object and solve only the old-new/new-new completion problem, instead of restarting a full graph search for each target.",
-    "closest_prior_art": "Local exact-witness lookup plus the negative-space note that a four-vertex lift may exist; no current repo artifact turns adjacent verified witnesses into a recursive construction program.",
-    "differentiation": "This reuses the strongest verified signal already in the repo, the exact witness ladder up to n = 22, and searches a sharply restricted completion space. It avoids both Paley rehashing and full-edge stochastic search.",
-    "easiest_falsifier": "Run leave-one-step-out recovery on known steps such as 20 -> 21 and 21 -> 22 with a restricted SAT/IP completion over old-new and new-new edges. If the method cannot reliably recover known next witnesses, reject it before spending budget on n = 23.",
+    "id": "cegar_orbit_refinement",
+    "title": "Counterexample-guided orbit refinement over symmetry-compressed templates",
+    "novelty_claim": "Use the exact triangular-book verifier as an abstraction-refinement engine: start from coarse low-orbit template families, learn which pair types fail, and refine only the template dimensions implicated by those counterexamples.",
+    "closest_prior_art": "Wesley-style symmetry-reduced SAT/IP search on fixed block-circulant templates, the repo's exact pair-slack repair baseline, and the now-killed fixed-old four-vertex lift.",
+    "differentiation": "Unlike Paley or block-circulant reuse, the representation is not fixed in advance. Unlike pair-slack local repair, the main object being updated is the template lattice itself rather than a single edge-level witness. Unlike the frozen-old lift, it is not committed to preserving the old graph and is therefore not already refuted by the 20->21 and 21->22 infeasibility checks.",
+    "easiest_falsifier": "Hold out supported cases n=20, 21, and 22, start from coarse two-block and dihedral templates, and require either recovery or a decisive template-death certificate with fewer verifier calls than the exact pair-slack baseline. If two held-out cases fail, kill the lane.",
     "evidence_plan": [
-      "Mine exact witnesses for saturated edge/non-edge pairs, degree patterns, and orbit hints.",
-      "Encode a restricted completion model that holds the old graph fixed and solves only the four added vertices and their incidences.",
-      "Benchmark recovery on known adjacent steps before attempting frontier case 22 -> 23."
+      "Extract orbit summaries and recurring pair-saturation types from the verified witness bank through n=22.",
+      "Define a small deterministic template lattice covering two-block, dihedral, and one modest multi-orbit refinement family.",
+      "Translate verifier failures into refinement clauses and run leave-one-out recovery on held-out supported cases before touching frontier instances.",
+      "Compare verifier calls, pruned-template count, and best achieved slack against the pair-slack baseline on n=23 and n=24 only if the hold-out gate is passed."
     ],
     "budget_envelope": {
       "setup": "1 focused researcher day",
       "first_targets": [
-        "20 -> 21",
-        "21 -> 22",
-        "22 -> 23"
+        "hold-out n=20",
+        "hold-out n=21",
+        "hold-out n=22",
+        "n=23",
+        "n=24"
       ],
-      "kill_switch": "Stop after repeated failure on known-step recovery; do not escalate into unrestricted graph search."
+      "kill_switch": "Stop immediately after two held-out recovery failures or after no verifier-call advantage over pair-slack on the hold-out set."
     },
     "selected": true
   },
   {
-    "id": "pair_slack_repair",
-    "title": "Certificate-aligned pair-slack repair",
-    "novelty_claim": "Optimize exact per-pair slack against the verifier's real constraints instead of surrogate bad-book counts, degree heuristics, or generic annealing scores.",
-    "closest_prior_art": "The archived mixed-language local search and the bridge memo's belief-propagation repair idea.",
-    "differentiation": "The baseline is not another parameter sweep on heuristic search. Every move is scored by exact edge/non-edge slack margins, with message passing allowed only after the exact-slack baseline proves it adds value.",
-    "easiest_falsifier": "On n = 22, 24, and 50, compare exact max-slack repair against the old surrogate objective. If it does not improve verifier calls, best margin, or reproducibility, kill the direction.",
+    "id": "exact_pair_slack_baseline",
+    "title": "Deterministic exact pair-slack repair baseline",
+    "novelty_claim": "Replace surrogate violation counts with a deterministic objective built from the verifier's true per-pair slack margins, using the method as a baseline-to-beat rather than as a headline novelty claim.",
+    "closest_prior_art": "The repo's archived stochastic local-search family and the broader SAT/IP witness-search literature that scores candidate graphs by violations or structural surrogates.",
+    "differentiation": "Its value is methodological hygiene and a fast falsifier, not a new construction family. The objective is verifier-aligned, deterministic, and easy to benchmark against the legacy surrogate score.",
+    "easiest_falsifier": "On n=22, 24, and 50, require strictly better reproducible min-slack and/or fewer verifier calls than the old surrogate objective. If that does not happen, retire the lane.",
     "evidence_plan": [
-      "Log exact slack distributions for supported witnesses to identify the genuinely critical pairs.",
-      "Implement a bitset-backed max-slack tracker and compare it against the legacy aggregate objective.",
-      "Escalate to BP-style repair only if the exact-slack baseline beats the surrogate objective."
+      "Freeze the exact-slack implementation and deterministic tie-breaking.",
+      "Benchmark only against the old surrogate objective on n=22, n=24, and n=50.",
+      "Treat any win as necessary but not sufficient; do not market this as novel unless it yields frontier coverage or materially smaller exact-search neighborhoods."
     ],
     "budget_envelope": {
-      "setup": "0.5-1 focused researcher day",
+      "setup": "0.5 focused researcher day",
       "first_targets": [
-        "22",
-        "24",
-        "50"
+        "n=22",
+        "n=24",
+        "n=50"
       ],
-      "kill_switch": "Stop if the baseline collapses into ordinary heuristic tuning or shows no clear verifier-aligned gain."
+      "kill_switch": "Stop if the lane collapses into parameter tuning on the old heuristic family or if it fails to beat the surrogate objective cleanly."
     },
-    "selected": true
+    "selected": false
   },
   {
-    "id": "composite_orbit_templates",
-    "title": "Composite-order orbit-compressed templates",
-    "novelty_claim": "Search low-orbit witnesses in cyclic or product-group templates for unsupported even and odd-composite cases, rather than stretching finite-field Paley machinery beyond its proved regime.",
-    "closest_prior_art": "The known prime-power Paley-type family and the broader cyclic/block-circulant/difference-set lane flagged by the falsifier.",
-    "differentiation": "The target is not 'Paley for more n'. The target is an orbit-compressed search space fitted to exact witness statistics, with composite-order templates treated as their own design objects.",
-    "easiest_falsifier": "If exact witness mining does not reveal stable low-orbit or autocorrelation signatures, or if orbit-compressed SAT/ILP shows no leverage on 23, 24, or 50, reject the line.",
+    "id": "dual_shaped_low_orbit_seeds",
+    "title": "Dual-shaped low-orbit seeding via coding-theory spectra",
+    "novelty_claim": "Use association-scheme or MacWilliams-style dual variables to generate admissible low-orbit correlation profiles before any edge-level search, then round only those spectra that survive the exact verifier.",
+    "closest_prior_art": "Paley and two-block algebraic constructions, orbit-compressed SAT search, and the repo's abandoned SDP-seeding idea.",
+    "differentiation": "The proposal searches in a dual spectral space rather than directly over residues, edges, or SDP matrices. That is more novel than recycling composite-order circulant templates, but also more speculative, so it stays in reserve.",
+    "easiest_falsifier": "For n=23, 24, and 50, require the rounded dual-shaped seeds to start with a strictly better slack profile or a smaller restricted search neighborhood than the current Paley-style or exact-slack seeds. If not, kill it before any large search spend.",
     "evidence_plan": [
-      "Extract orbit, autocorrelation, and degree-multiset summaries from the exact witness bank.",
-      "Fit a small family of composite-order templates and test whether they explain known witnesses better than generic circulants.",
-      "Only then spend frontier budget on 23, 24, and 50."
+      "Fit dual correlation summaries to the verified witness bank and test whether they explain known witnesses better than the current cyclic templates.",
+      "Round a tiny family of admissible spectra into deterministic seeds for n=23, n=24, and n=50.",
+      "Compare initial verifier slack histograms and restricted-search dimension against the current deterministic seeds."
     ],
     "budget_envelope": {
       "setup": "1-2 focused researcher days",
       "first_targets": [
-        "witness-feature mining",
-        "23",
-        "24",
-        "50"
+        "witness-bank spectral fit",
+        "n=23",
+        "n=24",
+        "n=50"
       ],
-      "kill_switch": "Stop if the direction degenerates into cosmetic Paley variants or full graph search in disguise."
+      "kill_switch": "Stop if the rounded seeds do not improve the initial verifier profile over existing deterministic seeds."
     },
     "selected": false
   }

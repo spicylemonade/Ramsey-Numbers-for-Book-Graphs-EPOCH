@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-03-25T00:59:17.846439+00:00",
-  "updated_at": "2026-03-25T02:41:07.833836+00:00",
-  "current_agent": "reviewer",
+  "updated_at": "2026-03-25T03:23:35.153554+00:00",
+  "current_agent": "complete",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -23,10 +23,10 @@
       "error": null
     },
     "reviewer": {
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-03-25T02:41:07.833822+00:00",
-      "completed_at": null,
-      "error": null
+      "completed_at": "2026-03-25T03:02:06.396442+00:00",
+      "error": "Paper not accepted after 2 rounds"
     }
   },
   "phases": [
@@ -264,13 +264,74 @@
           "error": null
         }
       ]
+    },
+    {
+      "id": "phase_6",
+      "name": "Novelty Deepening",
+      "order": 6,
+      "items": [
+        {
+          "id": "item_026",
+          "title": "Counterexample-Guided Orbit Refinement With Held-Out Recovery",
+          "description": "Replace fixed templates with a deterministic abstraction-refinement search over symmetry-compressed template families.",
+          "acceptance_criteria": "Create `results/research/orbit_refinement_spec.md` defining a deterministic template lattice over at least `two_block`, `dihedral`, and one strictly finer multi-orbit family, with refinement rules driven by exact verifier counterexamples rather than fixed block-circulant templates; run leave-one-out recovery on held-out supported cases `n in {20,21,22}` and record full results in `results/experiments/orbit_refinement_holdout.md`; acceptance requires recovery on at least 2 of the 3 held-out cases with fewer verifier calls than the exact pair-slack baseline, or explicit template-death certificates that isolate why the lattice is too coarse; the writeup must state why this is materially different from Wesley-style fixed-template search, the archived pair-slack lane, and the required but irrelevant string-graph watchlist papers.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_027",
+          "title": "Frontier Orbit Refinement With A Novel Witness-Or-Certificate Requirement",
+          "description": "Push the new orbit-refinement machinery onto unsupported frontier cases only if the held-out gate passes.",
+          "acceptance_criteria": "Using only the deterministic orbit-refinement machinery that passes item_026, run frontier cases `n=23`, `24`, and `50` and record the full trace in `results/experiments/orbit_refinement_frontier.md`; acceptance requires at least one novel outcome: either a verifier-approved witness for a currently unsupported `n`, or a machine-checkable impossibility certificate for a nontrivial template family on one frontier case that was not already present in the repo; the artifact must include exact verifier output, template count pruned, and rerun determinism on the winning case or certificate; the discussion must explain why the result is not just a repackaged block-circulant or Paley witness.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_028",
+          "title": "Dual Spectral Seed Generator Via Association-Scheme Profiles",
+          "description": "Cross coding-theory-style dual spectra with witness mining to produce deterministic frontier seeds rather than another edge-level heuristic.",
+          "acceptance_criteria": "Create `results/research/dual_spectral_seed_spec.md` translating the exact witness bank into an association-scheme or MacWilliams-style dual profile / correlation-spectrum parameterization; fit the model on supported `n<=22`, then generate deterministic seeds for `n=23`, `24`, and `50`; acceptance requires the new seeds to beat the current residue-based seed on at least two of the three targets in initial minimum slack or total negative-excess profile and to shrink the downstream orbit-refinement or exact-search neighborhood by a documented factor, all logged in `results/experiments/dual_spectral_seed_benchmark.md`; the writeup must explain why the contribution is genuinely dual-spectral and not just another circulant heuristic.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_029",
+          "title": "Within-Layer Obstruction Decomposition And Reduced Exact Search",
+          "description": "Turn the saved pair-slack failure pattern into a structural result instead of another benchmark table.",
+          "acceptance_criteria": "From the saved pair-slack artifacts, formulate and prove or exhaustively certify a new within-layer obstruction decomposition for the current two-block family, with full evidence in `results/research/within_layer_obstruction.md`; acceptance requires showing that the reduced formulation reproduces the full verifier verdict on `n=24` and `50` while cutting constraint or variable count by at least 25 percent, and that the decomposition yields a concrete structural statement about why the current family stalls; the writeup must compare the result against Wesley-style SAT/IP search and explain the new theoretical content.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_030",
+          "title": "Minimal Rewire Threshold For Adjacent Witness Lifts",
+          "description": "Replace the dead frozen-old lift with a quantitatively meaningful liftability threshold study.",
+          "acceptance_criteria": "Implement a bounded-rewire lift study that relaxes the killed frozen-old model by allowing exactly `k` old-old rewires and records exact results for `20->21` and `21->22` in `results/experiments/relaxed_lift_threshold.md`; acceptance requires determining the minimum successful `k` or proving infeasibility up to a nontrivial lower bound `k_min`, plus at least one positive-control recovery case showing the encoding is not degenerate; the end product must be a structural statement about liftability thresholds, not just a list of failed runs, and must explicitly distinguish this threshold result from the previously killed frozen-old formulation.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_031",
+          "title": "Composite-Order Deterministic Family Beyond The Prime-Power Frontier",
+          "description": "Target the real unsolved territory with a family-level contribution that cannot collapse back into the known prime-power branch.",
+          "acceptance_criteria": "Create `results/research/composite_order_family.md` proposing a deterministic construction family for at least one infinite non-prime-power order class or, failing that, a single frontier composite case with a family-level rule rather than a one-off witness, and benchmark it in `results/experiments/composite_order_frontier.md`; acceptance requires either a verifier-approved witness on one currently unsupported composite target such as `n=24` or `50`, or a symbolic family that passes exact verification on at least three non-prime-power instances not covered by the current prime-power branch; the report must prove the family is not isomorphic to the known prime-power or Paley construction on the tested instances and must document the exact prior-art gap against Wesley and block-circulant sources.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
     }
   ],
   "summary": {
-    "total_items": 25,
+    "total_items": 31,
     "completed": 25,
     "in_progress": 0,
     "failed": 0,
-    "pending": 0
+    "pending": 6
   }
 }
