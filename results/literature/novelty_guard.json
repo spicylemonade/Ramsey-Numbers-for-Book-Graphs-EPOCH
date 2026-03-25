@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-03-24T23:43:14.251479+00:00",
+  "seed_query": "not graph string algorithm python triangular solution vertices",
+  "closest_papers": [
+    {
+      "paperId": "3da459173030065b5eb442f961be6f58d162ab48",
+      "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+      "year": 2025,
+      "citationCount": 0,
+      "fieldsOfStudy": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "overlap_terms": [
+        "not",
+        "graph",
+        "string",
+        "algorithm",
+        "contain"
+      ],
+      "score": 6
+    },
+    {
+      "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e",
+      "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+      "year": 2025,
+      "citationCount": 2,
+      "fieldsOfStudy": [],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm",
+        "solution"
+      ],
+      "score": 5
+    },
+    {
+      "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec",
+      "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+      "year": 2016,
+      "citationCount": 22,
+      "fieldsOfStudy": [
+        "Mathematics",
+        "Computer Science",
+        "Medicine",
+        "Biology"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm",
+        "input"
+      ],
+      "score": 4
+    },
+    {
+      "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5",
+      "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+      "year": 2024,
+      "citationCount": 6,
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm"
+      ],
+      "score": 4
+    },
+    {
+      "paperId": "f325f72796758b1e6d1870186c60fbb367cf2aa8",
+      "title": "SOF: An Efficient String Graph Construction Algorithm",
+      "year": 2019,
+      "citationCount": 1,
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm",
+        "edges"
+      ],
+      "score": 4
+    }
+  ],
+  "guardrails": [
+    "Do not treat the watchlist as a bibliography dump; use it to identify already-solved angles.",
+    "If the current direction matches a watchlist paper too closely, document the overlap and pivot.",
+    "Every Phase 3 implementation should be paired with an explicit differentiation note against a named paper.",
+    "Use gap-first frontier queries before broad implementation to mine unsolved limitations and future-work regions."
+  ],
+  "gap_frontier": [],
+  "novelty_questions": [
+    "How is the planned contribution materially different from 'String Graph Obstacles of High Girth and of Bounded Degree'?",
+    "How is the planned contribution materially different from 'Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation'?",
+    "How is the planned contribution materially different from 'FSG: Fast String Graph Construction for De Novo Assembly'?",
+    "How is the planned contribution materially different from 'A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs'?",
+    "How is the planned contribution materially different from 'SOF: An Efficient String Graph Construction Algorithm'?"
+  ]
+}

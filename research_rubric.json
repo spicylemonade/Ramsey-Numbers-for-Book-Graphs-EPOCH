@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-03-25T00:59:17.846439+00:00",
+  "updated_at": "2026-03-25T01:01:06.004869+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-03-25T00:59:17.846439+00:00",
+      "completed_at": "2026-03-25T01:01:06.004856+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Map the repository modules, artifacts, and active-vs-legacy boundaries.",
+          "acceptance_criteria": "Produce `results/repo_map.md` listing every major file/module under the repo root, `.archivara/`, `results/`, and `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/`; mark each as active, helper, generated, or legacy; document import/execution connections; explicitly state that root `solution.py` and `test_solution.py` are the active execution path.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Align the research direction with the existing swarm briefs before any implementation.",
+          "acceptance_criteria": "Read `results/swarm/director_brief.md`, `results/swarm/hypotheses.json`, and `results/swarm/tool_plan.md`; write `results/swarm/implementation_alignment.md` naming the champion, backup, and reserve lanes; record why the next implementation starts with the four-vertex lift and not legacy stochastic search or Paley repackaging.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Repair and extend the literature snapshot using targeted web search instead of restarting from zero.",
+          "acceptance_criteria": "Update `results/literature/literature_snapshot.json` in place by extending the existing snapshot; use web search plus `.archivara/semantic_scholar.py` to add at least 10 problem-local sources and at least 2 relevant code or benchmark artifacts on triangular/book Ramsey graphs, exact witnesses, SAT/IP search, or circulant/block constructions; preserve prior entries with drift notes rather than deleting history.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Create the bibliography and keep the prior-art gap log current.",
+          "acceptance_criteria": "`sources.bib` exists at repo root with at least 10 relevant BibTeX entries drawn from consulted sources; `results/literature/prior_art_gap.md` is updated after the literature pass and after each major experimental milestone with differentiation notes, evidence artifacts, and pivot decisions for the named watchlist papers plus at least 3 book-Ramsey-local papers.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Run a Codex multi-agent Phase 1 literature and concept-tree synthesis.",
+          "acceptance_criteria": "Delegate a bounded Phase 1 pass using `explorer`, `citation_auditor`, `novelty_checker`, and `integrator`; write `results/literature/prior_art_review.md`; create at least 3 concept cards under `results/concept_evolve/tree/phase_1_problem/`; include an explicit note comparing the planned direction against `String Graph Obstacles of High Girth and of Bounded Degree (2025)`, `Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation (2025)`, `FSG: Fast String Graph Construction for De Novo Assembly (2016)`, and `A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs (2024)`.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_006",
+          "description": "Reproduce the deterministic baseline and freeze the starting coverage table.",
+          "acceptance_criteria": "Run `python -m unittest -v test_solution.py` and `python solution.py --verify-supported --limit 100`; store the commands, dates, and outputs in `results/verification/baseline_regression.md`; record the baseline support table over `n<=100`, including the current `42 supported / 58 unsupported` split if unchanged.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_007",
+          "description": "Build a machine-readable witness provenance map.",
+          "acceptance_criteria": "Create `results/verification/witness_provenance.json` mapping every `n` in `1..100` to one of `small_exact`, `exact_graph6`, `exact_two_block`, `prime_power_family`, or `unsupported`; include source references for each exact witness block and a summary count by category.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Audit graph6 and exact-witness source provenance.",
+          "acceptance_criteria": "Create `results/verification/witness_source_audit.md` tracing each embedded graph6 string and the `n=22` exact two-block witness to a paper, appendix, benchmark page, or repository artifact; unresolved provenance entries must be listed explicitly rather than assumed.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Mine baseline structural features from the verified witness bank.",
+          "acceptance_criteria": "Create `results/analysis/exact_witness_features.json` covering all supported exact witnesses through `n=22`; include degree multisets, saturated pair counts, pair-slack histograms, and coarse orbit or symmetry summaries suitable for the four-vertex-lift and composite-orbit hypotheses.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Run a Codex multi-agent Phase 2 baseline audit and concept-tree expansion.",
+          "acceptance_criteria": "Delegate a bounded Phase 2 pass using `worker`, `benchmark_auditor`, `falsifier`, and `integrator`; write `results/verification/baseline_audit.md` separating root-baseline claims from legacy-archive behavior; create at least 3 concept cards under `results/concept_evolve/tree/phase_2_baseline/` summarizing baseline metrics, provenance controls, and archive-contamination risks.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_011",
+          "description": "Formalize the champion four-vertex-lift research plan.",
+          "acceptance_criteria": "Write `results/research/four_vertex_lift_spec.md` defining the fixed-old-graph setting, variables for old-new and new-new incidences, known-step recovery targets `20->21` and `21->22`, the frontier target `22->23`, the verifier-aligned objective, runtime budget, and the kill switch from `results/swarm/director_brief.md`.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Formalize the backup exact pair-slack repair plan.",
+          "acceptance_criteria": "Write `results/research/pair_slack_repair_spec.md` defining the exact per-pair slack objective, move scoring, comparison metrics, and benchmark set `{22,24,50}`; the spec must explicitly say BP-style or other bridge ideas are disallowed until the exact-slack baseline shows a verifier-aligned win.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Gate the reserve composite-order orbit-template lane with evidence rather than intuition.",
+          "acceptance_criteria": "Write `results/research/composite_orbit_gate.md` deciding whether `composite_orbit_templates` stays reserved; the decision must cite `results/analysis/exact_witness_features.json` and state the minimum low-orbit or autocorrelation evidence required before any implementation budget is spent.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Expand the concept tree for core hypotheses and negative-space alternatives.",
+          "acceptance_criteria": "Create at least 6 concept cards under `results/concept_evolve/tree/phase_3_hypotheses/`, covering the four-vertex lift, pair-slack repair, composite-order orbit templates, BP repair, SDP seeding, and DSL/program-synthesis ideas; each card must include why it is different, the easiest falsifier, and the overlap risk with known work.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Run a Codex multi-agent Phase 3 hypothesis ranking and novelty check.",
+          "acceptance_criteria": "Delegate a bounded Phase 3 pass using `research_director`, `hypothesis_scout`, `falsifier`, `novelty_checker`, and `integrator`; write `results/research/hypothesis_ranking.md` ranking champion, backup, and reserve lanes; update `results/literature/prior_art_gap.md` with explicit differentiation or pivot notes against the named watchlist papers and at least 2 problem-local book-Ramsey or SAT/IP sources.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_016",
+          "description": "Execute known-step recovery experiments for the four-vertex lift.",
+          "acceptance_criteria": "Run bounded recovery experiments for `20->21` and `21->22` using the restricted completion model; store commands, seeds if any, runtime, verifier-call counts, and outcomes in `results/experiments/four_vertex_lift_known_steps.md`; if both known-step recoveries fail reproducibly, mark the champion lane killed.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Attempt the first frontier case only after known-step recovery is evaluated.",
+          "acceptance_criteria": "If item_016 passes its kill switch, run a bounded `22->23` experiment and record the result in `results/experiments/four_vertex_lift_frontier.md`; include success or failure status, best slack margin, runtime, and whether the outcome changes the supported frontier.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Benchmark the exact pair-slack repair baseline on the hard cases.",
+          "acceptance_criteria": "Run the backup lane on `n=22`, `n=24`, and `n=50`; compare it against the archived surrogate-objective search or a documented equivalent baseline using verifier calls, best achieved slack margin, reproducibility, and runtime; record the comparison in `results/experiments/pair_slack_benchmark.md`.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Maintain reproducible experiment manifests and monitoring logs.",
+          "acceptance_criteria": "Create `results/experiments/experiment_manifest.json` describing each experiment, input set, command, time budget, and artifact outputs; for any run longer than 5 minutes, save monitoring notes or checkpoints sufficient for rerun or interruption recovery.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Run a Codex multi-agent Phase 4 experiment synthesis and benchmark audit.",
+          "acceptance_criteria": "Delegate a bounded Phase 4 pass using `worker`, `monitor`, `benchmark_auditor`, `falsifier`, and `integrator`; write or update `results/verification/benchmark_report.md`; create at least 3 concept cards under `results/concept_evolve/tree/phase_4_results/` capturing successful patterns, killed directions, and frontier blockers.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_021",
+          "description": "Quantify coverage change and audit claims against the baseline.",
+          "acceptance_criteria": "Write `results/verification/coverage_delta.md` comparing the latest solver coverage against the Phase 2 baseline over `n<=100`; explicitly report whether the solver is still partial, and if the `42 supported / 58 unsupported` baseline changed, document the exact delta by `n`.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Perform a final novelty audit against named prior work and repaired local sources.",
+          "acceptance_criteria": "Write `results/verification/novelty_report.md` comparing the final planned or implemented method against `String Graph Obstacles of High Girth and of Bounded Degree (2025)`, `Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation (2025)`, `FSG: Fast String Graph Construction for De Novo Assembly (2016)`, `A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs (2024)`, and at least 3 problem-local book-Ramsey, exact-witness, or SAT/IP sources; the report must say whether each overlap is real, superficial retrieval drift, or a pivot trigger.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Audit citations and freeze the bibliography.",
+          "acceptance_criteria": "Run a citation pass over all literature, experiment, and final-report artifacts; `sources.bib` must contain at least 10 relevant papers plus any consulted code or benchmark entries; write `results/verification/citation_audit.md` listing every unsupported claim or missing citation that must be fixed before publication.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Produce the final analysis and documentation package without overclaiming.",
+          "acceptance_criteria": "Write `results/final_report.md` summarizing the baseline, chosen direction, experiments, results, limitations, and next steps; it must explicitly distinguish the active root artifact from the legacy archive and must not claim a full all-`n` solution unless Phase 4 evidence actually proves that.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Run a Codex multi-agent final verification bundle and synthesis.",
+          "acceptance_criteria": "Delegate a bounded Phase 5 pass using `novelty_checker`, `citation_auditor`, `benchmark_auditor`, and `integrator`; ensure `results/verification/novelty_report.md`, `results/verification/citation_audit.md`, `results/verification/benchmark_report.md`, and `results/verification/verification_summary.md` all exist and cross-reference one another; `results/verification/verification_summary.md` must state the final claim language approved for external use.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}

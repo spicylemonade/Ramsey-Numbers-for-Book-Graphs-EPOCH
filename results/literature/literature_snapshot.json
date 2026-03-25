@@ -1,0 +1,386 @@
+{
+  "generated_at": "2026-03-24T23:43:14.249970+00:00",
+  "seed_query": "not graph string algorithm python triangular solution vertices",
+  "task_terms": [
+    "not",
+    "graph",
+    "string",
+    "algorithm",
+    "python",
+    "triangular",
+    "solution",
+    "vertices",
+    "contain",
+    "include",
+    "edges",
+    "input"
+  ],
+  "top_papers": [
+    {
+      "paperId": "36cee124338d0128101218eb4af4535db29cac2e",
+      "title": "Efficient Reflection String Analysis via Graph Coloring",
+      "year": 2018,
+      "citationCount": 14,
+      "authors": [
+        "Neville Grech",
+        "George Kastrinis",
+        "Y. Smaragdakis"
+      ],
+      "venue": "European Conference on Object-Oriented Programming",
+      "abstract": null,
+      "externalIds": {
+        "DBLP": "conf/ecoop/GrechKS18",
+        "MAG": "2902559039",
+        "DOI": "10.4230/LIPIcs.ECOOP.2018.26",
+        "CorpusId": 46983725
+      },
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "url": "https://www.semanticscholar.org/paper/36cee124338d0128101218eb4af4535db29cac2e",
+      "task_similarity": 0.24,
+      "novelty_distance": 0.76
+    },
+    {
+      "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5",
+      "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+      "year": 2024,
+      "citationCount": 6,
+      "authors": [
+        "D. Lokshtanov",
+        "Fahad Panolan",
+        "Saket Saurabh",
+        "Jie Xue",
+        "M. Zehavi"
+      ],
+      "venue": "International Symposium on Computational Geometry",
+      "abstract": null,
+      "externalIds": {
+        "DBLP": "conf/compgeom/LokshtanovP00Z24",
+        "DOI": "10.4230/LIPIcs.SoCG.2024.72",
+        "CorpusId": 270286766
+      },
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "url": "https://www.semanticscholar.org/paper/934374f003767b2ff4e2860596098142b2fdb0b5",
+      "task_similarity": 0.2667,
+      "novelty_distance": 0.7333
+    },
+    {
+      "paperId": "d41444faf849e8ec188df4035eebdd798409e20e",
+      "title": "Constructing an indeterminate string from its associated graph",
+      "year": 2017,
+      "citationCount": 12,
+      "authors": [
+        "Joel Helling",
+        "P. Ryan",
+        "W. F. Smyth",
+        "Michael Soltys"
+      ],
+      "venue": "Theoretical Computer Science",
+      "abstract": null,
+      "externalIds": {
+        "MAG": "2592557380",
+        "DBLP": "journals/tcs/HellingRSS18",
+        "DOI": "10.1016/j.tcs.2017.02.016",
+        "CorpusId": 21659682
+      },
+      "fieldsOfStudy": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "url": "https://www.semanticscholar.org/paper/d41444faf849e8ec188df4035eebdd798409e20e",
+      "task_similarity": 0.2974,
+      "novelty_distance": 0.7026
+    },
+    {
+      "paperId": "409122665359f9dbbb14ea8ed4e3fd005a91d822",
+      "title": "Graph and String Parameters: Connections Between Pathwidth, Cutwidth and the Locality Number",
+      "year": 2019,
+      "citationCount": 10,
+      "authors": [
+        "Katrin Casel",
+        "Joel D. Day",
+        "Pamela Fleischmann",
+        "Tomasz Kociumaka",
+        "F. Manea",
+        "Markus L. Schmid"
+      ],
+      "venue": "International Colloquium on Automata, Languages and Programming",
+      "abstract": "We investigate the locality number, a recently introduced structural parameter for strings (with applications in pattern matching with variables), and its connection to two important graph-parameters, cutwidth and pathwidth. These connections allow us to show that computing the locality number is NP-hard but fixed parameter tractable (when the locality number or the alphabet size is treated as a parameter), and can be approximated with ratio $O(\\sqrt{\\log{opt}} \\log n)$. As a by-product, we also relate cutwidth via the locality number to pathwidth, which is of independent interest, since it improves the currently best known approximation algorithm for cutwidth. In addition to these main results, we also consider the possibility of greedy-based approximation algorithms for the locality number.",
+      "externalIds": {
+        "DBLP": "conf/icalp/CaselDFKMS19",
+        "ArXiv": "1902.10983",
+        "MAG": "2916938597",
+        "DOI": "10.4230/LIPIcs.ICALP.2019.109",
+        "CorpusId": 67855331
+      },
+      "fieldsOfStudy": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "url": "https://www.semanticscholar.org/paper/409122665359f9dbbb14ea8ed4e3fd005a91d822",
+      "task_similarity": 0.3111,
+      "novelty_distance": 0.6889
+    },
+    {
+      "paperId": "3da459173030065b5eb442f961be6f58d162ab48",
+      "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+      "year": 2025,
+      "citationCount": 0,
+      "authors": [
+        "Maria Chudnovsky",
+        "D. Eppstein",
+        "David Fischer"
+      ],
+      "venue": "International Symposium Graph Drawing and Network Visualization",
+      "abstract": "A string graph is the intersection graph of curves in the plane. Kratochv\\'il previously showed the existence of infinitely many obstacles: graphs that are not string graphs but for which any edge contraction or vertex deletion produces a string graph. Kratochv\\'il's obstacles contain arbitrarily large cliques, so they have girth three and unbounded degree. We extend this line of working by studying obstacles among graphs of restricted girth and/or degree. We construct an infinite family of obstacles of girth four; in addition, our construction is $K_{2,3}$-subgraph-free and near-planar (planar plus one edge). Furthermore, we prove that there is a subcubic obstacle of girth three, and that there are no subcubic obstacles of high girth. We characterize the subcubic string graphs as having a matching whose contraction yields a planar graph, and based on this characterization we find a linear-time algorithm for recognizing subcubic string graphs of bounded treewidth.",
+      "externalIds": {
+        "ArXiv": "2509.00278",
+        "DBLP": "journals/corr/abs-2509-00278",
+        "DOI": "10.48550/arXiv.2509.00278",
+        "CorpusId": 281081154
+      },
+      "fieldsOfStudy": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "url": "https://www.semanticscholar.org/paper/3da459173030065b5eb442f961be6f58d162ab48",
+      "task_similarity": 0.3174,
+      "novelty_distance": 0.6826
+    },
+    {
+      "paperId": "9a0f64e2db5c1f798fda969e2d1a15b095532af1",
+      "title": "A Na\u00efve Five-Element String Algorithm",
+      "year": 2009,
+      "citationCount": 6,
+      "authors": [
+        "Yanhong Cui",
+        "R. Guo",
+        "D. Guo"
+      ],
+      "venue": "Journal of Software",
+      "abstract": null,
+      "externalIds": {
+        "MAG": "1994962449",
+        "DBLP": "journals/jsw/CuiGG09",
+        "DOI": "10.4304/JSW.4.9.925-934",
+        "CorpusId": 15147761
+      },
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "url": "https://www.semanticscholar.org/paper/9a0f64e2db5c1f798fda969e2d1a15b095532af1",
+      "task_similarity": 0.3722,
+      "novelty_distance": 0.6278
+    },
+    {
+      "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e",
+      "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+      "year": 2025,
+      "citationCount": 2,
+      "authors": [
+        "S. Vinodhkumar",
+        "P. Pravin",
+        "P. Kumar"
+      ],
+      "venue": "2025 International Conference on Visual Analytics and Data Visualization (ICVADV)",
+      "abstract": "Quantum computing based Grover's algorithm performs unstructured search problems in unsorted data to structured data in validating bit string through graph coloring. The quantum Grover's algorithm and graph theory was looked at in graph coloring. In graph coloring algorithm can be leveraged to validate coloring assignments for graph with arbitrary structures. It's accuracy and efficiency has been achieved by the iteration of square root (N) By adapting Grover's search mechanism, we aim to optimize the process of finding valid coloring in a graph, which is a crucial NP-complete problem in classical computation. This algorithm determines shortest node to see if the gates can be colored rightly for detect validation bit string. To get a validated a significant advantage of the hybrid classical-quantum approach reduces time complexity and exhaustive search. Grover's algorithm reduces the number of iterations needed for a solution, providing a quantum advantage in efficiency.",
+      "externalIds": {
+        "DOI": "10.1109/ICVADV63329.2025.10961929",
+        "CorpusId": 277999366
+      },
+      "fieldsOfStudy": [],
+      "url": "https://www.semanticscholar.org/paper/ded242b5537f83a4173bee5afc2b7a5cbd03da3e",
+      "task_similarity": 0.3906,
+      "novelty_distance": 0.6094
+    },
+    {
+      "paperId": "699243c40d3cae773b698a2ff4a99746d397ce78",
+      "title": "An External-Memory Algorithm for String Graph Construction",
+      "year": 2016,
+      "citationCount": 2,
+      "authors": [
+        "P. Bonizzoni",
+        "G. Della Vedova",
+        "Yuri Pirola",
+        "M. Previtali",
+        "Raffaella Rizzi"
+      ],
+      "venue": "Algorithmica",
+      "abstract": null,
+      "externalIds": {
+        "DOI": "10.1007/s00453-016-0165-4",
+        "CorpusId": 253982676
+      },
+      "fieldsOfStudy": [],
+      "url": "https://www.semanticscholar.org/paper/699243c40d3cae773b698a2ff4a99746d397ce78",
+      "task_similarity": 0.4015,
+      "novelty_distance": 0.5985
+    },
+    {
+      "paperId": "215369464353074d3ab3baf4ff93a6355e6f6b41",
+      "title": "An External-Memory Algorithm for String Graph Construction",
+      "year": 2014,
+      "citationCount": 11,
+      "authors": [
+        "P. Bonizzoni",
+        "G. D. Vedova",
+        "Yuri Pirola",
+        "M. Previtali",
+        "Raffaella Rizzi"
+      ],
+      "venue": "Algorithmica",
+      "abstract": null,
+      "externalIds": {
+        "DBLP": "journals/algorithmica/BonizzoniVPPR17",
+        "MAG": "2963599524",
+        "DOI": "10.1007/s00453-016-0165-4",
+        "CorpusId": 3771079
+      },
+      "fieldsOfStudy": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "url": "https://www.semanticscholar.org/paper/215369464353074d3ab3baf4ff93a6355e6f6b41",
+      "task_similarity": 0.4015,
+      "novelty_distance": 0.5985
+    },
+    {
+      "paperId": "12156df8d074c1476f14db9d25fff9415a1dcfec",
+      "title": "Efficient String Graph Construction Algorithm",
+      "year": 2019,
+      "citationCount": 0,
+      "authors": [
+        "S. Morshed",
+        "Shibu Yooseph"
+      ],
+      "venue": "",
+      "abstract": null,
+      "externalIds": {
+        "MAG": "2995199201",
+        "CorpusId": 213382098
+      },
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "url": "https://www.semanticscholar.org/paper/12156df8d074c1476f14db9d25fff9415a1dcfec",
+      "task_similarity": 0.4292,
+      "novelty_distance": 0.5708
+    }
+  ],
+  "prior_art_watchlist": [
+    {
+      "paperId": "3da459173030065b5eb442f961be6f58d162ab48",
+      "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+      "year": 2025,
+      "citationCount": 0,
+      "fieldsOfStudy": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "overlap_terms": [
+        "not",
+        "graph",
+        "string",
+        "algorithm",
+        "contain"
+      ],
+      "score": 6
+    },
+    {
+      "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e",
+      "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+      "year": 2025,
+      "citationCount": 2,
+      "fieldsOfStudy": [],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm",
+        "solution"
+      ],
+      "score": 5
+    },
+    {
+      "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec",
+      "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+      "year": 2016,
+      "citationCount": 22,
+      "fieldsOfStudy": [
+        "Mathematics",
+        "Computer Science",
+        "Medicine",
+        "Biology"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm",
+        "input"
+      ],
+      "score": 4
+    },
+    {
+      "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5",
+      "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+      "year": 2024,
+      "citationCount": 6,
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm"
+      ],
+      "score": 4
+    },
+    {
+      "paperId": "f325f72796758b1e6d1870186c60fbb367cf2aa8",
+      "title": "SOF: An Efficient String Graph Construction Algorithm",
+      "year": 2019,
+      "citationCount": 1,
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm",
+        "edges"
+      ],
+      "score": 4
+    },
+    {
+      "paperId": "215369464353074d3ab3baf4ff93a6355e6f6b41",
+      "title": "An External-Memory Algorithm for String Graph Construction",
+      "year": 2014,
+      "citationCount": 11,
+      "fieldsOfStudy": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "overlap_terms": [
+        "graph",
+        "string",
+        "algorithm"
+      ],
+      "score": 3
+    }
+  ],
+  "graph_summary": {
+    "node_count": 17,
+    "edge_count": 11,
+    "recommended_count": 4
+  },
+  "gap_frontier": [],
+  "novelty_questions": [
+    "How is the planned contribution materially different from 'String Graph Obstacles of High Girth and of Bounded Degree'?",
+    "How is the planned contribution materially different from 'Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation'?",
+    "How is the planned contribution materially different from 'FSG: Fast String Graph Construction for De Novo Assembly'?",
+    "How is the planned contribution materially different from 'A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs'?",
+    "How is the planned contribution materially different from 'SOF: An Efficient String Graph Construction Algorithm'?"
+  ]
+}

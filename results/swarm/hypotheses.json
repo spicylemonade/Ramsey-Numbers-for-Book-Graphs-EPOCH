@@ -1,0 +1,72 @@
+[
+  {
+    "id": "four_vertex_lift",
+    "title": "Four-vertex lift from the exact witness ladder",
+    "novelty_claim": "Treat the transition n -> n + 1 as the primary object and solve only the old-new/new-new completion problem, instead of restarting a full graph search for each target.",
+    "closest_prior_art": "Local exact-witness lookup plus the negative-space note that a four-vertex lift may exist; no current repo artifact turns adjacent verified witnesses into a recursive construction program.",
+    "differentiation": "This reuses the strongest verified signal already in the repo, the exact witness ladder up to n = 22, and searches a sharply restricted completion space. It avoids both Paley rehashing and full-edge stochastic search.",
+    "easiest_falsifier": "Run leave-one-step-out recovery on known steps such as 20 -> 21 and 21 -> 22 with a restricted SAT/IP completion over old-new and new-new edges. If the method cannot reliably recover known next witnesses, reject it before spending budget on n = 23.",
+    "evidence_plan": [
+      "Mine exact witnesses for saturated edge/non-edge pairs, degree patterns, and orbit hints.",
+      "Encode a restricted completion model that holds the old graph fixed and solves only the four added vertices and their incidences.",
+      "Benchmark recovery on known adjacent steps before attempting frontier case 22 -> 23."
+    ],
+    "budget_envelope": {
+      "setup": "1 focused researcher day",
+      "first_targets": [
+        "20 -> 21",
+        "21 -> 22",
+        "22 -> 23"
+      ],
+      "kill_switch": "Stop after repeated failure on known-step recovery; do not escalate into unrestricted graph search."
+    },
+    "selected": true
+  },
+  {
+    "id": "pair_slack_repair",
+    "title": "Certificate-aligned pair-slack repair",
+    "novelty_claim": "Optimize exact per-pair slack against the verifier's real constraints instead of surrogate bad-book counts, degree heuristics, or generic annealing scores.",
+    "closest_prior_art": "The archived mixed-language local search and the bridge memo's belief-propagation repair idea.",
+    "differentiation": "The baseline is not another parameter sweep on heuristic search. Every move is scored by exact edge/non-edge slack margins, with message passing allowed only after the exact-slack baseline proves it adds value.",
+    "easiest_falsifier": "On n = 22, 24, and 50, compare exact max-slack repair against the old surrogate objective. If it does not improve verifier calls, best margin, or reproducibility, kill the direction.",
+    "evidence_plan": [
+      "Log exact slack distributions for supported witnesses to identify the genuinely critical pairs.",
+      "Implement a bitset-backed max-slack tracker and compare it against the legacy aggregate objective.",
+      "Escalate to BP-style repair only if the exact-slack baseline beats the surrogate objective."
+    ],
+    "budget_envelope": {
+      "setup": "0.5-1 focused researcher day",
+      "first_targets": [
+        "22",
+        "24",
+        "50"
+      ],
+      "kill_switch": "Stop if the baseline collapses into ordinary heuristic tuning or shows no clear verifier-aligned gain."
+    },
+    "selected": true
+  },
+  {
+    "id": "composite_orbit_templates",
+    "title": "Composite-order orbit-compressed templates",
+    "novelty_claim": "Search low-orbit witnesses in cyclic or product-group templates for unsupported even and odd-composite cases, rather than stretching finite-field Paley machinery beyond its proved regime.",
+    "closest_prior_art": "The known prime-power Paley-type family and the broader cyclic/block-circulant/difference-set lane flagged by the falsifier.",
+    "differentiation": "The target is not 'Paley for more n'. The target is an orbit-compressed search space fitted to exact witness statistics, with composite-order templates treated as their own design objects.",
+    "easiest_falsifier": "If exact witness mining does not reveal stable low-orbit or autocorrelation signatures, or if orbit-compressed SAT/ILP shows no leverage on 23, 24, or 50, reject the line.",
+    "evidence_plan": [
+      "Extract orbit, autocorrelation, and degree-multiset summaries from the exact witness bank.",
+      "Fit a small family of composite-order templates and test whether they explain known witnesses better than generic circulants.",
+      "Only then spend frontier budget on 23, 24, and 50."
+    ],
+    "budget_envelope": {
+      "setup": "1-2 focused researcher days",
+      "first_targets": [
+        "witness-feature mining",
+        "23",
+        "24",
+        "50"
+      ],
+      "kill_switch": "Stop if the direction degenerates into cosmetic Paley variants or full graph search in disguise."
+    },
+    "selected": false
+  }
+]
