@@ -1,7 +1,115 @@
+import ast
 import unittest
 from pathlib import Path
 
 import solution as solver
+
+
+EXPECTED_SUPPORTED_UP_TO_100 = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    25,
+    27,
+    31,
+    37,
+    41,
+    45,
+    49,
+    51,
+    55,
+    57,
+    61,
+    63,
+    69,
+    75,
+    79,
+    85,
+    87,
+    91,
+    97,
+    99,
+]
+
+EXPECTED_UNSUPPORTED_UP_TO_100 = [
+    23,
+    24,
+    26,
+    28,
+    29,
+    30,
+    32,
+    33,
+    34,
+    35,
+    36,
+    38,
+    39,
+    40,
+    42,
+    43,
+    44,
+    46,
+    47,
+    48,
+    50,
+    52,
+    53,
+    54,
+    56,
+    58,
+    59,
+    60,
+    62,
+    64,
+    65,
+    66,
+    67,
+    68,
+    70,
+    71,
+    72,
+    73,
+    74,
+    76,
+    77,
+    78,
+    80,
+    81,
+    82,
+    83,
+    84,
+    86,
+    88,
+    89,
+    90,
+    92,
+    93,
+    94,
+    95,
+    96,
+    98,
+    100,
+]
 
 
 class SolutionTests(unittest.TestCase):
@@ -25,9 +133,37 @@ class SolutionTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     solver.solution(n)
 
+    def test_supported_domain_up_to_100_is_stable(self) -> None:
+        supported, unsupported = solver._supported_values(100)
+        self.assertEqual(supported, EXPECTED_SUPPORTED_UP_TO_100)
+        self.assertEqual(unsupported, EXPECTED_UNSUPPORTED_UP_TO_100)
+
+    def test_solution_module_has_pure_python_import_hygiene(self) -> None:
+        source = Path(solver.__file__).read_text()
+        tree = ast.parse(source)
+        allowed_imports = {"__future__", "argparse", "itertools"}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for alias in node.names:
+                    root = alias.name.split(".")[0]
+                    with self.subTest(import_name=alias.name):
+                        self.assertIn(root, allowed_imports)
+            elif isinstance(node, ast.ImportFrom):
+                module = (node.module or "").split(".")[0]
+                with self.subTest(import_from=node.module):
+                    self.assertIn(module, allowed_imports)
+
     def test_solution_module_has_no_codegen_or_random_fallbacks(self) -> None:
         source = Path(solver.__file__).read_text()
-        for token in ["subprocess", "os.system", "ctypes", "cffi", "gcc", "clang", "random"]:
+        for token in [
+            "subprocess",
+            "os.system",
+            "ctypes",
+            "cffi",
+            "gcc",
+            "clang",
+            "random",
+        ]:
             with self.subTest(token=token):
                 self.assertNotIn(token, source)
 

@@ -1,0 +1,431 @@
+{
+  "generated_at": "2026-03-25T01:08:00Z",
+  "summary_counts": {
+    "small_exact": 3,
+    "exact_graph6": 17,
+    "exact_two_block": 1,
+    "prime_power_family": 21,
+    "unsupported": 58
+  },
+  "source_reference_definitions": {
+    "small_exact": [
+      "solution.py::_small_exact_witnesses",
+      "solution.py::solution"
+    ],
+    "exact_graph6": [
+      "solution.py::_exact_graph6_witnesses",
+      "solution.py::_graph6_to_adjacency_string"
+    ],
+    "exact_two_block": [
+      "solution.py::_exact_two_block_witnesses",
+      "solution.py::_cyclic_two_block"
+    ],
+    "prime_power_family": [
+      "solution.py::_prime_power",
+      "solution.py::_paley_two_block"
+    ],
+    "unsupported": []
+  },
+  "witnesses": {
+    "1": {
+      "category": "small_exact",
+      "source_reference_key": "small_exact"
+    },
+    "2": {
+      "category": "small_exact",
+      "source_reference_key": "small_exact"
+    },
+    "3": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "4": {
+      "category": "small_exact",
+      "source_reference_key": "small_exact"
+    },
+    "5": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "6": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "7": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "8": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "9": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "10": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "11": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "12": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "13": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "14": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "15": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "16": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "17": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "18": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "19": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "20": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "21": {
+      "category": "exact_graph6",
+      "source_reference_key": "exact_graph6"
+    },
+    "22": {
+      "category": "exact_two_block",
+      "source_reference_key": "exact_two_block"
+    },
+    "23": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "24": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "25": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "26": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "27": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "28": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "29": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "30": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "31": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "32": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "33": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "34": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "35": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "36": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "37": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "38": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "39": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "40": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "41": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "42": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "43": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "44": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "45": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "46": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "47": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "48": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "49": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "50": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "51": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "52": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "53": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "54": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "55": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "56": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "57": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "58": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "59": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "60": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "61": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "62": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "63": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "64": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "65": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "66": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "67": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "68": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "69": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "70": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "71": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "72": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "73": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "74": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "75": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "76": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "77": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "78": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "79": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "80": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "81": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "82": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "83": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "84": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "85": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "86": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "87": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "88": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "89": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "90": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "91": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "92": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "93": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "94": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "95": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "96": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "97": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "98": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    },
+    "99": {
+      "category": "prime_power_family",
+      "source_reference_key": "prime_power_family"
+    },
+    "100": {
+      "category": "unsupported",
+      "source_reference_key": "unsupported"
+    }
+  }
+}

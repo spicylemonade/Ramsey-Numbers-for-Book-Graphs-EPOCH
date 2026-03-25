@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-03-25T00:59:17.846439+00:00",
-  "updated_at": "2026-03-25T01:01:06.004869+00:00",
-  "current_agent": "orchestrator",
+  "updated_at": "2026-03-25T01:05:30.000000+00:00",
+  "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,8 +11,8 @@
       "error": null
     },
     "researcher": {
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-03-25T01:01:13.991355+00:00",
       "completed_at": null,
       "error": null
     },
@@ -39,8 +39,8 @@
           "id": "item_001",
           "description": "Map the repository modules, artifacts, and active-vs-legacy boundaries.",
           "acceptance_criteria": "Produce `results/repo_map.md` listing every major file/module under the repo root, `.archivara/`, `results/`, and `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/`; mark each as active, helper, generated, or legacy; document import/execution connections; explicitly state that root `solution.py` and `test_solution.py` are the active execution path.",
-          "status": "pending",
-          "notes": null,
+          "status": "in_progress",
+          "notes": "Drafted `results/repo_map.md` and verified the active root path is `solution.py` + `test_solution.py`; waiting for the mandatory `concept_evolve evolve` run before closing the item.",
           "error": null
         },
         {
@@ -269,8 +269,8 @@
   "summary": {
     "total_items": 25,
     "completed": 0,
-    "in_progress": 0,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 25
+    "pending": 24
   }
 }
