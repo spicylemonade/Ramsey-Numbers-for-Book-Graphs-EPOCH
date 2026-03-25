@@ -1,0 +1,30 @@
+[
+  {
+    "bridge": "four_vertex_lift_completion",
+    "novelty_signal": "Uses adjacent exact witnesses as transition constraints instead of restarting full search or reusing Paley packaging.",
+    "validation_plan": "Recover 20->21 and 21->22 with the old witness fixed, then attempt 22->23 only if both succeed.",
+    "risk": "May fail even on known steps, which would kill the lane quickly.",
+    "promotion_decision": "promote"
+  },
+  {
+    "bridge": "exact_slack_certificate",
+    "novelty_signal": "Replaces surrogate heuristic scores with verifier-aligned exact slack margins.",
+    "validation_plan": "Benchmark on n=22,24,50 against the archived surrogate objective using verifier calls and best slack.",
+    "risk": "Could collapse into ordinary heuristic tuning if slack bookkeeping is too expensive or uninformative.",
+    "promotion_decision": "promote"
+  },
+  {
+    "bridge": "orbit_compressed_frontier",
+    "novelty_signal": "Only mildly novel unless exact witnesses show real low-orbit structure.",
+    "validation_plan": "Delay implementation until symmetry proxies from the exact witness bank justify the template class.",
+    "risk": "High overlap risk with generic circulant/Paley-style rehashing.",
+    "promotion_decision": "hold"
+  },
+  {
+    "bridge": "unrestricted_stochastic_search",
+    "novelty_signal": "None; this recreates the rejected legacy failure mode.",
+    "validation_plan": "Do not pursue unless every structured deterministic lane fails and the goal changes from submission artifact to exploratory search.",
+    "risk": "Reintroduces probabilistic, non-auditable behavior into the narrative.",
+    "promotion_decision": "retire"
+  }
+]

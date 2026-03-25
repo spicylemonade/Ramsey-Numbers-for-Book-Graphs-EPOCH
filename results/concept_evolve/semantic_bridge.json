@@ -1,0 +1,156 @@
+{
+  "nodes": [
+    {
+      "id": "active_path_firewall",
+      "domain": "software_reliability"
+    },
+    {
+      "id": "active_path_firewall",
+      "domain": "extremal_graph_theory"
+    },
+    {
+      "id": "support_table_contract",
+      "domain": "testing"
+    },
+    {
+      "id": "support_table_contract",
+      "domain": "combinatorics"
+    },
+    {
+      "id": "witness_provenance_ledger",
+      "domain": "research_metadata"
+    },
+    {
+      "id": "witness_provenance_ledger",
+      "domain": "graph_search"
+    },
+    {
+      "id": "four_vertex_lift_completion",
+      "domain": "extremal_graph_theory"
+    },
+    {
+      "id": "four_vertex_lift_completion",
+      "domain": "sat_ilp_search"
+    },
+    {
+      "id": "exact_slack_certificate",
+      "domain": "combinatorial_optimization"
+    },
+    {
+      "id": "exact_slack_certificate",
+      "domain": "certificate_design"
+    },
+    {
+      "id": "orbit_compressed_frontier",
+      "domain": "group_actions"
+    },
+    {
+      "id": "orbit_compressed_frontier",
+      "domain": "graph_search"
+    },
+    {
+      "id": "finite_field_family_boundary",
+      "domain": "finite_fields"
+    },
+    {
+      "id": "finite_field_family_boundary",
+      "domain": "extremal_graph_theory"
+    },
+    {
+      "id": "archive_quarantine_gate",
+      "domain": "software_supply_chain"
+    },
+    {
+      "id": "archive_quarantine_gate",
+      "domain": "reproducibility"
+    },
+    {
+      "id": "deterministic_submission_dsl",
+      "domain": "program_synthesis"
+    },
+    {
+      "id": "deterministic_submission_dsl",
+      "domain": "formal_methods"
+    },
+    {
+      "id": "verifier_first_regression_harness",
+      "domain": "software_testing"
+    },
+    {
+      "id": "verifier_first_regression_harness",
+      "domain": "mathematical_verification"
+    }
+  ],
+  "edges": [
+    {
+      "source": "active_path_firewall",
+      "target": "archive_quarantine_gate",
+      "relation": "both isolate the active artifact from legacy contamination"
+    },
+    {
+      "source": "active_path_firewall",
+      "target": "deterministic_submission_dsl",
+      "relation": "both reduce solver behavior to a narrow verified interface"
+    },
+    {
+      "source": "support_table_contract",
+      "target": "verifier_first_regression_harness",
+      "relation": "the frozen table becomes the main regression oracle"
+    },
+    {
+      "source": "witness_provenance_ledger",
+      "target": "support_table_contract",
+      "relation": "source classes explain which support claims are theorem-backed versus embedded"
+    },
+    {
+      "source": "finite_field_family_boundary",
+      "target": "witness_provenance_ledger",
+      "relation": "prime-power cases are a distinct provenance class"
+    },
+    {
+      "source": "finite_field_family_boundary",
+      "target": "four_vertex_lift_completion",
+      "relation": "the theorem-backed family defines the solved boundary the lift must surpass"
+    },
+    {
+      "source": "four_vertex_lift_completion",
+      "target": "exact_slack_certificate",
+      "relation": "slack can score restricted completions during known-step recovery"
+    },
+    {
+      "source": "exact_slack_certificate",
+      "target": "orbit_compressed_frontier",
+      "relation": "slack diagnostics can decide whether symmetry-compressed templates are promising"
+    },
+    {
+      "source": "orbit_compressed_frontier",
+      "target": "four_vertex_lift_completion",
+      "relation": "both are frontier extensions gated by exact witness structure"
+    },
+    {
+      "source": "verifier_first_regression_harness",
+      "target": "four_vertex_lift_completion",
+      "relation": "known-step recovery should be judged only by exact verifier outcomes"
+    }
+  ],
+  "bridge_chains": [
+    [
+      "archive_quarantine_gate",
+      "active_path_firewall",
+      "support_table_contract",
+      "verifier_first_regression_harness"
+    ],
+    [
+      "finite_field_family_boundary",
+      "witness_provenance_ledger",
+      "four_vertex_lift_completion",
+      "exact_slack_certificate"
+    ],
+    [
+      "deterministic_submission_dsl",
+      "active_path_firewall",
+      "four_vertex_lift_completion",
+      "orbit_compressed_frontier"
+    ]
+  ]
+}

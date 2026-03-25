@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-24T23:43:28Z",
+  "updated_at": "2026-03-25T01:13:54Z",
   "recent_queries": [
     {
       "timestamp": "2026-03-24T23:41:11Z",
@@ -131,13 +131,56 @@
       "network_calls": 0,
       "cache_hits": 1,
       "save_path": "/home/archivara/work/repo/results/literature/gap_probe_4.json"
+    },
+    {
+      "timestamp": "2026-03-25T01:13:11Z",
+      "command": "search",
+      "query": "Lower Bounds for Book Ramsey Numbers",
+      "limit": 5,
+      "skip_known": true,
+      "result_count": 5,
+      "network_calls": 1,
+      "cache_hits": 0
+    },
+    {
+      "timestamp": "2026-03-25T01:13:39Z",
+      "command": "search",
+      "query": "Off-diagonal book Ramsey numbers",
+      "limit": 5,
+      "skip_known": true,
+      "result_count": 0,
+      "network_calls": 0,
+      "cache_hits": 0
+    },
+    {
+      "timestamp": "2026-03-25T01:13:39Z",
+      "command": "search",
+      "query": "Book Ramsey numbers I",
+      "limit": 5,
+      "skip_known": true,
+      "result_count": 0,
+      "network_calls": 0,
+      "cache_hits": 0
+    },
+    {
+      "timestamp": "2026-03-25T01:13:54Z",
+      "command": "search",
+      "query": "Book Ramsey numbers I",
+      "limit": 5,
+      "skip_known": false,
+      "result_count": 5,
+      "network_calls": 1,
+      "cache_hits": 0
     }
   ],
   "seen_paper_ids": [
+    "02095ac28dfcd4a641556efd6014b97fbc765319",
     "05aa0119d343dffb53f8d03f6673025d3fb1ba23",
     "12156df8d074c1476f14db9d25fff9415a1dcfec",
+    "1cf1de72811207d192e80472b4e42824ab3dddeb",
     "215369464353074d3ab3baf4ff93a6355e6f6b41",
     "23af6f06c98f39f04f5bf0219d021e6f9ed04b67",
+    "2703be41c53665386797333bcf912241dbd3270d",
     "36cee124338d0128101218eb4af4535db29cac2e",
     "3da459173030065b5eb442f961be6f58d162ab48",
     "3ed4537fb38e19f81b251e3a9659ce19b909faa7",
@@ -147,6 +190,7 @@
     "5ed8abb9c608a39acb1f16640bd983ff6c271cec",
     "5f429f9f31edefe8a992d84b447a0dc665d291f6",
     "64e06bd10e7a3a214cfe720df6d46e422884cac1",
+    "64f8114d0d4e737c1cc3b58efdd5272023109ed4",
     "699243c40d3cae773b698a2ff4a99746d397ce78",
     "7c06abd62d2f347668f814997abe0761a4844356",
     "934374f003767b2ff4e2860596098142b2fdb0b5",
@@ -155,19 +199,24 @@
     "a8e4414b54ada40add05d6402d34d6638462069d",
     "bb7456be57e38cd46cdb45b513959464596c3bff",
     "c0a432d11ada2dc896934f7704b265d90a0c649b",
+    "c7b7d7a04e8324b28d9615c12e94d15602933e34",
+    "d0eef83ca664eb922ca48f50339773acc40395d4",
     "d41444faf849e8ec188df4035eebdd798409e20e",
+    "d61e6086c28e1653930edc995a4ee65bba6ebad6",
     "d640a729241fbfd4cd22b43510e1fff121d4ee5a",
+    "da6878e3722da5547dc5e3e1b8ac31946864dd7c",
     "dbfd376dd065a9266467dd72c0fca10395132467",
     "ded242b5537f83a4173bee5afc2b7a5cbd03da3e",
+    "e355a35e9d260acd4116109dd1be84c83ebbc0bb",
     "f2342368c2dbce3be28b5298f6fc67890416c405",
     "f31f1042e2276de5098f1032fa4413aaa7929d10",
     "f325f72796758b1e6d1870186c60fbb367cf2aa8",
     "f3c44e784477bd5c8ce8a41570b5d78622e13875"
   ],
   "stats": {
-    "total_commands": 12,
-    "unique_papers": 29,
-    "network_calls": 11,
+    "total_commands": 16,
+    "unique_papers": 38,
+    "network_calls": 13,
     "cache_hits": 3
   }
 }

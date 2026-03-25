@@ -1,0 +1,132 @@
+{
+  "associations": [
+    "coverage frontier as an incremental completion problem rather than a fresh global search",
+    "unsupported n as negative data that defines the exact scope of the active solver",
+    "prime-power family as a boundary condition instead of an extrapolation license"
+  ],
+  "forced_bridges": [
+    {
+      "from": "adjacent exact witnesses",
+      "to": "incremental SAT/ILP completion",
+      "mechanism": "freeze the old graph and solve only old-new and new-new incidences for n->n+1"
+    },
+    {
+      "from": "verifier slack histograms",
+      "to": "robust local repair",
+      "mechanism": "optimize the worst exact pair slack instead of heuristic bad-book counts"
+    },
+    {
+      "from": "witness provenance classes",
+      "to": "frontier triage",
+      "mechanism": "separate theorem-backed families from embedded exact payloads before claiming generality"
+    }
+  ],
+  "anomaly_results": [
+    {
+      "constraint": "No stochastic search is allowed anywhere in the active path",
+      "result": "The only viable frontier extensions are structured completions or exact verifier-aligned repairs."
+    },
+    {
+      "constraint": "The old witness must remain fixed during n->n+1 recovery",
+      "result": "Known-step recovery becomes a clean falsifier for the four-vertex lift hypothesis."
+    },
+    {
+      "constraint": "Coverage claims must stay honest for unsupported n",
+      "result": "Progress should be measured by support-table deltas, not anecdotal candidate graphs."
+    }
+  ],
+  "steering_directions": [
+    {
+      "direction": "Run four-vertex lift known-step recovery first.",
+      "rationale": "It is the tightest frontier experiment that uses the existing exact witness ladder.",
+      "first_step": "Model 20->21 and 21->22 with fixed old graph and variable incidences only.",
+      "expected_signal": "Success on both known steps justifies a bounded 22->23 attempt."
+    },
+    {
+      "direction": "Benchmark exact slack repair before any more elaborate heuristics.",
+      "rationale": "This directly addresses the mismatch between heuristic scores and the verifier.",
+      "first_step": "Compare exact min-slack improvement against the legacy surrogate objective on n=22,24,50.",
+      "expected_signal": "A verifier-aligned slack baseline should dominate on reproducibility and best certificate margin."
+    },
+    {
+      "direction": "Mine symmetry features before spending budget on orbit templates.",
+      "rationale": "Symmetry compression only helps if exact witnesses actually show low-orbit structure.",
+      "first_step": "Extract coarse automorphism proxies, repeated degree classes, and pair-slack symmetries through n=22.",
+      "expected_signal": "If symmetry evidence is weak, composite-order orbit search should remain reserved."
+    }
+  ],
+  "validation_checks": [
+    "Known-step recovery must reproduce valid witnesses for 20->21 and 21->22.",
+    "Any new search objective must improve exact verifier slack or coverage, not only heuristic scores.",
+    "Coverage claims must be backed by an updated support table over n<=100."
+  ],
+  "sub_problem": "How can coverage extend beyond the exact witness bank and prime-power family without reintroducing stochastic search?",
+  "input_fingerprint": "7aca5f20cc8c1e8317c1a3207b8182281e10af8c26e5dddccdbd02658102bf25",
+  "input_context": {
+    "command": "probe",
+    "topic": "how can coverage extend beyond the exact witness bank and prime-power family without reintroducing stochastic search?",
+    "context": [
+      {
+        "path": "results/research_context.md",
+        "exists": true,
+        "sha256": "8bc4c5c1fa060359f79fc127dbacd1c3a8ef667a1129de71abcd50f544bd6a7a"
+      },
+      {
+        "path": "results/literature/prior_art_watchlist.md",
+        "exists": true,
+        "sha256": "132d6c81608b98f705cea53fabb8d7c38a81b5fd3eaa7f59ee02e6de745705b3"
+      },
+      {
+        "path": "results/literature/prior_art_gap.md",
+        "exists": true,
+        "sha256": "2dd93ab3a9763f286e5d39e289111a14aecebd9455a3e6ad6b520041430290f4"
+      },
+      {
+        "path": "results/literature/semantic_scholar_manifest.json",
+        "exists": true,
+        "sha256": "a339509334e62ea41e73a7fbcbfac8963bfbfbfe9b9ef99adece934ad2e48faa"
+      },
+      {
+        "path": "results/swarm/director_brief.md",
+        "exists": true,
+        "sha256": "9780d4e2fff11d88e14d219a665c10b7af3df55f23beb454efbf2f58f77b21d2"
+      },
+      {
+        "path": "results/swarm/hypotheses.json",
+        "exists": true,
+        "sha256": "7344b977eee2fc26e64e821648404d7038db62b4f9e176479a44a214aa1a766a"
+      },
+      {
+        "path": "results/swarm/tool_plan.md",
+        "exists": true,
+        "sha256": "018ad3662d51605e6a12fd62fc87fd9e7d2ee0dcf204a1b9226958a03c033037"
+      },
+      {
+        "path": "results/swarm/falsifier.md",
+        "exists": true,
+        "sha256": "fef9edaa07cb3846f5cfbffd3926d3a0809c7f37aa85232a13a83b3e99f25d42"
+      },
+      {
+        "path": "results/concept_evolve/concept_cards.json",
+        "exists": true,
+        "sha256": "dc736b88c5d908f34d3596d45b91e9038145f34b1f4293446a8ec027dda47d0b"
+      },
+      {
+        "path": "results/concept_evolve/semantic_bridge.json",
+        "exists": true,
+        "sha256": "709bf18b2a81a101de8d1c221de0d7b3442fc9f31b182d6dbf44b8974c50d5aa"
+      },
+      {
+        "path": "results/concept_evolve/steering_directions.json",
+        "exists": true,
+        "sha256": "bd77034663a5a55f7e13c64d90a3177b4615dca1ce0030795899557d72ff26bc"
+      },
+      {
+        "path": "results/verification/verification_summary.md",
+        "exists": true,
+        "sha256": "872ee4ce502cf9936e1f4397ef77d6754ff83fddac1dc7379a2b3da0b6b4346a"
+      }
+    ]
+  },
+  "timestamp": "2026-03-25T01:16:21.362881+00:00"
+}

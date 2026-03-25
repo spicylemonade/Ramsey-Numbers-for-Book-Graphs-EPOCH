@@ -1,0 +1,92 @@
+[
+  {
+    "id": "active_path_firewall",
+    "slug": "active-path-firewall",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/001_active-path-firewall",
+    "domains": [
+      "software_reliability",
+      "extremal_graph_theory"
+    ]
+  },
+  {
+    "id": "support_table_contract",
+    "slug": "support-table-contract",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/002_support-table-contract",
+    "domains": [
+      "testing",
+      "combinatorics"
+    ]
+  },
+  {
+    "id": "witness_provenance_ledger",
+    "slug": "witness-provenance-ledger",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/003_witness-provenance-ledger",
+    "domains": [
+      "research_metadata",
+      "graph_search"
+    ]
+  },
+  {
+    "id": "four_vertex_lift_completion",
+    "slug": "four-vertex-lift-completion",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/004_four-vertex-lift-completion",
+    "domains": [
+      "extremal_graph_theory",
+      "sat_ilp_search"
+    ]
+  },
+  {
+    "id": "exact_slack_certificate",
+    "slug": "exact-slack-certificate",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/005_exact-slack-certificate",
+    "domains": [
+      "combinatorial_optimization",
+      "certificate_design"
+    ]
+  },
+  {
+    "id": "orbit_compressed_frontier",
+    "slug": "orbit-compressed-frontier",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/006_orbit-compressed-frontier",
+    "domains": [
+      "group_actions",
+      "graph_search"
+    ]
+  },
+  {
+    "id": "finite_field_family_boundary",
+    "slug": "finite-field-family-boundary",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/007_finite-field-family-boundary",
+    "domains": [
+      "finite_fields",
+      "extremal_graph_theory"
+    ]
+  },
+  {
+    "id": "archive_quarantine_gate",
+    "slug": "archive-quarantine-gate",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/008_archive-quarantine-gate",
+    "domains": [
+      "software_supply_chain",
+      "reproducibility"
+    ]
+  },
+  {
+    "id": "deterministic_submission_dsl",
+    "slug": "deterministic-submission-dsl",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/009_deterministic-submission-dsl",
+    "domains": [
+      "program_synthesis",
+      "formal_methods"
+    ]
+  },
+  {
+    "id": "verifier_first_regression_harness",
+    "slug": "verifier-first-regression-harness",
+    "folder": "/home/archivara/work/repo/results/concept_evolve/tree/010_verifier-first-regression-harness",
+    "domains": [
+      "software_testing",
+      "mathematical_verification"
+    ]
+  }
+]

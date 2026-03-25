@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "active_path_firewall",
+  "description": "Treat the root solver as a sealed interface whose only admissible behaviors are verified witness emission or explicit refusal. The practical aim is to stop legacy archive code from contaminating claims about the active artifact.",
+  "domains": [
+    "software_reliability",
+    "extremal_graph_theory"
+  ],
+  "mathematical_formalization": "For every input n, output \\in Witness(n) \\cup {ValueError}; no hidden transition into heuristic search states is permitted.",
+  "analogical_connections": [
+    "ABI stability for a shared library",
+    "lab protocol quarantine between active samples and frozen archives"
+  ],
+  "implementation_hypothesis": "Audit imports and execution edges, then add regressions that enforce root-only imports and explicit unsupported behavior.",
+  "experiment_seed": "Run the root test suite and a full n<=100 support sweep after any solver edit.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+      "paperId": "3da459173030065b5eb442f961be6f58d162ab48"
+    }
+  ],
+  "novelty_claim": "The novelty is not a new bound; it is the enforcement layer that keeps a partial witness packer from regressing back into heuristic or mixed-language behavior.",
+  "differentiation": "Unlike the watchlist papers, this is a repo-control mechanism over a concrete submission artifact, not a new structural theorem about string or book graphs.",
+  "folder_plan": [
+    "results/concept_evolve/tree/001_active_path_firewall"
+  ],
+  "generated_at": "2026-03-25T01:15:26.314993+00:00",
+  "project_folder": "concept_evolve/tree/001_active-path-firewall"
+}

@@ -1,0 +1,28 @@
+{
+  "active_path_firewall": [
+    "archive_quarantine_gate",
+    "deterministic_submission_dsl"
+  ],
+  "support_table_contract": [
+    "verifier_first_regression_harness"
+  ],
+  "witness_provenance_ledger": [
+    "support_table_contract"
+  ],
+  "finite_field_family_boundary": [
+    "witness_provenance_ledger",
+    "four_vertex_lift_completion"
+  ],
+  "four_vertex_lift_completion": [
+    "exact_slack_certificate"
+  ],
+  "exact_slack_certificate": [
+    "orbit_compressed_frontier"
+  ],
+  "orbit_compressed_frontier": [
+    "four_vertex_lift_completion"
+  ],
+  "verifier_first_regression_harness": [
+    "four_vertex_lift_completion"
+  ]
+}

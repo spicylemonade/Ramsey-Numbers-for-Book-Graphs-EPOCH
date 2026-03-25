@@ -1,0 +1,20 @@
+[
+  {
+    "direction": "Keep the root submission sealed and verifier-first.",
+    "rationale": "The user complaint is resolved only if the active path stays Python-only, deterministic, and explicit about unsupported n.",
+    "first_step": "Retain the full support-table regression and import-hygiene tests.",
+    "expected_signal": "Any reintroduction of random/C fallback breaks tests immediately."
+  },
+  {
+    "direction": "Start frontier work with four-vertex lift recovery, not unrestricted search.",
+    "rationale": "Adjacent exact witnesses are the strongest unused evidence in the repo.",
+    "first_step": "Attempt 20->21 and 21->22 recovery with old graph fixed and only new incidences variable.",
+    "expected_signal": "If known steps fail reproducibly, kill the lift direction early."
+  },
+  {
+    "direction": "Use provenance and slack audits before any broader novelty claim.",
+    "rationale": "The solver is currently a deterministic partial artifact, not a general construction.",
+    "first_step": "Pair every supported-domain or frontier claim with witness provenance and exact verifier evidence.",
+    "expected_signal": "Documentation stops overclaiming and makes unsupported gaps visible."
+  }
+]

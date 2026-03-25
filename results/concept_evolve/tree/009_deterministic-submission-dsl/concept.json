@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "deterministic_submission_dsl",
+  "description": "View the submission artifact as a tiny domain-specific language with only two commands: emit a verified adjacency string or reject unsupported input. This strips away any temptation to smuggle search policy into the solver interface.",
+  "domains": [
+    "program_synthesis",
+    "formal_methods"
+  ],
+  "mathematical_formalization": "API(n) := VerifiedWitness(n) | Unsupported(n); no latent search state enters the denotation.",
+  "analogical_connections": [
+    "total functions with an error monad",
+    "instrument controllers with guarded operating modes"
+  ],
+  "implementation_hypothesis": "Keep solver logic declarative and push exploration into separate scripts or archived tools.",
+  "experiment_seed": "AST-audit the root solver and fail if new imports or side-effectful execution paths appear.",
+  "closest_prior_art": [
+    {
+      "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+      "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5"
+    },
+    {
+      "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+      "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e"
+    }
+  ],
+  "novelty_claim": "The novelty is a submission-language discipline that turns correctness obligations into interface constraints.",
+  "differentiation": "This is about artifact design and proof obligations, not approximation or quantum search.",
+  "folder_plan": [
+    "results/concept_evolve/tree/009_deterministic_submission_dsl"
+  ],
+  "generated_at": "2026-03-25T01:15:26.321082+00:00",
+  "project_folder": "concept_evolve/tree/009_deterministic-submission-dsl"
+}

@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "finite_field_family_boundary",
+  "description": "Use the existing prime-power family as a boundary condition rather than pretending it solves the unsupported frontier. The family becomes a calibration tool for what algebraic structure is already captured.",
+  "domains": [
+    "finite_fields",
+    "extremal_graph_theory"
+  ],
+  "mathematical_formalization": "If q=2n-1 is a prime power with q \\equiv 1 mod 4, emit the Paley-type two-block witness; otherwise do not extrapolate.",
+  "analogical_connections": [
+    "phase diagram boundary",
+    "validity region of a perturbation series"
+  ],
+  "implementation_hypothesis": "Keep theorem-backed family generation but surround it with explicit tests and unsupported-case refusal.",
+  "experiment_seed": "Regress the prime-power values in the frozen support table and ensure non-prime-power composites remain unsupported.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+      "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec"
+    }
+  ],
+  "novelty_claim": "The novelty is the discipline of using the family as a verified boundary, not as a rhetorical substitute for a general algorithm.",
+  "differentiation": "This is a framing/control idea, not a claim of a new infinite construction.",
+  "folder_plan": [
+    "results/concept_evolve/tree/007_finite_field_family_boundary"
+  ],
+  "generated_at": "2026-03-25T01:15:26.319378+00:00",
+  "project_folder": "concept_evolve/tree/007_finite-field-family-boundary"
+}

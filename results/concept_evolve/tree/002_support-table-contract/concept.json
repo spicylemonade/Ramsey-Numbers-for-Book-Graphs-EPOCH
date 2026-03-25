@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "support_table_contract",
+  "description": "Promote the supported/unsupported split to a checked contract rather than an implicit behavior hidden inside exceptions. This turns determinism into a testable interface claim.",
+  "domains": [
+    "testing",
+    "combinatorics"
+  ],
+  "mathematical_formalization": "SupportTable = {n \\le 100 : verify(solution(n), n) = true}; regressions assert exact equality to the frozen table.",
+  "analogical_connections": [
+    "conformance test vectors",
+    "reference spectra in experimental chemistry"
+  ],
+  "implementation_hypothesis": "Encode the exact n<=100 support table in tests and fail on any silent drift.",
+  "experiment_seed": "Compare _supported_values(100) against the frozen 42/58 split after each change.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+      "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e"
+    }
+  ],
+  "novelty_claim": "The contribution is a reproducibility boundary around a partial constructive solver, not a search heuristic.",
+  "differentiation": "This is verifier-first artifact governance, whereas the cited search/algorithm papers optimize or characterize graph families.",
+  "folder_plan": [
+    "results/concept_evolve/tree/002_support_table_contract"
+  ],
+  "generated_at": "2026-03-25T01:15:26.315794+00:00",
+  "project_folder": "concept_evolve/tree/002_support-table-contract"
+}

@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "exact_slack_certificate",
+  "description": "Score candidate edits by exact per-pair slack against the verifier rather than by approximate bad-book counts. The goal is to align search pressure with the yes/no witness certificate.",
+  "domains": [
+    "combinatorial_optimization",
+    "certificate_design"
+  ],
+  "mathematical_formalization": "slack(u,v)=min((n-2)-cn_G(u,v), (n-1)-cn_\\overline{G}(u,v)) with sign conditioned on edge/non-edge status.",
+  "analogical_connections": [
+    "barrier functions in constrained optimization",
+    "safety margins in structural engineering"
+  ],
+  "implementation_hypothesis": "Maintain exact slack histograms and improve the minimum slack first on hard unsupported instances.",
+  "experiment_seed": "Benchmark on n in {22,24,50} against surrogate bad-book objectives.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+      "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e"
+    }
+  ],
+  "novelty_claim": "The novelty is objective-function alignment with the exact verifier rather than stochastic score hacking.",
+  "differentiation": "The cited search-style work is about finding valid states; this idea is specifically about reparameterizing local search around verifier slack.",
+  "folder_plan": [
+    "results/concept_evolve/tree/005_exact_slack_certificate"
+  ],
+  "generated_at": "2026-03-25T01:15:26.317685+00:00",
+  "project_folder": "concept_evolve/tree/005_exact-slack-certificate"
+}

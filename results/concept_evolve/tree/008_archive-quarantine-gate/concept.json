@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "archive_quarantine_gate",
+  "description": "Preserve the legacy archive for context while blocking it from the active execution path. This handles the user complaint that the old search tree mixed C and probabilistic code with the submission story.",
+  "domains": [
+    "software_supply_chain",
+    "reproducibility"
+  ],
+  "mathematical_formalization": "ActivePath \\cap LegacyPath = \u000barnothing for imports, tests, and published claim language.",
+  "analogical_connections": [
+    "biosafety containment",
+    "frozen calibration hardware kept off the production line"
+  ],
+  "implementation_hypothesis": "Document the root-vs-archive boundary and audit imports so legacy modules cannot leak into root tests or CLI paths.",
+  "experiment_seed": "Regenerate the repo map whenever new files appear and fail if the root path starts importing legacy modules.",
+  "closest_prior_art": [
+    {
+      "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+      "paperId": "3da459173030065b5eb442f961be6f58d162ab48"
+    },
+    {
+      "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+      "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec"
+    }
+  ],
+  "novelty_claim": "The novelty is operational quarantine around a research code base that mixes archive experiments with an active artifact.",
+  "differentiation": "The cited papers do not address repository-architecture risks; this concept does.",
+  "folder_plan": [
+    "results/concept_evolve/tree/008_archive_quarantine_gate"
+  ],
+  "generated_at": "2026-03-25T01:15:26.320234+00:00",
+  "project_folder": "concept_evolve/tree/008_archive-quarantine-gate"
+}

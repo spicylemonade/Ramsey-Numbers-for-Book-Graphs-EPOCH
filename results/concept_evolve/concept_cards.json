@@ -1,0 +1,302 @@
+[
+  {
+    "symbolic_name": "active_path_firewall",
+    "description": "Treat the root solver as a sealed interface whose only admissible behaviors are verified witness emission or explicit refusal. The practical aim is to stop legacy archive code from contaminating claims about the active artifact.",
+    "domains": [
+      "software_reliability",
+      "extremal_graph_theory"
+    ],
+    "mathematical_formalization": "For every input n, output \\in Witness(n) \\cup {ValueError}; no hidden transition into heuristic search states is permitted.",
+    "analogical_connections": [
+      "ABI stability for a shared library",
+      "lab protocol quarantine between active samples and frozen archives"
+    ],
+    "implementation_hypothesis": "Audit imports and execution edges, then add regressions that enforce root-only imports and explicit unsupported behavior.",
+    "experiment_seed": "Run the root test suite and a full n<=100 support sweep after any solver edit.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+        "paperId": "3da459173030065b5eb442f961be6f58d162ab48"
+      }
+    ],
+    "novelty_claim": "The novelty is not a new bound; it is the enforcement layer that keeps a partial witness packer from regressing back into heuristic or mixed-language behavior.",
+    "differentiation": "Unlike the watchlist papers, this is a repo-control mechanism over a concrete submission artifact, not a new structural theorem about string or book graphs.",
+    "folder_plan": [
+      "results/concept_evolve/tree/001_active_path_firewall"
+    ]
+  },
+  {
+    "symbolic_name": "support_table_contract",
+    "description": "Promote the supported/unsupported split to a checked contract rather than an implicit behavior hidden inside exceptions. This turns determinism into a testable interface claim.",
+    "domains": [
+      "testing",
+      "combinatorics"
+    ],
+    "mathematical_formalization": "SupportTable = {n \\le 100 : verify(solution(n), n) = true}; regressions assert exact equality to the frozen table.",
+    "analogical_connections": [
+      "conformance test vectors",
+      "reference spectra in experimental chemistry"
+    ],
+    "implementation_hypothesis": "Encode the exact n<=100 support table in tests and fail on any silent drift.",
+    "experiment_seed": "Compare _supported_values(100) against the frozen 42/58 split after each change.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+        "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e"
+      }
+    ],
+    "novelty_claim": "The contribution is a reproducibility boundary around a partial constructive solver, not a search heuristic.",
+    "differentiation": "This is verifier-first artifact governance, whereas the cited search/algorithm papers optimize or characterize graph families.",
+    "folder_plan": [
+      "results/concept_evolve/tree/002_support_table_contract"
+    ]
+  },
+  {
+    "symbolic_name": "witness_provenance_ledger",
+    "description": "Track each supported n by witness source class so later claims can distinguish embedded exact payloads from theorem-backed algebraic constructions. This prevents provenance drift when the code base mixes exact data and constructive families.",
+    "domains": [
+      "research_metadata",
+      "graph_search"
+    ],
+    "mathematical_formalization": "Prov(n) \\in {small_exact, exact_graph6, exact_two_block, prime_power_family, unsupported}.",
+    "analogical_connections": [
+      "sample chain-of-custody",
+      "dataset lineage in ML pipelines"
+    ],
+    "implementation_hypothesis": "Emit a machine-readable provenance map and a source audit for every supported n.",
+    "experiment_seed": "Generate the provenance ledger over n<=100 and compare category counts before and after solver changes.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+        "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec"
+      }
+    ],
+    "novelty_claim": "The novelty is explicit provenance bookkeeping over mixed witness sources inside one deterministic artifact.",
+    "differentiation": "The cited papers provide constructions or algorithms; they do not provide repo-local witness lineage controls.",
+    "folder_plan": [
+      "results/concept_evolve/tree/003_witness_provenance_ledger"
+    ]
+  },
+  {
+    "symbolic_name": "four_vertex_lift_completion",
+    "description": "Attack coverage by holding a known witness on 4n-2 vertices fixed and solving only the incidences created by the four added vertices in the n->n+1 step. This narrows the search from all edges to a structured completion problem.",
+    "domains": [
+      "extremal_graph_theory",
+      "sat_ilp_search"
+    ],
+    "mathematical_formalization": "Given G_n on 4n-2 vertices, solve for E_old,new and E_new,new such that G_{n+1} avoids B_n and \\overline{G}_{n+1} avoids B_{n+1}.",
+    "analogical_connections": [
+      "matrix completion with hard constraints",
+      "incremental circuit ECO routing"
+    ],
+    "implementation_hypothesis": "Recover known steps 20->21 and 21->22 before trying 22->23.",
+    "experiment_seed": "Encode the restricted completion model and measure whether it reproduces known adjacent witnesses.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+        "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5"
+      }
+    ],
+    "novelty_claim": "The search object is the witness transition itself, not a fresh global search on each target n.",
+    "differentiation": "This is different from Paley repackaging because it uses adjacent exact witnesses as constraints, and different from the watchlist because it is a specialized completion problem for book-Ramsey witnesses.",
+    "folder_plan": [
+      "results/concept_evolve/tree/004_four_vertex_lift_completion"
+    ]
+  },
+  {
+    "symbolic_name": "exact_slack_certificate",
+    "description": "Score candidate edits by exact per-pair slack against the verifier rather than by approximate bad-book counts. The goal is to align search pressure with the yes/no witness certificate.",
+    "domains": [
+      "combinatorial_optimization",
+      "certificate_design"
+    ],
+    "mathematical_formalization": "slack(u,v)=min((n-2)-cn_G(u,v), (n-1)-cn_\\overline{G}(u,v)) with sign conditioned on edge/non-edge status.",
+    "analogical_connections": [
+      "barrier functions in constrained optimization",
+      "safety margins in structural engineering"
+    ],
+    "implementation_hypothesis": "Maintain exact slack histograms and improve the minimum slack first on hard unsupported instances.",
+    "experiment_seed": "Benchmark on n in {22,24,50} against surrogate bad-book objectives.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+        "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e"
+      }
+    ],
+    "novelty_claim": "The novelty is objective-function alignment with the exact verifier rather than stochastic score hacking.",
+    "differentiation": "The cited search-style work is about finding valid states; this idea is specifically about reparameterizing local search around verifier slack.",
+    "folder_plan": [
+      "results/concept_evolve/tree/005_exact_slack_certificate"
+    ]
+  },
+  {
+    "symbolic_name": "orbit_compressed_frontier",
+    "description": "Compress unsupported frontier cases with low-orbit templates only if exact witnesses exhibit symmetry signals. This keeps the symmetry lane evidence-driven instead of aesthetic.",
+    "domains": [
+      "group_actions",
+      "graph_search"
+    ],
+    "mathematical_formalization": "Search over orbit representatives of a group action H on V(G), minimizing free variables from O(|V|^2) to O(|E/H|).",
+    "analogical_connections": [
+      "crystallographic unit cells",
+      "factor graphs with tied parameters"
+    ],
+    "implementation_hypothesis": "Mine exact witnesses for orbit size patterns before spending any frontier budget on composite-order templates.",
+    "experiment_seed": "Estimate automorphism proxies and degree-repeat signatures for exact witnesses through n=22.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+        "paperId": "3da459173030065b5eb442f961be6f58d162ab48"
+      }
+    ],
+    "novelty_claim": "The novelty is gating symmetry compression on witness-bank evidence instead of assuming circulant structure by default.",
+    "differentiation": "This avoids both brute-force search and unearned algebraic template bias.",
+    "folder_plan": [
+      "results/concept_evolve/tree/006_orbit_compressed_frontier"
+    ]
+  },
+  {
+    "symbolic_name": "finite_field_family_boundary",
+    "description": "Use the existing prime-power family as a boundary condition rather than pretending it solves the unsupported frontier. The family becomes a calibration tool for what algebraic structure is already captured.",
+    "domains": [
+      "finite_fields",
+      "extremal_graph_theory"
+    ],
+    "mathematical_formalization": "If q=2n-1 is a prime power with q \\equiv 1 mod 4, emit the Paley-type two-block witness; otherwise do not extrapolate.",
+    "analogical_connections": [
+      "phase diagram boundary",
+      "validity region of a perturbation series"
+    ],
+    "implementation_hypothesis": "Keep theorem-backed family generation but surround it with explicit tests and unsupported-case refusal.",
+    "experiment_seed": "Regress the prime-power values in the frozen support table and ensure non-prime-power composites remain unsupported.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+        "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec"
+      }
+    ],
+    "novelty_claim": "The novelty is the discipline of using the family as a verified boundary, not as a rhetorical substitute for a general algorithm.",
+    "differentiation": "This is a framing/control idea, not a claim of a new infinite construction.",
+    "folder_plan": [
+      "results/concept_evolve/tree/007_finite_field_family_boundary"
+    ]
+  },
+  {
+    "symbolic_name": "archive_quarantine_gate",
+    "description": "Preserve the legacy archive for context while blocking it from the active execution path. This handles the user complaint that the old search tree mixed C and probabilistic code with the submission story.",
+    "domains": [
+      "software_supply_chain",
+      "reproducibility"
+    ],
+    "mathematical_formalization": "ActivePath \\cap LegacyPath = \u000barnothing for imports, tests, and published claim language.",
+    "analogical_connections": [
+      "biosafety containment",
+      "frozen calibration hardware kept off the production line"
+    ],
+    "implementation_hypothesis": "Document the root-vs-archive boundary and audit imports so legacy modules cannot leak into root tests or CLI paths.",
+    "experiment_seed": "Regenerate the repo map whenever new files appear and fail if the root path starts importing legacy modules.",
+    "closest_prior_art": [
+      {
+        "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+        "paperId": "3da459173030065b5eb442f961be6f58d162ab48"
+      },
+      {
+        "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+        "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec"
+      }
+    ],
+    "novelty_claim": "The novelty is operational quarantine around a research code base that mixes archive experiments with an active artifact.",
+    "differentiation": "The cited papers do not address repository-architecture risks; this concept does.",
+    "folder_plan": [
+      "results/concept_evolve/tree/008_archive_quarantine_gate"
+    ]
+  },
+  {
+    "symbolic_name": "deterministic_submission_dsl",
+    "description": "View the submission artifact as a tiny domain-specific language with only two commands: emit a verified adjacency string or reject unsupported input. This strips away any temptation to smuggle search policy into the solver interface.",
+    "domains": [
+      "program_synthesis",
+      "formal_methods"
+    ],
+    "mathematical_formalization": "API(n) := VerifiedWitness(n) | Unsupported(n); no latent search state enters the denotation.",
+    "analogical_connections": [
+      "total functions with an error monad",
+      "instrument controllers with guarded operating modes"
+    ],
+    "implementation_hypothesis": "Keep solver logic declarative and push exploration into separate scripts or archived tools.",
+    "experiment_seed": "AST-audit the root solver and fail if new imports or side-effectful execution paths appear.",
+    "closest_prior_art": [
+      {
+        "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+        "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5"
+      },
+      {
+        "title": "Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation",
+        "paperId": "ded242b5537f83a4173bee5afc2b7a5cbd03da3e"
+      }
+    ],
+    "novelty_claim": "The novelty is a submission-language discipline that turns correctness obligations into interface constraints.",
+    "differentiation": "This is about artifact design and proof obligations, not approximation or quantum search.",
+    "folder_plan": [
+      "results/concept_evolve/tree/009_deterministic_submission_dsl"
+    ]
+  },
+  {
+    "symbolic_name": "verifier_first_regression_harness",
+    "description": "Make the exact verifier the center of every regression, from sample witnesses to the full support table. This ensures future solver edits are measured by certified behavior rather than by search anecdotes.",
+    "domains": [
+      "software_testing",
+      "mathematical_verification"
+    ],
+    "mathematical_formalization": "Regression pass iff forall n in SupportedSet: verify(solution(n),n)=true and forall n in UnsupportedSet: solution(n) raises ValueError.",
+    "analogical_connections": [
+      "gold-standard assay panels",
+      "property-based testing with formal oracle checks"
+    ],
+    "implementation_hypothesis": "Expand tests from samples to the full frozen table and add import/codegen guards.",
+    "experiment_seed": "Run unittest plus the support sweep on every milestone commit.",
+    "closest_prior_art": [
+      {
+        "title": "Lower bounds for book Ramsey numbers",
+        "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+      },
+      {
+        "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+        "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5"
+      }
+    ],
+    "novelty_claim": "The novelty is a verifier-centered engineering workflow for a partial combinatorial construction artifact.",
+    "differentiation": "The mathematical sources justify constructions; this harness makes those constructions operationally auditable inside the repo.",
+    "folder_plan": [
+      "results/concept_evolve/tree/010_verifier_first_regression_harness"
+    ]
+  }
+]

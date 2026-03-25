@@ -1,0 +1,14 @@
+{
+  "topic": "active root solver must stay pure python deterministic and explicitly reject unsupported n instead of using c or probabilistic search",
+  "timestamp": "2026-03-25T01:15:26.323553+00:00",
+  "status": "completed",
+  "n_concepts": 10,
+  "n_graph_nodes": 20,
+  "n_graph_edges": 10,
+  "n_steering_directions": 3,
+  "tree": {
+    "concept_folder_count": 10,
+    "walk_path_count": 5,
+    "edge_count": 10
+  }
+}

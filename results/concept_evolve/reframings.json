@@ -1,0 +1,132 @@
+{
+  "problem": " have this code for this question:\nLet B_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\".\n\nFind an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of B_{n-1} and whose complement does not contain a copy of B_{n}.\n\nProvide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. The order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... For example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}.\n\nSolution format:\n* Write a Python script defining a function solution(n: int) -> str.\n* Do not include any code at the file level. You may include a main block for testing, but it will not be executed by the verifier.\n* For n <= 100, the algorithm must complete within 10 minutes when run on a typical laptop.\n\nmajor issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
+  "framings": [
+    {
+      "domain": "software_reliability",
+      "reframing": "The task is a release-engineering problem: ship only a deterministic, auditable solver interface and quarantine exploratory tooling.",
+      "key_insight": "Unsupported inputs are part of the contract, not a reason to smuggle in heuristics.",
+      "suggested_technique": "Import-hygiene tests plus explicit capability tables.",
+      "mapping_back": "Freeze the supported domain and reject all other n instead of falling back to stochastic/C code.",
+      "candidate_folder_name": "software_reliability_gate"
+    },
+    {
+      "domain": "formal_methods",
+      "reframing": "The solver is a partial function with proof obligations on its defined domain.",
+      "key_insight": "The important property is total honesty: verified output or explicit non-support.",
+      "suggested_technique": "Refinement-style API contract with verifier-backed tests.",
+      "mapping_back": "Treat ValueError as the defined result for unsupported n and verify all supported witnesses exactly.",
+      "candidate_folder_name": "partial_function_contract"
+    },
+    {
+      "domain": "incremental_optimization",
+      "reframing": "Coverage extension is an incremental completion problem from n to n+1 rather than a full restart.",
+      "key_insight": "Holding the old witness fixed drastically reduces the search space.",
+      "suggested_technique": "Restricted completion model over old-new and new-new incidences.",
+      "mapping_back": "Attempt 20->21 and 21->22 known-step recovery before frontier cases.",
+      "candidate_folder_name": "incremental_completion"
+    },
+    {
+      "domain": "constraint_programming",
+      "reframing": "Each candidate graph is a hard-constraint feasibility object with a sparse certificate structure.",
+      "key_insight": "Verifier slack gives better search guidance than aggregate heuristic penalties.",
+      "suggested_technique": "SAT/ILP with exact pair-slack diagnostics.",
+      "mapping_back": "Use exact slack repair on hard unsupported n like 24 and 50.",
+      "candidate_folder_name": "constraint_certificate_search"
+    },
+    {
+      "domain": "scientific_metadata",
+      "reframing": "Witnesses are specimens with provenance classes and chain-of-custody requirements.",
+      "key_insight": "Exact payloads, theorem-backed constructions, and unsupported values must never be conflated.",
+      "suggested_technique": "Machine-readable provenance ledger plus source audit.",
+      "mapping_back": "Track each n by witness class and keep unresolved external provenance explicit.",
+      "candidate_folder_name": "provenance_ledger"
+    },
+    {
+      "domain": "group_theory",
+      "reframing": "The frontier may be approachable through orbit compression only if the exact witness bank shows symmetry.",
+      "key_insight": "Symmetry should be earned from data, not assumed from algebraic aesthetics.",
+      "suggested_technique": "Orbit representatives and automorphism proxies.",
+      "mapping_back": "Mine degree repeats and pair-slack symmetries before any composite-order template search.",
+      "candidate_folder_name": "orbit_compression_gate"
+    },
+    {
+      "domain": "finite_field_modeling",
+      "reframing": "The prime-power branch is a validity region, not a universal construction.",
+      "key_insight": "Known algebraic families should serve as calibration boundaries.",
+      "suggested_technique": "Boundary-condition testing and explicit support separation.",
+      "mapping_back": "Keep Paley-type generation only where theorem-backed and do not extrapolate to composites.",
+      "candidate_folder_name": "family_boundary_model"
+    },
+    {
+      "domain": "benchmark_design",
+      "reframing": "The problem is a benchmark-governance issue where success metrics must reflect exact certification, not anecdotal search wins.",
+      "key_insight": "A frozen support table prevents soft overclaiming.",
+      "suggested_technique": "Milestone regressions with exact verifier oracles.",
+      "mapping_back": "Run the n<=100 support sweep on every milestone and report the full unsupported set.",
+      "candidate_folder_name": "benchmark_governance"
+    }
+  ],
+  "timestamp": "2026-03-25T01:17:15.446549+00:00",
+  "input_fingerprint": "46bc7d0a605170e4caebd15476c441b8a71dde961dbf5894cdc4300a996c689f",
+  "input_context": {
+    "command": "reframe",
+    "topic": "have this code for this question: let b_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\". find an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of b_{n-1} and whose complement does not contain a copy of b_{n}. provide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. the order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... for example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}. solution format: * write a python script defining a function solution(n: int) -> str. * do not include any code at the file level. you may include a main block for testing, but it will not be executed by the verifier. * for n <= 100, the algorithm must complete within 10 minutes when run on a typical laptop. major issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
+    "context": [
+      {
+        "path": "results/research_context.md",
+        "exists": true,
+        "sha256": "8bc4c5c1fa060359f79fc127dbacd1c3a8ef667a1129de71abcd50f544bd6a7a"
+      },
+      {
+        "path": "results/literature/prior_art_watchlist.md",
+        "exists": true,
+        "sha256": "132d6c81608b98f705cea53fabb8d7c38a81b5fd3eaa7f59ee02e6de745705b3"
+      },
+      {
+        "path": "results/literature/prior_art_gap.md",
+        "exists": true,
+        "sha256": "2dd93ab3a9763f286e5d39e289111a14aecebd9455a3e6ad6b520041430290f4"
+      },
+      {
+        "path": "results/literature/semantic_scholar_manifest.json",
+        "exists": true,
+        "sha256": "a339509334e62ea41e73a7fbcbfac8963bfbfbfe9b9ef99adece934ad2e48faa"
+      },
+      {
+        "path": "results/swarm/director_brief.md",
+        "exists": true,
+        "sha256": "9780d4e2fff11d88e14d219a665c10b7af3df55f23beb454efbf2f58f77b21d2"
+      },
+      {
+        "path": "results/swarm/hypotheses.json",
+        "exists": true,
+        "sha256": "7344b977eee2fc26e64e821648404d7038db62b4f9e176479a44a214aa1a766a"
+      },
+      {
+        "path": "results/swarm/tool_plan.md",
+        "exists": true,
+        "sha256": "018ad3662d51605e6a12fd62fc87fd9e7d2ee0dcf204a1b9226958a03c033037"
+      },
+      {
+        "path": "results/swarm/falsifier.md",
+        "exists": true,
+        "sha256": "fef9edaa07cb3846f5cfbffd3926d3a0809c7f37aa85232a13a83b3e99f25d42"
+      },
+      {
+        "path": "results/concept_evolve/probe_result.json",
+        "exists": true,
+        "sha256": "35aa715780d4f206881d65ca70b453e24487e986f19c707f7ee074bd4d533151"
+      },
+      {
+        "path": "results/concept_evolve/concept_delta.md",
+        "exists": true,
+        "sha256": "5f3ed86211a3fec31ed54716bf165c36c64527497e810dd7e192d0719b81b477"
+      },
+      {
+        "path": "results/verification/verification_summary.md",
+        "exists": true,
+        "sha256": "872ee4ce502cf9936e1f4397ef77d6754ff83fddac1dc7379a2b3da0b6b4346a"
+      }
+    ]
+  }
+}

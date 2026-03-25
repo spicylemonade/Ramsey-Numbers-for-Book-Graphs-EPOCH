@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "orbit_compressed_frontier",
+  "description": "Compress unsupported frontier cases with low-orbit templates only if exact witnesses exhibit symmetry signals. This keeps the symmetry lane evidence-driven instead of aesthetic.",
+  "domains": [
+    "group_actions",
+    "graph_search"
+  ],
+  "mathematical_formalization": "Search over orbit representatives of a group action H on V(G), minimizing free variables from O(|V|^2) to O(|E/H|).",
+  "analogical_connections": [
+    "crystallographic unit cells",
+    "factor graphs with tied parameters"
+  ],
+  "implementation_hypothesis": "Mine exact witnesses for orbit size patterns before spending any frontier budget on composite-order templates.",
+  "experiment_seed": "Estimate automorphism proxies and degree-repeat signatures for exact witnesses through n=22.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "String Graph Obstacles of High Girth and of Bounded Degree",
+      "paperId": "3da459173030065b5eb442f961be6f58d162ab48"
+    }
+  ],
+  "novelty_claim": "The novelty is gating symmetry compression on witness-bank evidence instead of assuming circulant structure by default.",
+  "differentiation": "This avoids both brute-force search and unearned algebraic template bias.",
+  "folder_plan": [
+    "results/concept_evolve/tree/006_orbit_compressed_frontier"
+  ],
+  "generated_at": "2026-03-25T01:15:26.318588+00:00",
+  "project_folder": "concept_evolve/tree/006_orbit-compressed-frontier"
+}

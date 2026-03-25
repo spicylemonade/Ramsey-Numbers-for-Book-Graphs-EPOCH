@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "witness_provenance_ledger",
+  "description": "Track each supported n by witness source class so later claims can distinguish embedded exact payloads from theorem-backed algebraic constructions. This prevents provenance drift when the code base mixes exact data and constructive families.",
+  "domains": [
+    "research_metadata",
+    "graph_search"
+  ],
+  "mathematical_formalization": "Prov(n) \\in {small_exact, exact_graph6, exact_two_block, prime_power_family, unsupported}.",
+  "analogical_connections": [
+    "sample chain-of-custody",
+    "dataset lineage in ML pipelines"
+  ],
+  "implementation_hypothesis": "Emit a machine-readable provenance map and a source audit for every supported n.",
+  "experiment_seed": "Generate the provenance ledger over n<=100 and compare category counts before and after solver changes.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "FSG: Fast String Graph Construction for De Novo Assembly",
+      "paperId": "5ed8abb9c608a39acb1f16640bd983ff6c271cec"
+    }
+  ],
+  "novelty_claim": "The novelty is explicit provenance bookkeeping over mixed witness sources inside one deterministic artifact.",
+  "differentiation": "The cited papers provide constructions or algorithms; they do not provide repo-local witness lineage controls.",
+  "folder_plan": [
+    "results/concept_evolve/tree/003_witness_provenance_ledger"
+  ],
+  "generated_at": "2026-03-25T01:15:26.316426+00:00",
+  "project_folder": "concept_evolve/tree/003_witness-provenance-ledger"
+}

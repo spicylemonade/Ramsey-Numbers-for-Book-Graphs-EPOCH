@@ -1,0 +1,26 @@
+{
+  "associations": [
+    "Treat unsupported values as first-class data, not exceptions to hide in logs.",
+    "Use provenance classes to stop theorem-backed families from being mistaken for general constructions.",
+    "A partial solver can still be scientifically clean if its refusal boundary is explicit and regression-tested."
+  ],
+  "blind_spots": [
+    "Exact external provenance for the graph6 payload bank is still unresolved in the repo.",
+    "The current concept set improves rigor but does not itself extend coverage beyond the known frontier.",
+    "Symmetry signals for unsupported frontier cases have not yet been mined from the exact witness bank."
+  ],
+  "anomaly_results": [
+    {
+      "constraint": "No archive files may be imported by the root path.",
+      "effect": "The solver remains deterministic but the legacy exploratory evidence must be treated as context only."
+    },
+    {
+      "constraint": "Unsupported values must raise immediately.",
+      "effect": "The artifact becomes honest and stable, but coverage claims must remain partial."
+    },
+    {
+      "constraint": "Frontier work must use the exact verifier as oracle.",
+      "effect": "Heuristic objective functions are demoted unless they improve exact slack or known-step recovery."
+    }
+  ]
+}

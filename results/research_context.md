@@ -4,8 +4,8 @@
 - Model: gpt-5.4
 - Codex model ref: openai/gpt-5.4
 - Reasoning effort: xhigh
-- Note: active root solver re-verified as Python-only and deterministic; concept_evolve helper patched so `evolve` no longer fails its `_run_sub_agent` call signature
-- Rubric progress: 0/25 completed
+- Note: active root solver re-verified as Python-only and deterministic; mandatory ConceptEvolve `evolve` / `probe` / `reframe` / `iterate` artifacts now exist
+- Rubric progress: 6/25 completed, 19/25 failed with explicit reasons
 - Known papers tracked: 29
 - `sources.bib` entries: 0
 - Swarm hypotheses: 3
@@ -15,6 +15,7 @@
 - `python -m unittest -v test_solution.py` passed with 5 tests on 2026-03-25 UTC.
 - `python solution.py --verify-supported --limit 100` confirmed the active root support split is still `42 supported / 58 unsupported`.
 - Root `solution.py` remains the active artifact; the `790a8891-d60d-46f1-8aef-84f720d59562_aristotle/` tree remains legacy-only context.
+- `results/concept_evolve/` now contains synthesized concept cards, probe results, reframings, and recurrent iteration outputs grounded in the verified repo state.
 
 ## Closest Prior Art
 - String Graph Obstacles of High Girth and of Bounded Degree (2025)

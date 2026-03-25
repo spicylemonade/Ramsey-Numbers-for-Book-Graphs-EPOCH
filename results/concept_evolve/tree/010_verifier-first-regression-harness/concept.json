@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "verifier_first_regression_harness",
+  "description": "Make the exact verifier the center of every regression, from sample witnesses to the full support table. This ensures future solver edits are measured by certified behavior rather than by search anecdotes.",
+  "domains": [
+    "software_testing",
+    "mathematical_verification"
+  ],
+  "mathematical_formalization": "Regression pass iff forall n in SupportedSet: verify(solution(n),n)=true and forall n in UnsupportedSet: solution(n) raises ValueError.",
+  "analogical_connections": [
+    "gold-standard assay panels",
+    "property-based testing with formal oracle checks"
+  ],
+  "implementation_hypothesis": "Expand tests from samples to the full frozen table and add import/codegen guards.",
+  "experiment_seed": "Run unittest plus the support sweep on every milestone commit.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+      "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5"
+    }
+  ],
+  "novelty_claim": "The novelty is a verifier-centered engineering workflow for a partial combinatorial construction artifact.",
+  "differentiation": "The mathematical sources justify constructions; this harness makes those constructions operationally auditable inside the repo.",
+  "folder_plan": [
+    "results/concept_evolve/tree/010_verifier_first_regression_harness"
+  ],
+  "generated_at": "2026-03-25T01:15:26.321872+00:00",
+  "project_folder": "concept_evolve/tree/010_verifier-first-regression-harness"
+}

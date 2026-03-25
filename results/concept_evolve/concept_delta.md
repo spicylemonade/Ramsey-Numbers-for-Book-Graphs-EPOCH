@@ -20,7 +20,9 @@
 - The active root solver remains Python-only and deterministic.
 - `python -m unittest -v test_solution.py` passes.
 - `python solution.py --verify-supported --limit 100` still verifies the `42 supported / 58 unsupported` split.
-- `concept_evolve evolve` now launches instead of failing immediately on a missing-arguments exception.
+- `concept_evolve evolve` no longer fails immediately on a missing-arguments exception and now has completed outputs on disk.
+- Mandatory `probe`, `reframe`, and `iterate` artifacts now exist in `results/concept_evolve/`.
+- The current recurrent champion bridge is `four_vertex_lift_completion`, with `exact_slack_certificate` retained as the promoted backup lane.
 
 ## Novelty Delta
 

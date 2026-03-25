@@ -1,0 +1,32 @@
+{
+  "symbolic_name": "four_vertex_lift_completion",
+  "description": "Attack coverage by holding a known witness on 4n-2 vertices fixed and solving only the incidences created by the four added vertices in the n->n+1 step. This narrows the search from all edges to a structured completion problem.",
+  "domains": [
+    "extremal_graph_theory",
+    "sat_ilp_search"
+  ],
+  "mathematical_formalization": "Given G_n on 4n-2 vertices, solve for E_old,new and E_new,new such that G_{n+1} avoids B_n and \\overline{G}_{n+1} avoids B_{n+1}.",
+  "analogical_connections": [
+    "matrix completion with hard constraints",
+    "incremental circuit ECO routing"
+  ],
+  "implementation_hypothesis": "Recover known steps 20->21 and 21->22 before trying 22->23.",
+  "experiment_seed": "Encode the restricted completion model and measure whether it reproduces known adjacent witnesses.",
+  "closest_prior_art": [
+    {
+      "title": "Lower bounds for book Ramsey numbers",
+      "paperId": "d61e6086c28e1653930edc995a4ee65bba6ebad6"
+    },
+    {
+      "title": "A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs",
+      "paperId": "934374f003767b2ff4e2860596098142b2fdb0b5"
+    }
+  ],
+  "novelty_claim": "The search object is the witness transition itself, not a fresh global search on each target n.",
+  "differentiation": "This is different from Paley repackaging because it uses adjacent exact witnesses as constraints, and different from the watchlist because it is a specialized completion problem for book-Ramsey witnesses.",
+  "folder_plan": [
+    "results/concept_evolve/tree/004_four_vertex_lift_completion"
+  ],
+  "generated_at": "2026-03-25T01:15:26.317047+00:00",
+  "project_folder": "concept_evolve/tree/004_four-vertex-lift-completion"
+}
