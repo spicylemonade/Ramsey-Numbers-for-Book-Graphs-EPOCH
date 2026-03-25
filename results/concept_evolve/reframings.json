@@ -1,81 +1,105 @@
 {
-  "problem": " have this code for this question:\nLet B_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\".\n\nFind an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of B_{n-1} and whose complement does not contain a copy of B_{n}.\n\nProvide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. The order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... For example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}.\n\nSolution format:\n* Write a Python script defining a function solution(n: int) -> str.\n* Do not include any code at the file level. You may include a main block for testing, but it will not be executed by the verifier.\n* For n <= 100, the algorithm must complete within 10 minutes when run on a typical laptop.\n\nmajor issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
+  "problem": "have this code for this question:\nLet B_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\".\n\nFind an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of B_{n-1} and whose complement does not contain a copy of B_{n}.\n\nProvide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. The order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... For example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}.\n\nSolution format:\n* Write a Python script defining a function .\n* Do not include any code at the file level. You may include a  block for testing, but it will not be executed by the verifier.\n* For n \u2264 100, the algorithm must complete within 10 minutes when run on a typical laptop.\n\nmajor issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
   "framings": [
     {
-      "domain": "software_reliability",
-      "reframing": "The task is a release-engineering problem: ship only a deterministic, auditable solver interface and quarantine exploratory tooling.",
-      "key_insight": "Unsupported inputs are part of the contract, not a reason to smuggle in heuristics.",
-      "suggested_technique": "Import-hygiene tests plus explicit capability tables.",
-      "mapping_back": "Freeze the supported domain and reject all other n instead of falling back to stochastic/C code.",
-      "candidate_folder_name": "software_reliability_gate"
+      "domain": "algebraic_graph_theory",
+      "reframing": "View the witness family as a Cayley or circulant graph problem: choose a symmetric generator set on a group of size 4n - 2 so that every difference class has tightly controlled codegree.",
+      "key_insight": "A triangular book is determined by common-neighbor counts, and in a Cayley graph those counts are algebraic correlation values of the generator set.",
+      "suggested_technique": "Deterministic Cayley or circulant constructions, optionally seeded by conference-matrix or Seidel-switching templates.",
+      "mapping_back": "Represent vertices by group elements, connect x to y when y - x lies in a symmetric set S, and choose S so every allowed difference has bounded correlation; the resulting rule emits adjacency bits in pure Python without randomized search.",
+      "candidate_folder_name": "cayley_circulant_construction"
     },
     {
-      "domain": "formal_methods",
-      "reframing": "The solver is a partial function with proof obligations on its defined domain.",
-      "key_insight": "The important property is total honesty: verified output or explicit non-support.",
-      "suggested_technique": "Refinement-style API contract with verifier-backed tests.",
-      "mapping_back": "Treat ValueError as the defined result for unsupported n and verify all supported witnesses exactly.",
-      "candidate_folder_name": "partial_function_contract"
+      "domain": "signal_processing",
+      "reframing": "Treat the graph as a periodic binary waveform wrapped around a circle, where a book violation is a large sidelobe in the correlation profile between shifts.",
+      "key_insight": "For circulant graphs, the number of common neighbors of a pair depends only on the periodic autocorrelation of the binary support sequence at the corresponding shift.",
+      "suggested_technique": "Low-autocorrelation binary sequences, cyclic difference sets, or Legendre-type sequence constructions from signal design.",
+      "mapping_back": "Build a symmetric binary sequence of length 4n - 2, use cyclic shifts to define adjacency, and exact-check whether every shift correlation stays below the B_{n-1} and B_n thresholds.",
+      "candidate_folder_name": "autocorrelation_sequence_design"
     },
     {
-      "domain": "incremental_optimization",
-      "reframing": "Coverage extension is an incremental completion problem from n to n+1 rather than a full restart.",
-      "key_insight": "Holding the old witness fixed drastically reduces the search space.",
-      "suggested_technique": "Restricted completion model over old-new and new-new incidences.",
-      "mapping_back": "Attempt 20->21 and 21->22 known-step recovery before frontier cases.",
-      "candidate_folder_name": "incremental_completion"
+      "domain": "combinatorial_design",
+      "reframing": "Neighborhoods become blocks in a partially balanced experiment, and forbidden books mean no pair of treatments may co-occur in too many blocks.",
+      "key_insight": "The problem naturally splits pairs into two classes, edge and nonedge, which matches the language of PBIB and quasi-symmetric designs with controlled intersection numbers.",
+      "suggested_technique": "Partially balanced incomplete block designs or quasi-symmetric 2-designs with two intersection numbers.",
+      "mapping_back": "Treat each vertex neighborhood as a block family, tune pairwise block intersections to mirror adjacent and nonadjacent codegree ceilings, then reconstruct a symmetric adjacency relation from the resulting incidence structure.",
+      "candidate_folder_name": "pbib_neighborhood_design"
+    },
+    {
+      "domain": "coding_theory",
+      "reframing": "Each row of the adjacency matrix is a binary codeword, and avoiding books means keeping pairwise overlaps of codewords under tight control.",
+      "key_insight": "Two-weight codes and bounded-intersection code families already package the same requirement of many binary vectors with limited mutual overlap.",
+      "suggested_technique": "Two-weight linear codes, constant-weight codes, and association-scheme bounds on pairwise intersections.",
+      "mapping_back": "Use a code family whose distance distribution takes only a few values, derive a graph from codewords or cosets, and translate overlap bounds into exact common-neighbor bounds before serializing the graph as the adjacency string.",
+      "candidate_folder_name": "two_weight_code_graphs"
+    },
+    {
+      "domain": "discrete_geometry",
+      "reframing": "Encode the graph by a plus-minus-one Seidel matrix and read its rows as vectors on a sphere; the search becomes one for a two-distance point set with controlled inner products.",
+      "key_insight": "Common-neighbor counts are affine transforms of row inner products, so spherical-code constraints speak directly to book suppression.",
+      "suggested_technique": "Spherical two-distance codes, equiangular-line constructions, or Gram-matrix search guided by Welch-type bounds.",
+      "mapping_back": "Search for a symmetric plus-minus-one matrix with acceptable off-diagonal inner products, decode the sign pattern back into edges, and emit the upper-triangular adjacency bits deterministically in Python.",
+      "candidate_folder_name": "spherical_code_rows"
+    },
+    {
+      "domain": "discrepancy_theory",
+      "reframing": "The rejected probabilistic solver is really a discrepancy-balancing argument waiting to be made constructive.",
+      "key_insight": "Random half-dense graphs work because pairwise correlations concentrate near expectation; discrepancy methods turn that concentration into deterministic edge decisions.",
+      "suggested_technique": "Method of conditional probabilities with pessimistic estimators, optionally supported by limited-independence generators.",
+      "mapping_back": "Expose edge variables one by one, always choosing the bit that keeps the estimated worst codegree violation smallest in G and its complement, so the final output is deterministic rather than Monte Carlo.",
+      "candidate_folder_name": "conditional_expectation_derandomization"
     },
     {
       "domain": "constraint_programming",
-      "reframing": "Each candidate graph is a hard-constraint feasibility object with a sparse certificate structure.",
-      "key_insight": "Verifier slack gives better search guidance than aggregate heuristic penalties.",
-      "suggested_technique": "SAT/ILP with exact pair-slack diagnostics.",
-      "mapping_back": "Use exact slack repair on hard unsupported n like 24 and 50.",
-      "candidate_folder_name": "constraint_certificate_search"
+      "reframing": "Model the task as an exact Boolean feasibility problem over the upper triangle of the adjacency matrix.",
+      "key_insight": "A book centered on a pair {u,v} is just a cardinality constraint on shared neighbors, so the full specification is SAT and CP native.",
+      "suggested_technique": "CP-SAT or SAT encoding with lex-leader symmetry breaking or SAT-modulo-symmetries.",
+      "mapping_back": "Create one Boolean variable per edge, add constraints bounding common neighbors for each pair in G and its complement, break vertex-permutation symmetry, and serialize any satisfying assignment as the requested string.",
+      "candidate_folder_name": "symmetry_broken_sat_search"
     },
     {
-      "domain": "scientific_metadata",
-      "reframing": "Witnesses are specimens with provenance classes and chain-of-custody requirements.",
-      "key_insight": "Exact payloads, theorem-backed constructions, and unsupported values must never be conflated.",
-      "suggested_technique": "Machine-readable provenance ledger plus source audit.",
-      "mapping_back": "Track each n by witness class and keep unresolved external provenance explicit.",
-      "candidate_folder_name": "provenance_ledger"
+      "domain": "quasirandomness",
+      "reframing": "Seek a density one-half pseudorandom graph with no large codegree spikes on either edges or nonedges.",
+      "key_insight": "Book size is exactly an edge-side or nonedge-side codegree spike, so quasirandomness criteria turn the ban into spectral or jumbledness targets.",
+      "suggested_technique": "Expander-mixing or jumbledness analysis together with Chung-Graham-Wilson style quasirandom criteria.",
+      "mapping_back": "Search deterministic regular or near-regular graph families whose second eigenvalue or codegree discrepancy forces all common-neighbor counts into the safe range, then emit that family by formula in pure Python.",
+      "candidate_folder_name": "quasirandom_codegree_control"
     },
     {
-      "domain": "group_theory",
-      "reframing": "The frontier may be approachable through orbit compression only if the exact witness bank shows symmetry.",
-      "key_insight": "Symmetry should be earned from data, not assumed from algebraic aesthetics.",
-      "suggested_technique": "Orbit representatives and automorphism proxies.",
-      "mapping_back": "Mine degree repeats and pair-slack symmetries before any composite-order template search.",
-      "candidate_folder_name": "orbit_compression_gate"
+      "domain": "formal_methods",
+      "reframing": "The real deliverable is not a lucky witness but a certified pure-Python function with an explicit correctness contract.",
+      "key_insight": "Because the failure mode was mixed-language heuristics, the right abstraction is synthesis plus proof obligation rather than one-off search.",
+      "suggested_technique": "Counterexample-guided inductive synthesis, solver-aided programming, or proof-carrying witness generation.",
+      "mapping_back": "Sketch a Python constructor family, use forbidden-book counterexamples to refine it, and ship the final function together with an exact verifier over every emitted instance.",
+      "candidate_folder_name": "cegis_verified_python"
     },
     {
-      "domain": "finite_field_modeling",
-      "reframing": "The prime-power branch is a validity region, not a universal construction.",
-      "key_insight": "Known algebraic families should serve as calibration boundaries.",
-      "suggested_technique": "Boundary-condition testing and explicit support separation.",
-      "mapping_back": "Keep Paley-type generation only where theorem-backed and do not extrapolate to composites.",
-      "candidate_folder_name": "family_boundary_model"
+      "domain": "network_science",
+      "reframing": "Books are edge-centered triangle motifs, so the task becomes motif engineering under a simultaneous complement-side cap.",
+      "key_insight": "Local edge switches can sharply reduce the worst spine-triangle multiplicity without discarding a globally regular seed structure.",
+      "suggested_technique": "Triangle-switch or motif-aware edge-swap neighborhoods with exact acceptance rules.",
+      "mapping_back": "Start from a deterministic regular or circulant seed, apply only deterministic switches that strictly reduce the maximum book count in G or its complement, and stop only when the exact checker passes.",
+      "candidate_folder_name": "motif_switch_repair"
     },
     {
-      "domain": "benchmark_design",
-      "reframing": "The problem is a benchmark-governance issue where success metrics must reflect exact certification, not anecdotal search wins.",
-      "key_insight": "A frozen support table prevents soft overclaiming.",
-      "suggested_technique": "Milestone regressions with exact verifier oracles.",
-      "mapping_back": "Run the n<=100 support sweep on every milestone and report the full unsupported set.",
-      "candidate_folder_name": "benchmark_governance"
+      "domain": "cryptography",
+      "reframing": "Choose adjacency from a Boolean function engineered for flat correlation rather than from ad hoc search.",
+      "key_insight": "Bent and plateaued Boolean functions are designed to suppress derivative and correlation spikes, and their Cayley graphs inherit very regular common-neighbor structure.",
+      "suggested_technique": "Bent or plateaued Boolean functions followed by Cayley-graph construction on F_2^m or related groups.",
+      "mapping_back": "Generate edges by evaluating a Boolean function on vertex differences or labels, exploit bitwise Python implementation for speed, and use exact checks or small deterministic gadgets to adapt the family to order 4n - 2.",
+      "candidate_folder_name": "boolean_function_cayley"
     }
   ],
-  "timestamp": "2026-03-25T01:17:15.446549+00:00",
-  "input_fingerprint": "46bc7d0a605170e4caebd15476c441b8a71dde961dbf5894cdc4300a996c689f",
+  "timestamp": "2026-03-25T01:54:42.916173+00:00",
+  "input_fingerprint": "8abc61572b23b1a8badb53132698c42293745836cde1dd7006cca8086c074453",
   "input_context": {
     "command": "reframe",
-    "topic": "have this code for this question: let b_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\". find an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of b_{n-1} and whose complement does not contain a copy of b_{n}. provide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. the order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... for example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}. solution format: * write a python script defining a function solution(n: int) -> str. * do not include any code at the file level. you may include a main block for testing, but it will not be executed by the verifier. * for n <= 100, the algorithm must complete within 10 minutes when run on a typical laptop. major issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
+    "topic": "have this code for this question: let b_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\". find an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of b_{n-1} and whose complement does not contain a copy of b_{n}. provide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. the order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... for example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}. solution format: * write a python script defining a function . * do not include any code at the file level. you may include a block for testing, but it will not be executed by the verifier. * for n \u2264 100, the algorithm must complete within 10 minutes when run on a typical laptop. major issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
     "context": [
       {
         "path": "results/research_context.md",
         "exists": true,
-        "sha256": "8bc4c5c1fa060359f79fc127dbacd1c3a8ef667a1129de71abcd50f544bd6a7a"
+        "sha256": "68060733b7d5caab71df29f08b155209f0db3f760ea524d42050592091f17e0f"
       },
       {
         "path": "results/literature/prior_art_watchlist.md",
@@ -90,7 +114,7 @@
       {
         "path": "results/literature/semantic_scholar_manifest.json",
         "exists": true,
-        "sha256": "a339509334e62ea41e73a7fbcbfac8963bfbfbfe9b9ef99adece934ad2e48faa"
+        "sha256": "e37a53939fabb4e5f9e155aa25393ed7a6dbfb60f7635d0fb35c4ba5e2e8c9bd"
       },
       {
         "path": "results/swarm/director_brief.md",
@@ -115,12 +139,12 @@
       {
         "path": "results/concept_evolve/probe_result.json",
         "exists": true,
-        "sha256": "35aa715780d4f206881d65ca70b453e24487e986f19c707f7ee074bd4d533151"
+        "sha256": "8c9b1f92cfe3509b8ba810c5026f44f8a0e5bd54a885ee5a122d0c76a32bd25a"
       },
       {
         "path": "results/concept_evolve/concept_delta.md",
         "exists": true,
-        "sha256": "5f3ed86211a3fec31ed54716bf165c36c64527497e810dd7e192d0719b81b477"
+        "sha256": "914e626c7e3eb865973d92123c3550599c1e719de7c7215e204429819a5f2834"
       },
       {
         "path": "results/verification/verification_summary.md",

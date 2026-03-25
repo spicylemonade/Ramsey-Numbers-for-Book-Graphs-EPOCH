@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "witness_provenance_controls",
+  "description": "Track where every supported witness comes from and which entries still lack external provenance.",
+  "domains": [
+    "provenance",
+    "verification"
+  ],
+  "implementation_hypothesis": "Makes hidden provenance debt visible instead of silently trusting embedded strings.",
+  "easiest_falsifier": "Any supported witness presented as externally sourced without a citation trail.",
+  "first_experiment": "Machine-readable provenance map plus source audit.",
+  "overlap_risk": "Low novelty, but critical to claim hygiene.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_2_baseline/witness_provenance_controls"
+}

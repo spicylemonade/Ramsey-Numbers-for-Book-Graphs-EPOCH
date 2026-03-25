@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "pair_slack_repair",
+  "description": "Optimize exact per-pair slack against the verifier.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Changes the objective, not the family.",
+  "easiest_falsifier": "No win on 22/24/50.",
+  "first_experiment": "Two-block hill-climb benchmark.",
+  "overlap_risk": "High overlap with heuristic tuning.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_3_hypotheses/pair_slack_repair"
+}

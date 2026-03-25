@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "dsl_program_synthesis",
+  "description": "Treat witness families as synthesis targets only after enough exact patterns are mined.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Frames constructions as small programs rather than large tables.",
+  "easiest_falsifier": "No stable repeated grammar in witness bank.",
+  "first_experiment": "Mine witness features and short-rule candidates first.",
+  "overlap_risk": "High overlap with superficial code compression unless real recurrence appears.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_3_hypotheses/dsl_program_synthesis"
+}

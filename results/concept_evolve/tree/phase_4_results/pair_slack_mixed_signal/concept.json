@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "pair_slack_mixed_signal",
+  "description": "Exact slack improves worst-case margin on 24 and 50 but does not produce a valid witness.",
+  "domains": [
+    "experiments",
+    "search"
+  ],
+  "implementation_hypothesis": "Captures a mixed empirical signal instead of a false success narrative.",
+  "easiest_falsifier": "A verifier-accepted witness on 24 or 50 from the same baseline.",
+  "first_experiment": "Deterministic two-block benchmark on 22, 24, 50.",
+  "overlap_risk": "Moderate overlap with heuristic tuning.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_4_results/pair_slack_mixed_signal"
+}

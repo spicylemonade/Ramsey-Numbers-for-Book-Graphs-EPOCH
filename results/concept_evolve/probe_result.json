@@ -60,16 +60,16 @@
     "Any new search objective must improve exact verifier slack or coverage, not only heuristic scores.",
     "Coverage claims must be backed by an updated support table over n<=100."
   ],
-  "sub_problem": "How can coverage extend beyond the exact witness bank and prime-power family without reintroducing stochastic search?",
-  "input_fingerprint": "7aca5f20cc8c1e8317c1a3207b8182281e10af8c26e5dddccdbd02658102bf25",
+  "sub_problem": "Can a deterministic 2-block-circulant exact search or construction cover the unsupported almost-diagonal cases n=23,24,50,100 and then extend to all n<=100 without probabilistic fallback?",
+  "input_fingerprint": "9559ea3521733ecea94c10c10880bb27d8a6e3b5f4f61474b33ea7ec66ca3fdb",
   "input_context": {
     "command": "probe",
-    "topic": "how can coverage extend beyond the exact witness bank and prime-power family without reintroducing stochastic search?",
+    "topic": "can a deterministic 2-block-circulant exact search or construction cover the unsupported almost-diagonal cases n=23,24,50,100 and then extend to all n<=100 without probabilistic fallback?",
     "context": [
       {
         "path": "results/research_context.md",
         "exists": true,
-        "sha256": "8bc4c5c1fa060359f79fc127dbacd1c3a8ef667a1129de71abcd50f544bd6a7a"
+        "sha256": "68060733b7d5caab71df29f08b155209f0db3f760ea524d42050592091f17e0f"
       },
       {
         "path": "results/literature/prior_art_watchlist.md",
@@ -128,5 +128,5 @@
       }
     ]
   },
-  "timestamp": "2026-03-25T01:16:21.362881+00:00"
+  "timestamp": "2026-03-25T01:33:27.886093+00:00"
 }

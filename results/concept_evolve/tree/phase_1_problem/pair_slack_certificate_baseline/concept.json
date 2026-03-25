@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "pair_slack_certificate_baseline",
+  "description": "Use exact verifier-aligned pair slack as the repair objective instead of heuristic bad-count surrogates.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Changes the search score to the exact per-pair certificate margin.",
+  "easiest_falsifier": "No verifier-aligned win over a surrogate baseline on 22, 24, and 50.",
+  "first_experiment": "Deterministic hill-climb benchmark in the two-block family.",
+  "overlap_risk": "High overlap with heuristic retuning if the benchmark does not improve frontier margins.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_1_problem/pair_slack_certificate_baseline"
+}

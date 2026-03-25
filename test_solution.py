@@ -138,6 +138,10 @@ class SolutionTests(unittest.TestCase):
         self.assertEqual(supported, EXPECTED_SUPPORTED_UP_TO_100)
         self.assertEqual(unsupported, EXPECTED_UNSUPPORTED_UP_TO_100)
 
+    def test_solution_module_is_repo_root_solution_file(self) -> None:
+        expected = Path(__file__).resolve().with_name("solution.py")
+        self.assertEqual(Path(solver.__file__).resolve(), expected)
+
     def test_solution_module_has_pure_python_import_hygiene(self) -> None:
         source = Path(solver.__file__).read_text()
         tree = ast.parse(source)

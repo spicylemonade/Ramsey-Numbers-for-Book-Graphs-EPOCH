@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "sdp_seeding",
+  "description": "Use semidefinite or spectral seeds only if they improve exact slack downstream.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Introduces a different seed generator, not a new certificate.",
+  "easiest_falsifier": "No measurable improvement in exact slack search.",
+  "first_experiment": "Seed the exact-slack baseline, not a stand-alone claim.",
+  "overlap_risk": "High overlap with generic continuous relaxations.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_3_hypotheses/sdp_seeding"
+}

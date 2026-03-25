@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "archive_contamination_risk",
+  "description": "Treat legacy C and stochastic files as evidence hazards rather than active execution assets.",
+  "domains": [
+    "software_engineering",
+    "verification"
+  ],
+  "implementation_hypothesis": "Turns repository hygiene into an explicit benchmark control.",
+  "easiest_falsifier": "Any report that treats archive search output as evidence about the active root solver.",
+  "first_experiment": "Baseline audit comparing root behavior and archive behavior side by side.",
+  "overlap_risk": "Low novelty, high review importance.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_2_baseline/archive_contamination_risk"
+}

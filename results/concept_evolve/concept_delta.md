@@ -2,29 +2,29 @@
 
 ## Suggestion
 
-- Keep the active root solver purely Python and deterministic.
-- Treat unsupported inputs as explicit failures instead of reviving mixed-language or probabilistic fallback.
-- Repair the mandatory `concept_evolve` tooling so structured exploration can actually run.
+- Mine the verified witness bank for structure before spending more search budget.
+- Kill the fixed-old-graph four-vertex lift quickly if it cannot recover known steps.
+- Benchmark an exact verifier-aligned pair-slack objective against the archived surrogate-style baseline before entertaining more elaborate repair ideas.
 
 ## Implementation
 
-- Patched `.archivara/concept_evolve.py` so `evolve()` now passes the required `command`, `fingerprint`, `topic`, and `watched_paths` arguments into `_run_sub_agent()`.
-- Added stronger root regressions in `test_solution.py`:
-  - full supported/unsupported table check for `n <= 100`,
-  - AST-based import hygiene,
-  - existing no-codegen/no-random fallback check.
-- Added repo and verification artifacts that separate the root artifact from the archived legacy search tree.
+- Added `book_research.py` with deterministic `features`, `lift`, and `pair-slack` experiment entry points.
+- Ran exact known-step lift experiments on `20 -> 21` and `21 -> 22`.
+- Ran deterministic pair-slack benchmarks on `n = 22`, `24`, and `50` in both exact and surrogate modes.
+- Strengthened `test_solution.py` with an explicit repo-root module path assertion.
+- Fixed the feature/provenance consistency issue so `results/analysis/exact_witness_features.json` now tags `n = 3` as `prime_power_family`.
 
 ## Result
 
 - The active root solver remains Python-only and deterministic.
 - `python -m unittest -v test_solution.py` passes.
 - `python solution.py --verify-supported --limit 100` still verifies the `42 supported / 58 unsupported` split.
-- `concept_evolve evolve` no longer fails immediately on a missing-arguments exception and now has completed outputs on disk.
-- Mandatory `probe`, `reframe`, and `iterate` artifacts now exist in `results/concept_evolve/`.
-- The current recurrent champion bridge is `four_vertex_lift_completion`, with `exact_slack_certificate` retained as the promoted backup lane.
+- The fixed-old-graph four-vertex lift failed both known-step recovery targets and is killed in its current form.
+- The exact pair-slack objective improved worst-case slack on `24` and `50`, but did not produce a new verified witness.
+- The post-verification `concept_evolve iterate` pass promoted `exact_slack_certificate` as the recurrent champion bridge.
+- Coverage did not move beyond the existing deterministic support table.
 
 ## Novelty Delta
 
-- No algorithmic novelty claim is added by this patch set.
-- The contribution here is correctness and tooling hygiene: the repo no longer relies on hidden stochastic/C fallback in the active path, and the concept-exploration helper is no longer broken at launch.
+- No new constructive all-`n` result was obtained.
+- The only defensible novelty delta from this pass is negative-space evidence: the fixed-old completion lane fails its own known-step gate, and exact slack is somewhat more verifier-aligned than the surrogate objective without yet changing the frontier.

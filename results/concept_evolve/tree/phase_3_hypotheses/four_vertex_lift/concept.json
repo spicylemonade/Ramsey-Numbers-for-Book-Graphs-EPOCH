@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "four_vertex_lift",
+  "description": "Use fixed-old-graph completion over old-new/new-new incidences.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Searches adjacent witness transitions instead of full witnesses.",
+  "easiest_falsifier": "Fail 20->21 and 21->22 recovery.",
+  "first_experiment": "Exact CP-SAT completion.",
+  "overlap_risk": "Moderate overlap with SAT/IP search.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_3_hypotheses/four_vertex_lift"
+}

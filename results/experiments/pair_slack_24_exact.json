@@ -1,0 +1,176 @@
+{
+  "n": 24,
+  "mode": "exact",
+  "runtime_seconds": 5.13,
+  "verifier_calls": 3,
+  "final_metrics": {
+    "min_slack": -2,
+    "violation_count": 48,
+    "total_negative_excess": 68,
+    "verified": false,
+    "verify_message": "edge (0,1) has 23 common neighbors",
+    "worst_constraints": [
+      {
+        "constraint": "edge_l0_2",
+        "slack": -2
+      },
+      {
+        "constraint": "edge_l0_3",
+        "slack": -2
+      },
+      {
+        "constraint": "edge_l0_44",
+        "slack": -2
+      },
+      {
+        "constraint": "edge_l0_45",
+        "slack": -2
+      },
+      {
+        "constraint": "edge_l1_14",
+        "slack": -2
+      }
+    ]
+  },
+  "d11": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    20,
+    22,
+    25,
+    27,
+    36,
+    37,
+    38,
+    39,
+    41,
+    42,
+    44,
+    45,
+    46
+  ],
+  "d12": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    12,
+    14,
+    16,
+    17,
+    18,
+    21,
+    24,
+    25,
+    27,
+    28,
+    32,
+    34,
+    36,
+    37,
+    42
+  ],
+  "timeline": [
+    {
+      "round": 0,
+      "min_slack": -9,
+      "violation_count": 40,
+      "total_negative_excess": 184,
+      "verified": false,
+      "verify_message": "edge (0,1) has 31 common neighbors",
+      "worst_constraints": [
+        {
+          "constraint": "edge_l0_1",
+          "slack": -9
+        },
+        {
+          "constraint": "edge_l0_46",
+          "slack": -9
+        },
+        {
+          "constraint": "nonedge_l1_1",
+          "slack": -9
+        },
+        {
+          "constraint": "nonedge_l1_46",
+          "slack": -9
+        },
+        {
+          "constraint": "edge_l0_2",
+          "slack": -8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "min_slack": -5,
+      "violation_count": 32,
+      "total_negative_excess": 84,
+      "verified": false,
+      "verify_message": "edge (0,1) has 27 common neighbors",
+      "worst_constraints": [
+        {
+          "constraint": "edge_l0_1",
+          "slack": -5
+        },
+        {
+          "constraint": "edge_l0_46",
+          "slack": -5
+        },
+        {
+          "constraint": "edge_l1_4",
+          "slack": -5
+        },
+        {
+          "constraint": "edge_l1_43",
+          "slack": -5
+        },
+        {
+          "constraint": "nonedge_l0_4",
+          "slack": -5
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "min_slack": -2,
+      "violation_count": 48,
+      "total_negative_excess": 68,
+      "verified": false,
+      "verify_message": "edge (0,1) has 23 common neighbors",
+      "worst_constraints": [
+        {
+          "constraint": "edge_l0_2",
+          "slack": -2
+        },
+        {
+          "constraint": "edge_l0_3",
+          "slack": -2
+        },
+        {
+          "constraint": "edge_l0_44",
+          "slack": -2
+        },
+        {
+          "constraint": "edge_l0_45",
+          "slack": -2
+        },
+        {
+          "constraint": "edge_l1_14",
+          "slack": -2
+        }
+      ]
+    }
+  ]
+}

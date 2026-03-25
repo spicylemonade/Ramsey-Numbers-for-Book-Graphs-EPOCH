@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "four_vertex_lift_known_step_recovery",
+  "description": "Test whether a verified witness for n can be completed to a verified witness for n+1 by adding exactly four vertices and solving only the new incidences.",
+  "domains": [
+    "combinatorics",
+    "constraint_programming"
+  ],
+  "implementation_hypothesis": "Changes the search object from full witness generation to fixed-old-graph completion.",
+  "easiest_falsifier": "Infeasible or timeout on the known steps 20->21 and 21->22.",
+  "first_experiment": "Exact CP-SAT completion with the old witness frozen.",
+  "overlap_risk": "Moderate overlap with SAT/IP search, but still different in object and variables.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_1_problem/four_vertex_lift_known_step_recovery"
+}

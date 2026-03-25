@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "composite_order_orbit_templates",
+  "description": "Gate any composite-order orbit search behind actual symmetry evidence from the exact witness bank.",
+  "domains": [
+    "combinatorics",
+    "group_actions"
+  ],
+  "implementation_hypothesis": "Targets unsupported composite cases as design objects rather than stretching the prime-power Paley lane.",
+  "easiest_falsifier": "No stable low-orbit signal beyond the solved parity structure in the exact bank.",
+  "first_experiment": "Read off WL/orbit proxies from the n<=22 witness bank before any implementation budget.",
+  "overlap_risk": "Overlaps with cyclic and block-circulant work if not constrained tightly.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_1_problem/composite_order_orbit_templates"
+}

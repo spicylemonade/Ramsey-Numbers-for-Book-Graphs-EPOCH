@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "frontier_blockers_n50",
+  "description": "The benchmark frontier still blocks a general claim because n=50 remains unsolved here.",
+  "domains": [
+    "benchmarking",
+    "combinatorics"
+  ],
+  "implementation_hypothesis": "Keeps the real frontier visible instead of averaging it away.",
+  "easiest_falsifier": "A verified 50 witness or a theorem-backed family covering it.",
+  "first_experiment": "Stress the backup lane on n=50 and report exact margins.",
+  "overlap_risk": "Low novelty, strong benchmark value.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_4_results/frontier_blockers_n50"
+}

@@ -1,0 +1,144 @@
+{
+  "n": 22,
+  "mode": "surrogate",
+  "runtime_seconds": 1.832,
+  "verifier_calls": 2,
+  "final_metrics": {
+    "min_slack": 0,
+    "violation_count": 0,
+    "total_negative_excess": 0,
+    "verified": true,
+    "verify_message": "ok",
+    "worst_constraints": [
+      {
+        "constraint": "edge_cross_0",
+        "slack": 0
+      },
+      {
+        "constraint": "edge_cross_1",
+        "slack": 0
+      },
+      {
+        "constraint": "edge_cross_10",
+        "slack": 0
+      },
+      {
+        "constraint": "edge_cross_11",
+        "slack": 0
+      },
+      {
+        "constraint": "edge_cross_12",
+        "slack": 0
+      }
+    ]
+  },
+  "d11": [
+    4,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    19,
+    21,
+    22,
+    24,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    36,
+    37,
+    39
+  ],
+  "d12": [
+    0,
+    1,
+    3,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    14,
+    17,
+    24,
+    25,
+    26,
+    28,
+    29,
+    30,
+    34,
+    35,
+    38,
+    41
+  ],
+  "timeline": [
+    {
+      "round": 0,
+      "min_slack": 0,
+      "violation_count": 0,
+      "total_negative_excess": 0,
+      "verified": true,
+      "verify_message": "ok",
+      "worst_constraints": [
+        {
+          "constraint": "edge_cross_0",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_1",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_10",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_11",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_12",
+          "slack": 0
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "min_slack": 0,
+      "violation_count": 0,
+      "total_negative_excess": 0,
+      "verified": true,
+      "verify_message": "ok",
+      "worst_constraints": [
+        {
+          "constraint": "edge_cross_0",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_1",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_10",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_11",
+          "slack": 0
+        },
+        {
+          "constraint": "edge_cross_12",
+          "slack": 0
+        }
+      ]
+    }
+  ]
+}

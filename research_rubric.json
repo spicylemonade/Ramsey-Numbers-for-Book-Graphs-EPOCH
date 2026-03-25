@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-03-25T00:59:17.846439+00:00",
-  "updated_at": "2026-03-25T01:19:00+00:00",
+  "updated_at": "2026-03-25T02:14:28.242364+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -55,25 +55,25 @@
           "id": "item_003",
           "description": "Repair and extend the literature snapshot using targeted web search instead of restarting from zero.",
           "acceptance_criteria": "Update `results/literature/literature_snapshot.json` in place by extending the existing snapshot; use web search plus `.archivara/semantic_scholar.py` to add at least 10 problem-local sources and at least 2 relevant code or benchmark artifacts on triangular/book Ramsey graphs, exact witnesses, SAT/IP search, or circulant/block constructions; preserve prior entries with drift notes rather than deleting history.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not repair `results/literature/literature_snapshot.json` or add the required 10+ problem-local sources in this pass."
+          "status": "completed",
+          "notes": "Repaired `results/literature/literature_snapshot.json` with 12 problem-local sources, 3 consulted code/benchmark artifacts, preserved drift history, and reused the Semantic Scholar memory plus targeted web artifacts.",
+          "error": null
         },
         {
           "id": "item_004",
           "description": "Create the bibliography and keep the prior-art gap log current.",
           "acceptance_criteria": "`sources.bib` exists at repo root with at least 10 relevant BibTeX entries drawn from consulted sources; `results/literature/prior_art_gap.md` is updated after the literature pass and after each major experimental milestone with differentiation notes, evidence artifacts, and pivot decisions for the named watchlist papers plus at least 3 book-Ramsey-local papers.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not create `sources.bib` or keep `results/literature/prior_art_gap.md` current with problem-local citations."
+          "status": "completed",
+          "notes": "Created `sources.bib` with 19 entries and updated `results/literature/prior_art_gap.md` with named watchlist comparisons, book-Ramsey-local differentiation, and post-experiment pivot notes.",
+          "error": null
         },
         {
           "id": "item_005",
           "description": "Run a Codex multi-agent Phase 1 literature and concept-tree synthesis.",
           "acceptance_criteria": "Delegate a bounded Phase 1 pass using `explorer`, `citation_auditor`, `novelty_checker`, and `integrator`; write `results/literature/prior_art_review.md`; create at least 3 concept cards under `results/concept_evolve/tree/phase_1_problem/`; include an explicit note comparing the planned direction against `String Graph Obstacles of High Girth and of Bounded Degree (2025)`, `Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation (2025)`, `FSG: Fast String Graph Construction for De Novo Assembly (2016)`, and `A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs (2024)`.",
-          "status": "failed",
-          "notes": null,
-          "error": "Created ConceptEvolve artifacts, but did not run the specified multi-agent Phase 1 pass or produce `results/literature/prior_art_review.md` and `tree/phase_1_problem/` outputs."
+          "status": "completed",
+          "notes": "Ran a bounded multi-agent Phase 1 literature synthesis, wrote `results/literature/prior_art_review.md`, and created the required `results/concept_evolve/tree/phase_1_problem/` concept cards.",
+          "error": null
         }
       ]
     },
@@ -110,17 +110,17 @@
           "id": "item_009",
           "description": "Mine baseline structural features from the verified witness bank.",
           "acceptance_criteria": "Create `results/analysis/exact_witness_features.json` covering all supported exact witnesses through `n=22`; include degree multisets, saturated pair counts, pair-slack histograms, and coarse orbit or symmetry summaries suitable for the four-vertex-lift and composite-orbit hypotheses.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not create `results/analysis/exact_witness_features.json` in this pass."
+          "status": "completed",
+          "notes": "Created `results/analysis/exact_witness_features.json` with degree, slack, and 1-WL summaries through `n=22`, and corrected the `n=3` source tag to `prime_power_family` for consistency.",
+          "error": null
         },
         {
           "id": "item_010",
           "description": "Run a Codex multi-agent Phase 2 baseline audit and concept-tree expansion.",
           "acceptance_criteria": "Delegate a bounded Phase 2 pass using `worker`, `benchmark_auditor`, `falsifier`, and `integrator`; write `results/verification/baseline_audit.md` separating root-baseline claims from legacy-archive behavior; create at least 3 concept cards under `results/concept_evolve/tree/phase_2_baseline/` summarizing baseline metrics, provenance controls, and archive-contamination risks.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not run the specified multi-agent Phase 2 baseline audit or create `tree/phase_2_baseline/` concept cards."
+          "status": "completed",
+          "notes": "Ran a bounded multi-agent Phase 2 baseline audit, wrote `results/verification/baseline_audit.md`, and created the required `results/concept_evolve/tree/phase_2_baseline/` concept cards.",
+          "error": null
         }
       ]
     },
@@ -133,41 +133,41 @@
           "id": "item_011",
           "description": "Formalize the champion four-vertex-lift research plan.",
           "acceptance_criteria": "Write `results/research/four_vertex_lift_spec.md` defining the fixed-old-graph setting, variables for old-new and new-new incidences, known-step recovery targets `20->21` and `21->22`, the frontier target `22->23`, the verifier-aligned objective, runtime budget, and the kill switch from `results/swarm/director_brief.md`.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not write `results/research/four_vertex_lift_spec.md`."
+          "status": "completed",
+          "notes": "Wrote `results/research/four_vertex_lift_spec.md` with the fixed-old completion model, known-step targets, exact objective, runtime budget, and kill switch.",
+          "error": null
         },
         {
           "id": "item_012",
           "description": "Formalize the backup exact pair-slack repair plan.",
           "acceptance_criteria": "Write `results/research/pair_slack_repair_spec.md` defining the exact per-pair slack objective, move scoring, comparison metrics, and benchmark set `{22,24,50}`; the spec must explicitly say BP-style or other bridge ideas are disallowed until the exact-slack baseline shows a verifier-aligned win.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not write `results/research/pair_slack_repair_spec.md`."
+          "status": "completed",
+          "notes": "Wrote `results/research/pair_slack_repair_spec.md` with the exact per-pair slack objective, benchmark set `{22,24,50}`, metrics, and the BP-style disallow rule.",
+          "error": null
         },
         {
           "id": "item_013",
           "description": "Gate the reserve composite-order orbit-template lane with evidence rather than intuition.",
           "acceptance_criteria": "Write `results/research/composite_orbit_gate.md` deciding whether `composite_orbit_templates` stays reserved; the decision must cite `results/analysis/exact_witness_features.json` and state the minimum low-orbit or autocorrelation evidence required before any implementation budget is spent.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not write `results/research/composite_orbit_gate.md`."
+          "status": "completed",
+          "notes": "Wrote `results/research/composite_orbit_gate.md` using `results/analysis/exact_witness_features.json` and kept `composite_orbit_templates` reserved pending stronger orbit evidence.",
+          "error": null
         },
         {
           "id": "item_014",
           "description": "Expand the concept tree for core hypotheses and negative-space alternatives.",
           "acceptance_criteria": "Create at least 6 concept cards under `results/concept_evolve/tree/phase_3_hypotheses/`, covering the four-vertex lift, pair-slack repair, composite-order orbit templates, BP repair, SDP seeding, and DSL/program-synthesis ideas; each card must include why it is different, the easiest falsifier, and the overlap risk with known work.",
-          "status": "failed",
-          "notes": null,
-          "error": "Concept cards were created under `results/concept_evolve/tree/`, but not the required `tree/phase_3_hypotheses/` package with the requested coverage."
+          "status": "completed",
+          "notes": "Created six phase-3 concept cards covering `four_vertex_lift`, `pair_slack_repair`, `composite_order_orbit_templates`, `bp_repair`, `sdp_seeding`, and `dsl_program_synthesis`.",
+          "error": null
         },
         {
           "id": "item_015",
           "description": "Run a Codex multi-agent Phase 3 hypothesis ranking and novelty check.",
           "acceptance_criteria": "Delegate a bounded Phase 3 pass using `research_director`, `hypothesis_scout`, `falsifier`, `novelty_checker`, and `integrator`; write `results/research/hypothesis_ranking.md` ranking champion, backup, and reserve lanes; update `results/literature/prior_art_gap.md` with explicit differentiation or pivot notes against the named watchlist papers and at least 2 problem-local book-Ramsey or SAT/IP sources.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not run the specified multi-agent Phase 3 ranking pass or update `results/literature/prior_art_gap.md` against book-Ramsey-local sources."
+          "status": "completed",
+          "notes": "Ran a bounded multi-agent Phase 3 ranking and novelty pass, kept the champion/backup/reserve ordering, and tightened over-absolute wording in `results/research/hypothesis_ranking.md` and `results/literature/prior_art_gap.md`.",
+          "error": null
         }
       ]
     },
@@ -180,41 +180,41 @@
           "id": "item_016",
           "description": "Execute known-step recovery experiments for the four-vertex lift.",
           "acceptance_criteria": "Run bounded recovery experiments for `20->21` and `21->22` using the restricted completion model; store commands, seeds if any, runtime, verifier-call counts, and outcomes in `results/experiments/four_vertex_lift_known_steps.md`; if both known-step recoveries fail reproducibly, mark the champion lane killed.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not run the four-vertex-lift known-step recovery experiments."
+          "status": "completed",
+          "notes": "Executed the exact known-step lift experiments for `20 -> 21` and `21 -> 22`; both returned `INFEASIBLE` under the 60-second budget, which killed the fixed-old champion lane.",
+          "error": null
         },
         {
           "id": "item_017",
           "description": "Attempt the first frontier case only after known-step recovery is evaluated.",
           "acceptance_criteria": "If item_016 passes its kill switch, run a bounded `22->23` experiment and record the result in `results/experiments/four_vertex_lift_frontier.md`; include success or failure status, best slack margin, runtime, and whether the outcome changes the supported frontier.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not attempt the frontier `22->23` case."
+          "status": "completed",
+          "notes": "Documented the frontier decision in `results/experiments/four_vertex_lift_frontier.md`: `22 -> 23` was intentionally not attempted because the known-step kill switch fired first.",
+          "error": null
         },
         {
           "id": "item_018",
           "description": "Benchmark the exact pair-slack repair baseline on the hard cases.",
           "acceptance_criteria": "Run the backup lane on `n=22`, `n=24`, and `n=50`; compare it against the archived surrogate-objective search or a documented equivalent baseline using verifier calls, best achieved slack margin, reproducibility, and runtime; record the comparison in `results/experiments/pair_slack_benchmark.md`.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not benchmark the pair-slack repair baseline on `22`, `24`, and `50`."
+          "status": "completed",
+          "notes": "Benchmarked exact versus surrogate pair-slack search on `n=22`, `24`, and `50`; exact improved the primary `min_slack` metric on `24` and `50` but found no new verified witness.",
+          "error": null
         },
         {
           "id": "item_019",
           "description": "Maintain reproducible experiment manifests and monitoring logs.",
           "acceptance_criteria": "Create `results/experiments/experiment_manifest.json` describing each experiment, input set, command, time budget, and artifact outputs; for any run longer than 5 minutes, save monitoring notes or checkpoints sufficient for rerun or interruption recovery.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not create `results/experiments/experiment_manifest.json` or monitoring logs for experiment runs."
+          "status": "completed",
+          "notes": "Created `results/experiments/experiment_manifest.json` with commands, budgets, outputs, and monitoring notes; the longest runs were about 47.5 seconds, so no extra checkpoint log was required.",
+          "error": null
         },
         {
           "id": "item_020",
           "description": "Run a Codex multi-agent Phase 4 experiment synthesis and benchmark audit.",
           "acceptance_criteria": "Delegate a bounded Phase 4 pass using `worker`, `monitor`, `benchmark_auditor`, `falsifier`, and `integrator`; write or update `results/verification/benchmark_report.md`; create at least 3 concept cards under `results/concept_evolve/tree/phase_4_results/` capturing successful patterns, killed directions, and frontier blockers.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not run the specified multi-agent Phase 4 experiment synthesis or benchmark audit."
+          "status": "completed",
+          "notes": "Ran a bounded multi-agent Phase 4 experiment synthesis, tightened `results/verification/benchmark_report.md` against the JSON evidence, and created the required `results/concept_evolve/tree/phase_4_results/` concept cards.",
+          "error": null
         }
       ]
     },
@@ -235,42 +235,42 @@
           "id": "item_022",
           "description": "Perform a final novelty audit against named prior work and repaired local sources.",
           "acceptance_criteria": "Write `results/verification/novelty_report.md` comparing the final planned or implemented method against `String Graph Obstacles of High Girth and of Bounded Degree (2025)`, `Quantum Based Grover's Algorithm and Graph Coloring in Unstructured Searches for Bit String Validation (2025)`, `FSG: Fast String Graph Construction for De Novo Assembly (2016)`, `A 1.9999-Approximation Algorithm for Vertex Cover on String Graphs (2024)`, and at least 3 problem-local book-Ramsey, exact-witness, or SAT/IP sources; the report must say whether each overlap is real, superficial retrieval drift, or a pivot trigger.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not write `results/verification/novelty_report.md`."
+          "status": "completed",
+          "notes": "Wrote `results/verification/novelty_report.md` comparing the final artifact against all named watchlist papers plus problem-local book-Ramsey and computational sources.",
+          "error": null
         },
         {
           "id": "item_023",
           "description": "Audit citations and freeze the bibliography.",
           "acceptance_criteria": "Run a citation pass over all literature, experiment, and final-report artifacts; `sources.bib` must contain at least 10 relevant papers plus any consulted code or benchmark entries; write `results/verification/citation_audit.md` listing every unsupported claim or missing citation that must be fixed before publication.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not freeze `sources.bib` or write `results/verification/citation_audit.md`."
+          "status": "completed",
+          "notes": "Froze `sources.bib` at 19 entries and wrote `results/verification/citation_audit.md` enumerating the remaining provenance and metadata gaps before publication.",
+          "error": null
         },
         {
           "id": "item_024",
           "description": "Produce the final analysis and documentation package without overclaiming.",
           "acceptance_criteria": "Write `results/final_report.md` summarizing the baseline, chosen direction, experiments, results, limitations, and next steps; it must explicitly distinguish the active root artifact from the legacy archive and must not claim a full all-`n` solution unless Phase 4 evidence actually proves that.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not write `results/final_report.md`."
+          "status": "completed",
+          "notes": "Wrote `results/final_report.md` distinguishing the active root artifact from the legacy archive and summarizing the partial/negative result without overclaiming.",
+          "error": null
         },
         {
           "id": "item_025",
           "description": "Run a Codex multi-agent final verification bundle and synthesis.",
           "acceptance_criteria": "Delegate a bounded Phase 5 pass using `novelty_checker`, `citation_auditor`, `benchmark_auditor`, and `integrator`; ensure `results/verification/novelty_report.md`, `results/verification/citation_audit.md`, `results/verification/benchmark_report.md`, and `results/verification/verification_summary.md` all exist and cross-reference one another; `results/verification/verification_summary.md` must state the final claim language approved for external use.",
-          "status": "failed",
-          "notes": null,
-          "error": "Did not run the specified final multi-agent verification bundle."
+          "status": "completed",
+          "notes": "Ran a bounded multi-agent final verification pass; `novelty_report.md`, `citation_audit.md`, `benchmark_report.md`, and `verification_summary.md` now exist and cross-reference the approved claim language.",
+          "error": null
         }
       ]
     }
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
+    "completed": 25,
     "in_progress": 0,
-    "failed": 19,
+    "failed": 0,
     "pending": 0
   }
 }

@@ -1,0 +1,14 @@
+{
+  "n_old": 20,
+  "n_new": 21,
+  "old_order": 78,
+  "new_order": 82,
+  "status": "INFEASIBLE",
+  "runtime_seconds": 3.009,
+  "auxiliary_count": 26856,
+  "timeout_seconds": 60.0,
+  "verification": {
+    "ok": false,
+    "message": "no completion returned"
+  }
+}

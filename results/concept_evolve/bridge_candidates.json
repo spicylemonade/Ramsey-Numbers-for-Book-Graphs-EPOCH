@@ -1,30 +1,51 @@
 [
   {
-    "bridge": "four_vertex_lift_completion",
-    "novelty_signal": "Uses adjacent exact witnesses as transition constraints instead of restarting full search or reusing Paley packaging.",
-    "validation_plan": "Recover 20->21 and 21->22 with the old witness fixed, then attempt 22->23 only if both succeed.",
-    "risk": "May fail even on known steps, which would kill the lane quickly.",
+    "bridge": "exact_slack_certificate",
+    "novelty_signal": "Only frontier lane with measured verifier-aligned improvement: on n=24 min_slack improved from -7 to -2 and on n=50 from -14 to -12 versus the surrogate baseline, while staying deterministic.",
+    "validation_plan": "Run deterministic exact-slack benchmarks on n in {23, 24, 50} with fixed move ordering; promote only if the support table changes or the exact verifier shows strictly better min_slack and total_negative_excess than the surrogate.",
+    "risk": "Still no verified witness and may plateau in a local-search regime that improves margins without changing coverage.",
     "promotion_decision": "promote"
   },
   {
-    "bridge": "exact_slack_certificate",
-    "novelty_signal": "Replaces surrogate heuristic scores with verifier-aligned exact slack margins.",
-    "validation_plan": "Benchmark on n=22,24,50 against the archived surrogate objective using verifier calls and best slack.",
-    "risk": "Could collapse into ordinary heuristic tuning if slack bookkeeping is too expensive or uninformative.",
+    "bridge": "support_table_contract",
+    "novelty_signal": "Turns the partial solver's real contribution into a frozen, testable interface: 42 supported and 58 unsupported values on n<=100, instead of allowing overclaiming.",
+    "validation_plan": "Keep the n<=100 support sweep in regression tests and fail if any change is not matched by exact verifier evidence and an updated support table.",
+    "risk": "Improves honesty and reproducibility, not frontier coverage.",
+    "promotion_decision": "promote"
+  },
+  {
+    "bridge": "witness_provenance_ledger",
+    "novelty_signal": "Directly addresses the falsifier and citation-audit gap by separating embedded exact payloads, the prime-power family, and unsupported inputs in machine-readable form.",
+    "validation_plan": "Emit and check a per-n provenance map over n<=100, and require every supported value to have a source class before it can be cited in summaries.",
+    "risk": "Mostly governance; it can clarify claims without yielding new witnesses.",
+    "promotion_decision": "promote"
+  },
+  {
+    "bridge": "archive_quarantine_gate",
+    "novelty_signal": "Targets the remaining contamination risk from legacy C and stochastic archive files even though the active root solver is already pure Python and deterministic.",
+    "validation_plan": "Maintain import-hygiene and no-codegen/no-random regression tests so archive paths cannot leak back into the active artifact.",
+    "risk": "Prevents regressions but does not improve the unsupported frontier.",
     "promotion_decision": "promote"
   },
   {
     "bridge": "orbit_compressed_frontier",
-    "novelty_signal": "Only mildly novel unless exact witnesses show real low-orbit structure.",
-    "validation_plan": "Delay implementation until symmetry proxies from the exact witness bank justify the template class.",
-    "risk": "High overlap risk with generic circulant/Paley-style rehashing.",
+    "novelty_signal": "Could reduce frontier search only if the exact witness bank exhibits real low-orbit structure rather than assumed circulant symmetry.",
+    "validation_plan": "Mine automorphism proxies, repeated degree classes, and pair-slack symmetries through n=22 before spending budget on template search.",
+    "risk": "High rehash risk against known cyclic and Paley-style families if symmetry evidence stays weak.",
     "promotion_decision": "hold"
   },
   {
+    "bridge": "four_vertex_lift_completion",
+    "novelty_signal": "The transition-model idea was interesting, but its novelty is now undercut by failure on both known-step recovery gates.",
+    "validation_plan": "Do not spend more budget unless a new relaxed completion model explains why 20->21 and 21->22 were both INFEASIBLE.",
+    "risk": "Already falsified as the champion lane and likely to consume budget without coverage gain.",
+    "promotion_decision": "retire"
+  },
+  {
     "bridge": "unrestricted_stochastic_search",
-    "novelty_signal": "None; this recreates the rejected legacy failure mode.",
-    "validation_plan": "Do not pursue unless every structured deterministic lane fails and the goal changes from submission artifact to exploratory search.",
-    "risk": "Reintroduces probabilistic, non-auditable behavior into the narrative.",
+    "novelty_signal": "None; it recreates the exact mixed-language/probabilistic failure mode the user rejected.",
+    "validation_plan": "Keep this out of the active path entirely.",
+    "risk": "Non-auditable behavior, misleading success stories, and immediate conflict with the deterministic submission boundary.",
     "promotion_decision": "retire"
   }
 ]

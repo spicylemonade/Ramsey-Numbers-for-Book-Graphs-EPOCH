@@ -22,6 +22,7 @@
     ],
     "prime_power_family": [
       "solution.py::_prime_power",
+      "solution.py::_field_model",
       "solution.py::_paley_two_block"
     ],
     "unsupported": []

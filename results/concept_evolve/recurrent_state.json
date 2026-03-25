@@ -1,42 +1,44 @@
 {
-  "focus": " have this code for this question:\nLet B_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\".\n\nFind an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of B_{n-1} and whose complement does not contain a copy of B_{n}.\n\nProvide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. The order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... For example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}.\n\nSolution format:\n* Write a Python script defining a function solution(n: int) -> str.\n* Do not include any code at the file level. You may include a main block for testing, but it will not be executed by the verifier.\n* For n <= 100, the algorithm must complete within 10 minutes when run on a typical laptop.\n\nmajor issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
-  "champion_bridge": "four_vertex_lift_completion",
+  "focus": "have this code for this question:\nLet B_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\".\n\nFind an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of B_{n-1} and whose complement does not contain a copy of B_{n}.\n\nProvide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. The order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... For example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}.\n\nSolution format:\n* Write a Python script defining a function `solution(n: int) -> str`.\n* Do not include any code at the file level. You may include a `main` block for testing, but it will not be executed by the verifier.\n* For n \u2264 100, the algorithm must complete within 10 minutes when run on a typical laptop.\n\nmajor issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
+  "champion_bridge": "exact_slack_certificate",
   "iteration_notes": [
-    "Promoted verifier-aligned structured frontier work.",
-    "Retired unrestricted stochastic search from the active research narrative.",
-    "Kept orbit-compressed templates as reserve pending symmetry evidence."
+    "Retired the four-vertex lift lane after both known-step recovery checks returned INFEASIBLE.",
+    "Kept unrestricted stochastic search retired because it violates the active deterministic boundary.",
+    "Promoted exact-slack as the only surviving frontier bridge and paired it with support-table, provenance, and archive-quarantine controls."
   ],
   "feedback_digest": [
-    "User complaint about mixed-language/probabilistic active code is resolved.",
-    "Root solver is still only a partial construction artifact.",
-    "Future work must change coverage, not just packaging."
+    "The negative signal is no longer language impurity in the active root artifact; reruns confirm root solution.py is pure Python, deterministic, and rejects unsupported n.",
+    "The strongest unresolved negative signal is coverage: the verified support table remains 42 supported and 58 unsupported for n<=100, with key misses at 23, 24, 50, and 100.",
+    "The former champion bridge, four_vertex_lift_completion, failed its own falsification gate on both 20->21 and 21->22 known-step recovery attempts.",
+    "Exact-slack repair produced only weak positive evidence: better worst-case slack than the surrogate on 24 and 50, but no new valid witness or support-table expansion.",
+    "Provenance and archive-contamination gaps remain material enough that claim language must stay conservative and machine-readable controls should be strengthened."
   ],
   "iteration_count": 1,
-  "last_feedback_hash": "7ad39f7c64732645521bade5b464779d65b34f750e20683748cfa121efad0865",
-  "input_fingerprint": "26a4b809c99778c1e792121aa4f76abe5778431771a7b423039c480ee130b58c",
+  "last_feedback_hash": "9afbfbaaa598fbab0d87aeaa22ef993f2ad4f5fd65eea3d253f625e52a813733",
+  "input_fingerprint": "2faad7152b8340934ea253417936a0606d2f91c85e870eb2895334bc557ba2fb",
   "input_context": {
     "command": "iterate",
-    "topic": "have this code for this question: let b_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\". find an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of b_{n-1} and whose complement does not contain a copy of b_{n}. provide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. the order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... for example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}. solution format: * write a python script defining a function solution(n: int) -> str. * do not include any code at the file level. you may include a main block for testing, but it will not be executed by the verifier. * for n <= 100, the algorithm must complete within 10 minutes when run on a typical laptop. major issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
+    "topic": "have this code for this question: let b_n denote the triangular book graph on n+2 vertices, i.e. with n triangular \"pages\". find an algorithm that takes n as input and produces a graph on 4n - 2 vertices that does not contain a copy of b_{n-1} and whose complement does not contain a copy of b_{n}. provide the algorithm that takes n as input and outputs the graph as an adjacency string: a binary string that lists whether an edge is present (1) or absent (0) in column major order, zero-indexed. the order the edges should appear in the string is: {0,1}, {0,2}, {1,2}, {0,3}, {1,3}, {2,3}, {0,4}, {1,4}, {2,4}, {3,4}, ... for example, the string 011010 would represent the 4-vertex graph with edges {0,2}, {1,2}, {1,3}. solution format: * write a python script defining a function `solution(n: int) -> str`. * do not include any code at the file level. you may include a `main` block for testing, but it will not be executed by the verifier. * for n \u2264 100, the algorithm must complete within 10 minutes when run on a typical laptop. major issues is that the code it wrote is both c and python not just python and its probablistic which means it might not find the correct graph unless it has exhausted all possibilities, so it might not be good enough. fix adress both, run and test and veriify we resolve",
     "context": [
       {
         "path": "results/research_context.md",
         "exists": true,
-        "sha256": "8bc4c5c1fa060359f79fc127dbacd1c3a8ef667a1129de71abcd50f544bd6a7a"
+        "sha256": "68060733b7d5caab71df29f08b155209f0db3f760ea524d42050592091f17e0f"
       },
       {
         "path": "results/literature/prior_art_watchlist.md",
         "exists": true,
-        "sha256": "132d6c81608b98f705cea53fabb8d7c38a81b5fd3eaa7f59ee02e6de745705b3"
+        "sha256": "fc5b4ae96b1bc00518642dc60a9bffea8c3f77c369610b20369bb28e62bbd355"
       },
       {
         "path": "results/literature/prior_art_gap.md",
         "exists": true,
-        "sha256": "2dd93ab3a9763f286e5d39e289111a14aecebd9455a3e6ad6b520041430290f4"
+        "sha256": "90986915af4c4cacc2f67b8f8d83fed93a97775c4bdf1ad0daa5f02760a8f08d"
       },
       {
         "path": "results/literature/semantic_scholar_manifest.json",
         "exists": true,
-        "sha256": "a339509334e62ea41e73a7fbcbfac8963bfbfbfe9b9ef99adece934ad2e48faa"
+        "sha256": "e37a53939fabb4e5f9e155aa25393ed7a6dbfb60f7635d0fb35c4ba5e2e8c9bd"
       },
       {
         "path": "results/swarm/director_brief.md",
@@ -61,44 +63,44 @@
       {
         "path": "results/concept_evolve/probe_result.json",
         "exists": true,
-        "sha256": "35aa715780d4f206881d65ca70b453e24487e986f19c707f7ee074bd4d533151"
+        "sha256": "8c9b1f92cfe3509b8ba810c5026f44f8a0e5bd54a885ee5a122d0c76a32bd25a"
       },
       {
         "path": "results/concept_evolve/reframings.json",
         "exists": true,
-        "sha256": "7e0e79c589bafb6ab1c647db22220a605243747cb21f18dfc9e21dc3eedf0f62"
+        "sha256": "1a3ba420a131879811eac95b2087588d2a567a978ab556c39f7105e0515d7a3d"
       },
       {
         "path": "results/concept_evolve/concept_delta.json",
-        "exists": false,
-        "sha256": ""
+        "exists": true,
+        "sha256": "8c8a1ddce1c7cd85fb1eb832aff0416bdaf6280ff63e8069c254ef3823351030"
       },
       {
         "path": "results/concept_evolve/recurrent_state.json",
-        "exists": false,
-        "sha256": ""
+        "exists": true,
+        "sha256": "4d7357565bd9dabf0383483bb86ac1a056e3f59c8828c1dca2e9757efc50f981"
       },
       {
         "path": "results/verification/novelty_report.md",
-        "exists": false,
-        "sha256": ""
+        "exists": true,
+        "sha256": "5da0dde77b5f15a9e44cd5290570baa5713738d9c088089b82e9cee1d24e9762"
       },
       {
         "path": "results/verification/benchmark_report.md",
-        "exists": false,
-        "sha256": ""
+        "exists": true,
+        "sha256": "b9ddebfe47f475388ee21bf318fbb58e86b8e8c554d070345d0048edc19ed3a4"
       },
       {
         "path": "results/verification/citation_audit.md",
-        "exists": false,
-        "sha256": ""
+        "exists": true,
+        "sha256": "71fd4a1560cf0d1158067e9b8ca701e9debac4ef6cadb3bae407c472f1245c9d"
       },
       {
         "path": "results/verification/verification_summary.md",
         "exists": true,
-        "sha256": "872ee4ce502cf9936e1f4397ef77d6754ff83fddac1dc7379a2b3da0b6b4346a"
+        "sha256": "fbd839abbe10c87845896376092f6ede206b508f06b9b85beb6f8f7ef3f45798"
       }
     ]
   },
-  "timestamp": "2026-03-25T01:18:01.066729+00:00"
+  "timestamp": "2026-03-25T02:07:54.211785+00:00"
 }

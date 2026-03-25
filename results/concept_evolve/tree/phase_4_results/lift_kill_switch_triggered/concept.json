@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "lift_kill_switch_triggered",
+  "description": "The fixed-old-graph lift failed on both known-step recovery targets.",
+  "domains": [
+    "experiments",
+    "constraint_programming"
+  ],
+  "implementation_hypothesis": "Documents a negative result rather than hiding it behind optimism.",
+  "easiest_falsifier": "Any reproducible completion on 20->21 or 21->22.",
+  "first_experiment": "Exact CP-SAT recovery on the known steps.",
+  "overlap_risk": "Low novelty, high decision value.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_4_results/lift_kill_switch_triggered"
+}

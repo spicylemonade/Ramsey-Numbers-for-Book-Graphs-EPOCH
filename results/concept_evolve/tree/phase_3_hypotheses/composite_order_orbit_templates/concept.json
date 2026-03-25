@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "composite_order_orbit_templates",
+  "description": "Search low-orbit composite-order templates only if witness features justify them.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Targets unsupported composite cases directly.",
+  "easiest_falsifier": "No stable low-orbit witness signal.",
+  "first_experiment": "WL/orbit feature gate.",
+  "overlap_risk": "High overlap with cyclic/block-circulant work.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_3_hypotheses/composite_order_orbit_templates"
+}

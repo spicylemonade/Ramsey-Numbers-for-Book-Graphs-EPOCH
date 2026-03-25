@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "bp_repair",
+  "description": "Try message-passing style repair only after the exact-slack baseline proves leverage.",
+  "domains": [
+    "combinatorics",
+    "search"
+  ],
+  "implementation_hypothesis": "Moves beyond local score descent only conditionally.",
+  "easiest_falsifier": "No exact-slack win.",
+  "first_experiment": "Disallowed until pair-slack baseline wins.",
+  "overlap_risk": "Very high overlap with generic heuristic search.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_3_hypotheses/bp_repair"
+}

@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-03-25T01:55:00Z",
+  "experiments": [
+    {
+      "name": "four_vertex_lift_20_21",
+      "command": "python3 book_research.py lift --n-old 20 --timeout 60 --output results/experiments/lift_20_21.json",
+      "time_budget_seconds": 60,
+      "outputs": [
+        "results/experiments/lift_20_21.json",
+        "results/experiments/four_vertex_lift_known_steps.md"
+      ]
+    },
+    {
+      "name": "four_vertex_lift_21_22",
+      "command": "python3 book_research.py lift --n-old 21 --timeout 60 --output results/experiments/lift_21_22.json",
+      "time_budget_seconds": 60,
+      "outputs": [
+        "results/experiments/lift_21_22.json",
+        "results/experiments/four_vertex_lift_known_steps.md"
+      ]
+    },
+    {
+      "name": "pair_slack_benchmark",
+      "command": "python3 book_research.py pair-slack --n {22,24,50} --mode {exact,surrogate} ...",
+      "time_budget_seconds": 60,
+      "outputs": [
+        "results/experiments/pair_slack_22_exact.json",
+        "results/experiments/pair_slack_22_surrogate.json",
+        "results/experiments/pair_slack_24_exact.json",
+        "results/experiments/pair_slack_24_surrogate.json",
+        "results/experiments/pair_slack_50_exact.json",
+        "results/experiments/pair_slack_50_surrogate.json",
+        "results/experiments/pair_slack_benchmark.md"
+      ]
+    }
+  ],
+  "monitoring_notes": [
+    "The longest bounded runs were the n=50 pair-slack benchmarks at roughly 47.5 seconds each.",
+    "No experiment in this pass exceeded the 60-second per-command budget, so no extra checkpoint log was required beyond the JSON outputs."
+  ]
+}

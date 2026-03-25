@@ -1,0 +1,14 @@
+{
+  "symbolic_name": "root_baseline_firewall",
+  "description": "Keep claims about the root solver separate from the archived mixed-language Aristotle search tree.",
+  "domains": [
+    "software_testing",
+    "verification"
+  ],
+  "implementation_hypothesis": "This is an evidence firewall, not a new construction.",
+  "easiest_falsifier": "Any benchmark or claim that mixes root and archive behavior.",
+  "first_experiment": "Cross-check tests and the support table against the root artifact only.",
+  "overlap_risk": "Low scientific novelty, high reproducibility value.",
+  "generated_at": "2026-03-25T01:50:00Z",
+  "project_folder": "results/concept_evolve/tree/phase_2_baseline/root_baseline_firewall"
+}
