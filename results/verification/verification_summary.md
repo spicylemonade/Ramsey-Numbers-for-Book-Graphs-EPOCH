@@ -1,36 +1,56 @@
 # Verification Summary
 
+## Round
+
+- Verification phase: `review_round_1`
+
 ## Decision
 
 DEEPEN
 
-The current bundle is internally reproducible and honest about its boundary (`42 supported / 58 unsupported` through `n <= 100`), but it is not publication-ready. The evidence supports a deterministic partial solver plus negative results on the frozen-old lift formulation, not a materially new book-Ramsey contribution.
+The current bundle is reproducible and mostly honest about its operational boundary, but it is not yet ready for publication-facing acceptance or for a lighter revise-only pass. The blocking issues are not just prose or bibliography cleanup: the witness provenance chain is still incomplete, the pair-slack benchmark has metric-accounting defects and missing controls, and no experiment has produced a new verified frontier witness or a materially distinct book-Ramsey result.
 
 ## Must-Fix Issues
 
-1. Narrow the claim boundary in final-facing prose.
-   - Do not present the work as a new construction, a general solver, or a validated four-vertex lift.
-   - Safe framing for now: deterministic partial solver, reproducible verification bundle, and negative-result package.
-2. Resolve external provenance for the witness payloads.
-   - Freeze the upstream source for the tiny exact witnesses (`n = 1, 2, 4`), the graph6 bank (`n = 5..21`), and the embedded `n = 22` two-block witness.
-   - This is a publication blocker, not a cosmetic citation gap.
-3. Attach citations to the load-bearing literature and provenance claims, and repair weak bibliography entries.
-   - `results/final_report.md` and the verification/literature summaries still describe prior art and provenance without attached citation syntax.
-   - Repair or replace weak entries before using them in paper-facing text, especially `LowerBoundsBookRamseyWesley2025`, `SMS`, `BlackLevenRadz`, `SCIP6`, and `VanOverbergheGithub`.
-4. Fix benchmark metric integrity before making any efficiency claim.
-   - The pair-slack benchmark currently misreports `verifier_calls`; it is reporting accepted-round count rather than true verifier invocations.
-   - `runtime_seconds` also excludes part of the end-to-end path.
-   - Re-export the benchmark after correcting the harness.
-5. Add the missing frontier and control experiments before claiming backup-lane strength.
-   - Pair-slack needs the omitted `n = 23` case, a perturb-and-recover control at `n = 22`, and objective ablations that isolate the effect of `min_slack`.
-   - The lift lane needs a relaxed control that allows bounded old-old rewiring; the current result falsifies only the fully frozen-old submodel.
-6. Keep the novelty judgment negative until new evidence appears.
-   - No bounded experiment produced a new verified frontier witness.
-   - Pair-slack shows only mixed scalar improvement, and the orbit-template lane has not crossed its own gate.
+1. Narrow the claim surface to what the artifacts actually support.
+   - Keep the safe boundary to: a deterministic partial solver, a reproducible `42 supported / 58 unsupported` split through `n <= 100`, a negative result for the fully frozen-old lift formulation on `20 -> 21` and `21 -> 22`, and a mixed exploratory signal for exact pair-slack.
+   - Remove or soften any wording that implies a new construction family, a general solver, a validated lift program, or a publication-ready novelty claim.
+
+2. Close external provenance for the witness payloads before presenting the supported range as publication-grade.
+   - Freeze the upstream source for the small exact witnesses, the graph6 bank for `n = 5..21`, and the embedded `n = 22` two-block witness.
+   - Use immutable provenance records such as archived snapshots, appendices, or exact commit permalinks rather than moving repository paths.
+
+3. Repair the citation trail on the manuscript-facing surfaces.
+   - Add actual citations where prior-art and provenance comparisons are made in `results/final_report.md`, `results/literature/prior_art_review.md`, and `results/literature/prior_art_gap.md`.
+   - Repair or replace weak bibliography entries before they are used in final-facing prose, especially the Wesley source record, the SAT Modulo Symmetries citation, the Black-Leven-Radziszowski record, and any stale solver or GitHub placeholders.
+
+4. Fix benchmark metric integrity and re-export the saved pair-slack results.
+   - Correct `verifier_calls` so it reports true verifier invocations rather than accepted-round count.
+   - Measure runtime as end-to-end wall time for the scored run, not only the post-seed or post-model-build segment.
+   - Re-export the existing benchmark outputs after the accounting fix so later comparisons are not built on mislabeled cost data.
+
+5. Add the missing controls needed to justify any claim about the backup lane.
+   - Benchmark pair-slack on `n = 23`, which is the first obvious unsupported frontier-adjacent falsifier.
+   - Replace the trivial `n = 22` identity sanity check with perturb-and-recover controls from a damaged known witness.
+   - Run objective ablations so the effect of `min_slack` is separated from tie-break-order changes.
+   - Split move-family controls where possible, especially within-layer versus cross-layer moves, because the current failures appear under-localized in the saved artifacts.
+
+6. Do not generalize the lift negative result beyond the tested formulation.
+   - The current evidence falsifies the fully frozen-old exact completion model only.
+   - Add at least one relaxed control with bounded old-old rewiring, plus a positive-control recovery case, before making broader lift-style claims.
+
+7. Keep the novelty verdict negative unless new evidence changes the boundary.
+   - No run extended the verified coverage frontier.
+   - Exact pair-slack produced mixed scalar changes rather than a decisive verifier-aligned win.
+   - Composite-order orbit templates remain speculative and have not crossed a frontier-relevant gate.
 
 ## Optional Improvements
 
-- Update `results/research_context.md` so the prior-art narrative matches the repaired literature artifacts and no longer treats the string-graph papers as the active closest comparison set.
-- Add failure localization for pair-slack and a broader lift stress grid (`18 -> 19` through `21 -> 22`) so the negative results become diagnostic rather than purely descriptive.
-- Replace moving provenance breadcrumbs with immutable commit permalinks or archived snapshots, and either wire unused bibliography keys into final-facing prose or drop them.
-- Keep the pair-slack and orbit-template lanes explicitly exploratory until they produce a verifier-aligned win or a frontier-relevant structural result.
+- Add richer failure diagnostics to the pair-slack artifacts, including slack histograms and counts by constraint family, so the remaining obstruction is localized rather than summarized by a few scalars.
+- Expand the lift stress grid to include earlier adjacent steps such as `18 -> 19` and `19 -> 20`, which would clarify whether the frozen-old failures are onset-specific or more systematic.
+- Clean stale literature side files and research-context summaries so the repaired watchlist is the only active prior-art narrative.
+- Replace schematic experiment-manifest commands with the exact invocations and output paths used to generate the saved benchmark files.
+
+## Next-Round Gate
+
+This work should stay in `DEEPEN` until the provenance chain is frozen, citations are attached at the actual comparison points, benchmark accounting is repaired, and at least the minimum missing controls (`n = 23`, perturb-and-recover, objective ablations, relaxed lift control) have been run. If those changes are completed without producing a new witness or stronger structural result, the package can still be reframed as a rigorous negative-results and verification artifact, but it is not there yet.

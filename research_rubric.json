@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-03-25T00:59:17.846439+00:00",
-  "updated_at": "2026-03-25T02:41:05.916977+00:00",
-  "current_agent": "writer",
+  "updated_at": "2026-03-25T02:41:07.833836+00:00",
+  "current_agent": "reviewer",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -23,8 +23,8 @@
       "error": null
     },
     "reviewer": {
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-03-25T02:41:07.833822+00:00",
       "completed_at": null,
       "error": null
     }
